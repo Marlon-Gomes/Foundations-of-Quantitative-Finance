@@ -1,0 +1,663 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23952,        655]
+NotebookOptionsPosition[     19661,        580]
+NotebookOutlinePosition[     20268,        601]
+CellTagsIndexPosition[     20225,        598]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"7489b20b-ece0-427d-93bd-\
+d022f95d08e5"],
+
+Cell["Fall 2020 \[LongDash] Assignment 03", "Subtitle",
+ CellChangeTimes->{{3.4101180191149073`*^9, 3.410118026587117*^9}, {
+   3.410451275016321*^9, 3.410451277624028*^9}, {3.41113152964636*^9, 
+   3.41113154518227*^9}, {3.4113965922506437`*^9, 3.411396608797546*^9}, {
+   3.411436154989222*^9, 3.4114361574128437`*^9}, {3.411436292462274*^9, 
+   3.411436309145669*^9}, {3.4611057192910433`*^9, 3.461105731739766*^9}, {
+   3.461106187281069*^9, 3.461106188567719*^9}, {3.461106347014133*^9, 
+   3.461106392456594*^9}, {3.461106425305952*^9, 3.461106433518922*^9}, {
+   3.461107458414324*^9, 3.461107510113055*^9}, {3.491414090059168*^9, 
+   3.4914141198204203`*^9}, {3.491414406521193*^9, 3.4914144159195843`*^9}, {
+   3.4914147112780046`*^9, 3.491414711427609*^9}, {3.555082975519517*^9, 
+   3.555082980676901*^9}, {3.555083477712988*^9, 3.555083478687748*^9}, {
+   3.585766164931189*^9, 3.585766165724255*^9}, {3.5858640317953672`*^9, 
+   3.58586403231535*^9}, {3.585980273287774*^9, 3.5859802812381983`*^9}, {
+   3.5864711538486023`*^9, 3.586471154459456*^9}, {3.599790496221098*^9, 
+   3.599790537399109*^9}, {3.617917652767757*^9, 3.6179176619292107`*^9}, {
+   3.617917919337837*^9, 3.617917919855098*^9}, {3.64938928036769*^9, 
+   3.649389302000416*^9}, 3.652198735751018*^9, {3.683054219247025*^9, 
+   3.6830542228671417`*^9}, {3.683054259780175*^9, 3.68305426284271*^9}, {
+   3.683054301458186*^9, 3.683054301657826*^9}, {3.7137069380036087`*^9, 
+   3.713706950755329*^9}, {3.745089018615395*^9, 3.745089019200886*^9}, {
+   3.745854458241702*^9, 3.7458544588709993`*^9}, {3.7462078003194942`*^9, 
+   3.746207800693631*^9}, {3.777813283399661*^9, 3.777813283926447*^9}, {
+   3.8081897756774073`*^9, 
+   3.808189781150175*^9}},ExpressionUUID->"bb9862ee-20aa-46cf-9aa9-\
+ae1eaae946c0"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, 
+   3.5853679457875834`*^9, {3.587183885529838*^9, 
+   3.587183898552814*^9}},ExpressionUUID->"7d251ea9-61fe-4cd9-9680-\
+567c82ae4807"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1", "Section",
+ CellChangeTimes->{{3.745854495105418*^9, 3.745854505635058*^9}, {
+  3.808189859691423*^9, 
+  3.80818986037162*^9}},ExpressionUUID->"7c392387-cda3-4a09-8570-\
+0a7ad078d799"],
+
+Cell["Use FinancialBond[\[NonBreakingSpace]] to compute the following:", \
+"Text",
+ CellChangeTimes->{{3.746286795557638*^9, 
+  3.7462868125969276`*^9}},ExpressionUUID->"ab5ec3b2-5e66-417c-9831-\
+b55599a4f43f"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A newly issued $10,000 bond with a ten-year term has a 4% coupon rate and \
+pays semi-annually. The current market yield for a ten-year bond of this type \
+is 3.7%. What is the current market price of the bond?\
+\>", "Item",
+ CellChangeTimes->{{3.746286837033349*^9, 3.746286981839905*^9}, {
+  3.746287190013872*^9, 
+  3.746287191645377*^9}},ExpressionUUID->"1355ccfe-4ac3-4e28-84f1-\
+ce94e5b8d93d"],
+
+Cell["\<\
+A $10,000 bond with a five-year term, a 3.7% coupon rate paying semi-annually \
+was issued eight months ago. The current market yield is 3.5%.\
+\>", "Item",
+ CellChangeTimes->{{3.746286837033349*^9, 3.7462869517121363`*^9}, {
+  3.7462870067048388`*^9, 3.7462871406291857`*^9}, {3.746287219796863*^9, 
+  3.746287220580944*^9}},ExpressionUUID->"c7082db2-f8b0-4b90-ae5b-\
+66255dc21b21"],
+
+Cell[CellGroupData[{
+
+Cell["What is the current price of the bond?", "Subitem",
+ CellChangeTimes->{{3.746286837033349*^9, 3.7462869517121363`*^9}, {
+  3.7462870067048388`*^9, 3.746287159420993*^9}},
+ FontSize->15,
+ FontWeight->"Regular",ExpressionUUID->"b0bebae3-66cd-492f-8859-a3c55864368d"],
+
+Cell["What is the accrued interest on the bond?", "Subitem",
+ CellChangeTimes->{{3.746286837033349*^9, 3.7462869517121363`*^9}, {
+  3.7462870067048388`*^9, 3.746287170477792*^9}},
+ FontSize->15,
+ FontWeight->"Regular",ExpressionUUID->"fe5c6f39-88d0-4ad9-b7b7-69a75ec6e529"]
+}, Open  ]],
+
+Cell["\<\
+Consider a $10,000 semi-annual bond with a twenty-year term and a 4.5% coupon \
+rate. The bond was issued five-years ago and currently trades at a price of \
+$10,500. What is the yield on the bond?\
+\>", "Item",
+ CellChangeTimes->{{3.746287213548736*^9, 
+  3.7462873728788643`*^9}},ExpressionUUID->"8856c3df-ee1a-47c5-982e-\
+0b3572c1f441"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 2", "Section",
+ CellChangeTimes->{{3.7462873990751953`*^9, 
+  3.746287402963222*^9}},ExpressionUUID->"fd537a0b-47f1-4c3c-82ed-\
+83f7a789e0f5"],
+
+Cell["\<\
+Consider two assets with mean returns, standard deviations and correlation \
+matrix:\
+\>", "Text",
+ CellChangeTimes->{{3.746287552436573*^9, 
+  3.746287605738607*^9}},ExpressionUUID->"84584586-cb45-42a5-89b7-\
+dc74d73c486d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox["\[Mu]",
+    FontWeight->"Bold"], "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0.08"},
+      {"0.05"}
+     }], "\[NoBreak]", ")"}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7462876186693773`*^9, 
+  3.7462876425971117`*^9}},ExpressionUUID->"0894fe68-03be-4a44-a5c3-\
+e7f69f3f7631"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox["\[Sigma]",
+    FontWeight->"Bold"], "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0.10"},
+      {"0.04"}
+     }], "\[NoBreak]", ")"}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.7462876552364807`*^9, 
+  3.746287672580188*^9}},ExpressionUUID->"afc9c887-7588-4ff9-bf93-\
+9b2fb8dd33ce"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox["C",
+    FontWeight->"Bold",
+    FontSlant->"Plain"], "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"1", "0.4"},
+      {"0.4", "1"}
+     }], "\[NoBreak]", ")"}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.746287687398603*^9, 
+  3.746287704083763*^9}},ExpressionUUID->"585bbd71-085e-4505-bfe5-\
+4cbb3a64d1f6"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[ScriptCapitalM]", "1"], "=", 
+   RowBox[{
+    UnderscriptBox["min", 
+     StyleBox["x",
+      FontWeight->"Bold"]], 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         FractionBox["1", "2"], 
+         SuperscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "T"], 
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold",
+          FontSlant->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Bold",
+          FontSlant->"Plain"], 
+         StyleBox["x",
+          FontWeight->"Bold",
+          FontSlant->"Plain"]}], "-", 
+        RowBox[{"\[Lambda]", " ", 
+         SuperscriptBox[
+          StyleBox["\[Mu]",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "T"], 
+         StyleBox["x",
+          FontWeight->"Bold",
+          FontSlant->"Plain"]}]}], " ", "|", 
+       StyleBox[
+        RowBox[{" ", 
+         StyleBox[" ",
+          FontWeight->"Bold"]}]], 
+       RowBox[{
+        SuperscriptBox[
+         StyleBox["1",
+          FontWeight->"Bold"], "T"], 
+        StyleBox["x",
+         FontWeight->"Bold",
+         FontSlant->"Plain"]}]}], "=", "1"}], "}"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{
+  3.463154110258522*^9, {3.5885228417025137`*^9, 3.5885228421418533`*^9}, {
+   3.602106975319828*^9, 3.6021069766469297`*^9}, {3.6022833426631002`*^9, 
+   3.602283346780156*^9}, {3.602283751499951*^9, 3.602283757035997*^9}, {
+   3.746287979715221*^9, 3.746287981777856*^9}},
+ TextAlignment->Center,ExpressionUUID->"1158addc-d20f-4d0a-9daf-90cca8f58569"],
+
+Cell[TextData[{
+ "Compute the covariance matrix ",
+ StyleBox["\[CapitalSigma]",
+  FontWeight->"Bold"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.746287748303142*^9, 3.74628779667108*^9}, {
+  3.746288086431481*^9, 
+  3.746288101558744*^9}},ExpressionUUID->"7bdfe600-cf27-4600-a8fe-\
+aa02cf0a638d"],
+
+Cell[TextData[{
+ "Consider the following portfolio optimization problem ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[ScriptCapitalM]", "1"], TraditionalForm]],ExpressionUUID->
+  "2b50d316-644d-4f7a-af1e-8149d18388fa"],
+ " (short positions allowed):"
+}], "Text",
+ CellChangeTimes->{{3.746288119669705*^9, 3.746288141356719*^9}, {
+  3.746288175764566*^9, 
+  3.7462881801878347`*^9}},ExpressionUUID->"81956742-1b2e-41f6-b62b-\
+98eee5367288"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[ScriptCapitalM]", "1"], "=", 
+   RowBox[{
+    UnderscriptBox["min", 
+     StyleBox["x",
+      FontWeight->"Bold"]], 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         FractionBox["1", "2"], 
+         SuperscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "T"], 
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold",
+          FontSlant->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Bold",
+          FontSlant->"Plain"], 
+         StyleBox["x",
+          FontWeight->"Bold",
+          FontSlant->"Plain"]}], "-", 
+        RowBox[{"\[Lambda]", " ", 
+         SuperscriptBox[
+          StyleBox["\[Mu]",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "T"], 
+         StyleBox["x",
+          FontWeight->"Bold",
+          FontSlant->"Plain"]}]}], " ", "|", 
+       StyleBox[
+        RowBox[{" ", 
+         StyleBox[" ",
+          FontWeight->"Bold"]}]], 
+       RowBox[{
+        SuperscriptBox[
+         StyleBox["1",
+          FontWeight->"Bold"], "T"], 
+        StyleBox["x",
+         FontWeight->"Bold",
+         FontSlant->"Plain"]}]}], "=", "1"}], "}"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{
+  3.463154110258522*^9, {3.5885228417025137`*^9, 3.5885228421418533`*^9}, {
+   3.602106975319828*^9, 3.6021069766469297`*^9}, {3.6022833426631002`*^9, 
+   3.602283346780156*^9}, {3.602283751499951*^9, 3.602283757035997*^9}, {
+   3.746287979715221*^9, 3.746287981777856*^9}},
+ TextAlignment->Center,ExpressionUUID->"af4a8778-b94a-4792-8aad-028b3b3a6de6"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Compute and plot a mean-variance efficient frontier for a portfolio \
+consisting of these two assets.\
+\>", "Item",
+ CellChangeTimes->{{3.746287748303142*^9, 
+  3.74628779667108*^9}},ExpressionUUID->"0a77352c-a469-4f8b-970d-\
+ac17b21cfed3"],
+
+Cell[TextData[{
+ "If the risk-free rate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["r", "f"], "=", "0.01"}], TraditionalForm]],ExpressionUUID->
+  "d20dd603-7732-4a1c-96c7-c82f1e973f77"],
+ ", what is the tangent portfolio?"
+}], "Item",
+ CellChangeTimes->{{3.746287748303142*^9, 
+  3.74628783603935*^9}},ExpressionUUID->"d6773ae8-9229-48b3-b524-\
+986d04cf74dc"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Consider the following portfolio optimization problem ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[ScriptCapitalM]", "2"], TraditionalForm]],ExpressionUUID->
+  "9a2aa907-6cc3-43ba-b673-cd6842e81d10"],
+ " (no short positions allowed):"
+}], "Text",
+ CellChangeTimes->{{3.746288119669705*^9, 
+  3.746288167292494*^9}},ExpressionUUID->"1d37bef8-e6d3-4e77-90ad-\
+f78ec32a07c4"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["\[ScriptCapitalM]", "2"], "=", 
+   RowBox[{
+    UnderscriptBox["min", 
+     StyleBox["x",
+      FontWeight->"Bold"]], 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         FractionBox["1", "2"], 
+         SuperscriptBox[
+          StyleBox["x",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "T"], 
+         StyleBox["\[CapitalSigma]",
+          FontWeight->"Bold",
+          FontSlant->"Plain"], 
+         StyleBox[" ",
+          FontWeight->"Bold",
+          FontSlant->"Plain"], 
+         StyleBox["x",
+          FontWeight->"Bold",
+          FontSlant->"Plain"]}], "-", 
+        RowBox[{"\[Lambda]", " ", 
+         SuperscriptBox[
+          StyleBox["\[Mu]",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "T"], 
+         StyleBox["x",
+          FontWeight->"Bold",
+          FontSlant->"Plain"]}]}], " ", "|", 
+       StyleBox[
+        RowBox[{" ", 
+         StyleBox[" ",
+          FontWeight->"Bold"]}]], 
+       RowBox[{
+        SuperscriptBox[
+         StyleBox["1",
+          FontWeight->"Bold"], "T"], 
+        StyleBox["x",
+         FontWeight->"Bold",
+         FontSlant->"Plain"]}]}], "=", 
+      RowBox[{"1", "\[And]", 
+       RowBox[{
+        SubscriptBox["x", "i"], "\[GreaterEqual]", "0"}]}]}], "}"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{
+  3.463154110258522*^9, {3.5885228417025137`*^9, 3.5885228421418533`*^9}, {
+   3.602106975319828*^9, 3.6021069766469297`*^9}, {3.6022833426631002`*^9, 
+   3.602283346780156*^9}, {3.602283751499951*^9, 3.602283757035997*^9}, {
+   3.746287979715221*^9, 3.7462880198476257`*^9}},
+ TextAlignment->Center,ExpressionUUID->"0efaa16a-cdce-4d40-ba53-a510ba3c5eed"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Compute and plot a mean-variance efficient frontier for a portfolio \
+consisting of these two assets.\
+\>", "Item",
+ CellChangeTimes->{{3.746287748303142*^9, 
+  3.74628779667108*^9}},ExpressionUUID->"9482bd47-f169-460c-b186-\
+5820cfa68c62"],
+
+Cell[TextData[{
+ "Compare the efficient frontiers of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[ScriptCapitalM]", "1"], TraditionalForm]],ExpressionUUID->
+  "dd885e15-f935-4ea0-b354-42ce292c01cb"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[ScriptCapitalM]", "2"], TraditionalForm]],ExpressionUUID->
+  "8221259f-e643-4d48-8dee-b6b10f84f9b5"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.746287748303142*^9, 3.74628779667108*^9}, {
+  3.746288202576027*^9, 
+  3.7462882378546457`*^9}},ExpressionUUID->"da5307ea-4331-44c2-9158-\
+5670620b3a3c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 3", "Section",
+ CellChangeTimes->{{3.7462882556866627`*^9, 
+  3.746288258309732*^9}},ExpressionUUID->"5bdb4cf5-1a95-4459-b58a-\
+cda775df0686"],
+
+Cell["\<\
+Use FinancialData[\[NonBreakingSpace]] to download the data required to \
+complete the following:\
+\>", "Text",
+ CellChangeTimes->{{3.7462884408755817`*^9, 
+  3.7462884721531754`*^9}},ExpressionUUID->"eff1f8b1-1df6-482f-963d-\
+131d146dc778"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Secure the closing price data for Microsoft and Apple to 2019-06-30.\
+\>", "Item",
+ CellChangeTimes->{{3.746288513392672*^9, 3.746288582357812*^9}, {
+  3.777813321526915*^9, 3.7778133262289667`*^9}, {3.778428935765645*^9, 
+  3.778428948815435*^9}},ExpressionUUID->"e56facd1-2628-4bb9-aefb-\
+b1aefbbe735c"],
+
+Cell["\<\
+Plot the closing price of Microsoft and Apple on the same graph.\
+\>", "Item",
+ CellChangeTimes->{{3.746288513392672*^9, 
+  3.746288611604474*^9}},ExpressionUUID->"464e8d81-6b15-4691-a4b9-\
+1202e60d5c57"],
+
+Cell["\<\
+Compute the daily returns for Microsoft and Apple and plot them on separate \
+graphs.\
+\>", "Item",
+ CellChangeTimes->{{3.746288513392672*^9, 3.746288645342073*^9}, {
+   3.746288680572762*^9, 3.7462886805729303`*^9}, 
+   3.778428964745493*^9},ExpressionUUID->"9f0d69d8-a31a-4348-be35-\
+dc3d2cc0b58d"],
+
+Cell["\<\
+Generate a table which contains for each stock in the Dow Jones Industrial \
+index: the ticker symbol, name, and market capitalization.\
+\>", "Item",
+ CellChangeTimes->{{3.746288513392672*^9, 3.746288645342073*^9}, {
+  3.7462886863794127`*^9, 
+  3.746288737643353*^9}},ExpressionUUID->"fca477ac-1754-40aa-8a60-\
+6c9d4a739d36"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 4", "Section",
+ CellChangeTimes->{{3.7786025062850227`*^9, 3.778602509786044*^9}, {
+  3.778773690907942*^9, 3.7787736915553827`*^9}, {3.808189539954543*^9, 
+  3.8081895411067877`*^9}},ExpressionUUID->"b2a0bf37-77e3-445c-b7fc-\
+c76a5ba49de9"],
+
+Cell["\<\
+Recently, yields on the sovereign debt of several European countries have \
+turned negative. In effect, bond holders are paying these governments for \
+holding their capital.\
+\>", "Text",
+ CellChangeTimes->{{3.778783189763249*^9, 
+  3.778783268787305*^9}},ExpressionUUID->"c6e963b9-d662-416b-9e89-\
+4cfe54306c24"],
+
+Cell[TextData[{
+ "Yields on German Bunds can be found at\n\n\t",
+ ButtonBox["https://www.bloomberg.com/markets/rates-bonds/government-bonds/\
+germany",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://www.bloomberg.com/markets/rates-bonds/government-bonds/\
+germany"], None},
+  ButtonNote->
+   "https://www.bloomberg.com/markets/rates-bonds/government-bonds/germany"],
+ ". \n\nRecent data for late September 2019 were ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"term", ",", " ", "yield"}], "}"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "79adc856-bd09-49ed-b9d0-7b0b22611ab0"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.778602843501255*^9, 3.778602988822584*^9}, {
+   3.778783498709346*^9, 3.7787835137595453`*^9}, 3.7787837869484987`*^9, {
+   3.778783882488634*^9, 
+   3.778783900408801*^9}},ExpressionUUID->"bc4de55f-183c-4d6c-bfdf-\
+8055d2518475"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mnBundYields", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "0.0076"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", 
+       RowBox[{"-", "0.007"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", 
+       RowBox[{"-", "0.0059"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"30", ",", 
+       RowBox[{"-", "0.0012"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.778602174368289*^9, 3.778602236293288*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"5a06ed52-31b8-4412-9ff9-a90025da4e3c"],
+
+Cell["\<\
+A reasonable estimate for the yield curve can be found using a second-order \
+spline interpolation. \
+\>", "Text",
+ CellChangeTimes->{{3.77860300231385*^9, 3.778603024575742*^9}, 
+   3.7787734232041893`*^9, {3.7787749811078243`*^9, 3.778774987354496*^9}, {
+   3.778783818202058*^9, 3.778783826198308*^9}, {3.7787844375826607`*^9, 
+   3.7787844398124027`*^9}},ExpressionUUID->"b8cb5f96-1b55-4e3c-9ec1-\
+f6a37df735dd"],
+
+Cell["\<\
+Consider an older Bund with a 10-year term, semi-annual payments, a face \
+amount of \[Euro]10,000 and a coupon rate of 0.002%. The bond is 3 years into \
+its term. What is the current market price of the bond?\
+\>", "Text",
+ CellChangeTimes->{{3.77860300231385*^9, 3.778603024575742*^9}, 
+   3.7787734232041893`*^9, {3.7787749811078243`*^9, 3.778774987354496*^9}, {
+   3.778783818202058*^9, 3.7787838186866217`*^9}, {3.778784404043952*^9, 
+   3.778784405529748*^9}},ExpressionUUID->"b762ba6e-0224-46ae-a35b-\
+8a7b63945f94"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{1058, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 34}},
+SpellingDictionaries->{"CorrectWords"->{
+ "buc", "Swaptions", "Memetics", "\[Beta]s", "Jefferys", "Jeffreys", "zeroa", 
+  "swaption", "lim", "Bund", "Bunds"}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"79b3bbc5-5a22-4c29-bf4e-279f67a11c8b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 656, 9, 250, "Title",ExpressionUUID->"7489b20b-ece0-427d-93bd-d022f95d08e5"],
+Cell[1239, 33, 1791, 25, 82, "Subtitle",ExpressionUUID->"bb9862ee-20aa-46cf-9aa9-ae1eaae946c0"],
+Cell[3033, 60, 385, 10, 183, "Subsubtitle",ExpressionUUID->"7d251ea9-61fe-4cd9-9680-567c82ae4807"],
+Cell[CellGroupData[{
+Cell[3443, 74, 203, 4, 105, "Section",ExpressionUUID->"7c392387-cda3-4a09-8570-0a7ad078d799"],
+Cell[3649, 80, 210, 4, 45, "Text",ExpressionUUID->"ab5ec3b2-5e66-417c-9831-b55599a4f43f"],
+Cell[CellGroupData[{
+Cell[3884, 88, 409, 8, 95, "Item",ExpressionUUID->"1355ccfe-4ac3-4e28-84f1-ce94e5b8d93d"],
+Cell[4296, 98, 393, 7, 69, "Item",ExpressionUUID->"c7082db2-f8b0-4b90-ae5b-66255dc21b21"],
+Cell[CellGroupData[{
+Cell[4714, 109, 270, 4, 36, "Subitem",ExpressionUUID->"b0bebae3-66cd-492f-8859-a3c55864368d"],
+Cell[4987, 115, 273, 4, 36, "Subitem",ExpressionUUID->"fe5c6f39-88d0-4ad9-b7b7-69a75ec6e529"]
+}, Open  ]],
+Cell[5275, 122, 349, 7, 95, "Item",ExpressionUUID->"8856c3df-ee1a-47c5-982e-0b3572c1f441"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5673, 135, 157, 3, 105, "Section",ExpressionUUID->"fd537a0b-47f1-4c3c-82ed-83f7a789e0f5"],
+Cell[5833, 140, 234, 6, 45, "Text",ExpressionUUID->"84584586-cb45-42a5-89b7-dc74d73c486d"],
+Cell[6070, 148, 350, 11, 73, "Equation",ExpressionUUID->"0894fe68-03be-4a44-a5c3-e7f69f3f7631"],
+Cell[6423, 161, 351, 11, 73, "Equation",ExpressionUUID->"afc9c887-7588-4ff9-bf93-9b2fb8dd33ce"],
+Cell[6777, 174, 374, 12, 73, "Equation",ExpressionUUID->"585bbd71-085e-4505-bfe5-4cbb3a64d1f6"],
+Cell[7154, 188, 1649, 52, 73, "Equation",ExpressionUUID->"1158addc-d20f-4d0a-9daf-90cca8f58569"],
+Cell[8806, 242, 293, 9, 43, "Item",ExpressionUUID->"7bdfe600-cf27-4600-a8fe-aa02cf0a638d"],
+Cell[9102, 253, 441, 11, 46, "Text",ExpressionUUID->"81956742-1b2e-41f6-b62b-98eee5367288"],
+Cell[9546, 266, 1649, 52, 73, "Equation",ExpressionUUID->"af4a8778-b94a-4792-8aad-028b3b3a6de6"],
+Cell[CellGroupData[{
+Cell[11220, 322, 250, 6, 69, "Item",ExpressionUUID->"0a77352c-a469-4f8b-970d-ac17b21cfed3"],
+Cell[11473, 330, 374, 11, 47, "Item",ExpressionUUID->"d6773ae8-9229-48b3-b524-986d04cf74dc"]
+}, Open  ]],
+Cell[11862, 344, 393, 10, 46, "Text",ExpressionUUID->"1d37bef8-e6d3-4e77-90ad-f78ec32a07c4"],
+Cell[12258, 356, 1753, 55, 73, "Equation",ExpressionUUID->"0efaa16a-cdce-4d40-ba53-a510ba3c5eed"],
+Cell[CellGroupData[{
+Cell[14036, 415, 250, 6, 69, "Item",ExpressionUUID->"9482bd47-f169-460c-b186-5820cfa68c62"],
+Cell[14289, 423, 552, 16, 44, "Item",ExpressionUUID->"da5307ea-4331-44c2-9158-5670620b3a3c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14890, 445, 157, 3, 105, "Section",ExpressionUUID->"5bdb4cf5-1a95-4459-b58a-cda775df0686"],
+Cell[15050, 450, 251, 6, 45, "Text",ExpressionUUID->"eff1f8b1-1df6-482f-963d-131d146dc778"],
+Cell[CellGroupData[{
+Cell[15326, 460, 315, 6, 43, "Item",ExpressionUUID->"e56facd1-2628-4bb9-aefb-b1aefbbe735c"],
+Cell[15644, 468, 214, 5, 43, "Item",ExpressionUUID->"464e8d81-6b15-4691-a4b9-1202e60d5c57"],
+Cell[15861, 475, 310, 7, 43, "Item",ExpressionUUID->"9f0d69d8-a31a-4348-be35-dc3d2cc0b58d"],
+Cell[16174, 484, 336, 7, 69, "Item",ExpressionUUID->"fca477ac-1754-40aa-8a60-6c9d4a739d36"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16559, 497, 256, 4, 105, "Section",ExpressionUUID->"b2a0bf37-77e3-445c-b7fc-c76a5ba49de9"],
+Cell[16818, 503, 324, 7, 73, "Text",ExpressionUUID->"c6e963b9-d662-416b-9e89-4cfe54306c24"],
+Cell[17145, 512, 902, 23, 157, "Text",ExpressionUUID->"bc4de55f-183c-4d6c-bfdf-8055d2518475"],
+Cell[18050, 537, 617, 18, 47, "Input",ExpressionUUID->"5a06ed52-31b8-4412-9ff9-a90025da4e3c"],
+Cell[18670, 557, 426, 8, 45, "Text",ExpressionUUID->"b8cb5f96-1b55-4e3c-9ec1-f6a37df735dd"],
+Cell[19099, 567, 534, 9, 101, "Text",ExpressionUUID->"b762ba6e-0224-46ae-a35b-8a7b63945f94"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

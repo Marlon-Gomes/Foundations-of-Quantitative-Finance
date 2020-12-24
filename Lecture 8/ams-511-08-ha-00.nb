@@ -1,0 +1,242 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      9737,        234]
+NotebookOptionsPosition[      8189,        197]
+NotebookOutlinePosition[      8944,        224]
+CellTagsIndexPosition[      8901,        221]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"7e828797-e1b6-4f57-b899-\
+a8e07e040324"],
+
+Cell["Fall 2020 \[LongDash] Assignment 08 ", "Subtitle",
+ CellChangeTimes->{{3.4101180191149073`*^9, 3.410118026587117*^9}, {
+   3.410451275016321*^9, 3.410451277624028*^9}, {3.41113152964636*^9, 
+   3.41113154518227*^9}, {3.4113965922506437`*^9, 3.411396608797546*^9}, {
+   3.411436154989222*^9, 3.4114361574128437`*^9}, {3.411436292462274*^9, 
+   3.411436309145669*^9}, {3.4611057192910433`*^9, 3.461105731739766*^9}, {
+   3.461106187281069*^9, 3.461106188567719*^9}, {3.461106347014133*^9, 
+   3.461106392456594*^9}, {3.461106425305952*^9, 3.461106433518922*^9}, {
+   3.461107458414324*^9, 3.461107510113055*^9}, {3.491414090059168*^9, 
+   3.4914141198204203`*^9}, {3.491414406521193*^9, 3.4914144159195843`*^9}, {
+   3.4914147112780046`*^9, 3.491414711427609*^9}, {3.493080124402238*^9, 
+   3.4930801431371737`*^9}, {3.493258293931929*^9, 3.4932583017065153`*^9}, {
+   3.587883342760137*^9, 3.587883359952135*^9}, {3.602203519041705*^9, 
+   3.602203568468873*^9}, {3.602806415037652*^9, 3.602806424237883*^9}, {
+   3.6058130607445583`*^9, 3.605813067806364*^9}, {3.606356204522771*^9, 
+   3.606356204815629*^9}, {3.606954432010997*^9, 3.606954449657132*^9}, {
+   3.607034409899108*^9, 3.607034413305244*^9}, {3.6560781608260813`*^9, 
+   3.6560781735996513`*^9}, {3.68870980386621*^9, 3.68870982564704*^9}, {
+   3.749843051989142*^9, 3.749843052548761*^9}, {3.781114888999761*^9, 
+   3.7811148900772743`*^9}, {3.809127463693617*^9, 3.809127467736699*^9}, 
+   3.812132519754054*^9, {3.812659638122438*^9, 3.81265963877075*^9}, {
+   3.8128104403705187`*^9, 
+   3.812810441105884*^9}},ExpressionUUID->"02fc04eb-08b0-4047-8a12-\
+d15bba5ae4d8"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, {
+  3.587883368607191*^9, 
+  3.587883390413391*^9}},ExpressionUUID->"08e4a1b3-2056-43d0-8e9e-\
+6cd3bae632dc"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1.", "Section",
+ CellChangeTimes->{{3.45070776907771*^9, 3.4507077931648912`*^9}, {
+   3.451603317783736*^9, 3.451603319196744*^9}, {3.469385034130913*^9, 
+   3.4693850348559504`*^9}, {3.4693882262136393`*^9, 3.469388226713882*^9}, {
+   3.469388856005396*^9, 3.469388856242487*^9}, {3.595537761316703*^9, 
+   3.595537761764819*^9}, 3.59554047787995*^9, {3.608940492442129*^9, 
+   3.608940492954245*^9}, 3.6089405978657913`*^9, {3.608940809817047*^9, 
+   3.608940812833026*^9}, {3.753018739084453*^9, 3.753018739771549*^9}, {
+   3.8121325432187634`*^9, 
+   3.812132546024663*^9}},ExpressionUUID->"c9b71931-e6cb-44d9-b671-\
+0a28b11117b2"],
+
+Cell[TextData[{
+ "An ",
+ StyleBox["lookback",
+  FontSlant->"Italic"],
+ " option is a path dependent option whose value is based on some function of \
+the underlying\[CloseCurlyQuote]s price history over the life of the option/ \
+rather than the price at expiry. Read the Wikipedia article ",
+ ButtonBox["https://en.wikipedia.org/wiki/Lookback_option",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://en.wikipedia.org/wiki/Lookback_option"], None},
+  ButtonNote->"https://en.wikipedia.org/wiki/Lookback_option"],
+ " which describes these options in detail. "
+}], "Text",
+ CellChangeTimes->{{3.751393602550147*^9, 3.751393673028597*^9}, {
+  3.751393835362741*^9, 3.7513938952046328`*^9}, {3.752008132699964*^9, 
+  3.752008143226569*^9}, {3.7526175985000343`*^9, 3.752617721678277*^9}, {
+  3.752617804376472*^9, 
+  3.752617805472334*^9}},ExpressionUUID->"540771c1-5ad1-4060-b085-\
+c4ad8c0e87c6"],
+
+Cell["\<\
+There are many possible forms; however, the particular case for this \
+assignment is a lookback put with:\
+\>", "Text",
+ CellChangeTimes->{{3.75139369574259*^9, 3.751393773105482*^9}, {
+  3.7513942245430403`*^9, 3.75139423399894*^9}, {3.7520081850839577`*^9, 
+  3.752008195659423*^9}, {3.752617784313628*^9, 3.752617818367876*^9}, {
+  3.752618127021491*^9, 3.7526181379958076`*^9}, {3.783199053046864*^9, 
+  3.783199054416008*^9}, {3.812810835608547*^9, 
+  3.812810870558323*^9}},ExpressionUUID->"1672e82b-ab5d-4ed6-807c-\
+251c508091e6"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"P", "(", "T", ")"}], "=", 
+   RowBox[{
+    RowBox[{"max", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        UnderscriptBox["max", "t"], "[", 
+        RowBox[{"S", "(", "t", ")"}], "]"}], "-", 
+       RowBox[{"S", "(", "T", ")"}]}], ",", "0"}], "]"}], "=", 
+    RowBox[{
+     SubscriptBox["S", "max"], "-", 
+     RowBox[{"S", "(", "T", ")"}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.751210417282201*^9, 3.7512104472428207`*^9}, {
+  3.7520078979981527`*^9, 3.752007898597921*^9}, {3.7524230493538227`*^9, 
+  3.752423055822316*^9}, {3.7526178827353*^9, 
+  3.752618010565804*^9}},ExpressionUUID->"dd954c46-8dfc-48a0-9702-\
+320eb4fa0ae6"],
+
+Cell[TextData[{
+ "Assume a stock with price ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "(", "0", ")"}], "=", 
+    RowBox[{"$96", ".25"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "63cfba5f-0d10-4ceb-8b61-030ff6740c83"],
+ " and volatility ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sigma]", "=", "28"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "74591600-682a-43d2-acaf-1f718b7c069f"],
+ "%, and a risk free rate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["r", "f"], "=", "0.5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9023bab2-bc75-4617-8f1b-27d06f0ad58d"],
+ "%. Use a Monte Carlo simulation to price the lookback option above for an \
+expiry of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "=", "0.75"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "905880cd-f5b1-4ef1-9531-de9e2479de84"],
+ ". Compare your solution to that returned by FinancialDerivative[\
+\[NonBreakingSpace]]."
+}], "Text",
+ CellChangeTimes->{{3.812820237267501*^9, 3.8128203434420147`*^9}, {
+  3.8128203901966457`*^9, 
+  3.8128204738738823`*^9}},ExpressionUUID->"d0d435cf-33ae-4ebd-8dac-\
+46d1445688cd"],
+
+Cell[TextData[{
+ StyleBox["Note:",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " The corresponding ",
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "solution is identified as a {\[OpenCurlyDoubleQuote]LookbackFloating\
+\[CloseCurlyDoubleQuote],\[NonBreakingSpace]\[OpenCurlyDoubleQuote]European\
+\[CloseCurlyDoubleQuote],\[NonBreakingSpace]\[OpenCurlyDoubleQuote]Put\
+\[CloseCurlyDoubleQuote]}. Use the Mathematica documentation to determine the \
+required parameters for FinancialDerivative[\[NonBreakingSpace]]."
+}], "Text",
+ CellChangeTimes->{{3.75261819615563*^9, 3.7526182727778378`*^9}, {
+  3.7526183033567963`*^9, 3.75261834101136*^9}, {3.7526183893236723`*^9, 
+  3.7526184748953342`*^9}, {3.8128105177099037`*^9, 3.812810520676066*^9}, {
+  3.812810551521096*^9, 
+  3.81281056587284*^9}},ExpressionUUID->"da2d457a-7abb-454c-ab54-\
+592cfbbadfc1"]
+}, Open  ]]
+}, Open  ]]
+},
+Editable->True,
+WindowToolbars->{},
+Selectable->True,
+WindowSize->{1440, 781},
+WindowMargins->{{92, Automatic}, {Automatic, 16}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+ShowSelection->True,
+DefaultFormatType->DefaultTextFormatType,
+SpellingDictionaries->{"CorrectWords"->{
+ "buc", "Swaptions", "Memetics", "\[Beta]s", "Jefferys", "Jeffreys", "zeroa", 
+  "swaption", "lim", "It\[OHat]"}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"cf29b8ff-c2b5-43f2-a4a4-e3a0a2802388"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 656, 9, 153, "Title",ExpressionUUID->"7e828797-e1b6-4f57-b899-a8e07e040324"],
+Cell[1226, 33, 1642, 23, 82, "Subtitle",ExpressionUUID->"02fc04eb-08b0-4047-8a12-d15bba5ae4d8"],
+Cell[2871, 58, 359, 10, 183, "Subsubtitle",ExpressionUUID->"08e4a1b3-2056-43d0-8e9e-6cd3bae632dc"],
+Cell[CellGroupData[{
+Cell[3255, 72, 651, 10, 105, "Section",ExpressionUUID->"c9b71931-e6cb-44d9-b671-0a28b11117b2"],
+Cell[3909, 84, 903, 19, 101, "Text",ExpressionUUID->"540771c1-5ad1-4060-b085-c4ad8c0e87c6"],
+Cell[4815, 105, 547, 10, 45, "Text",ExpressionUUID->"1672e82b-ab5d-4ed6-807c-251c508091e6"],
+Cell[5365, 117, 708, 19, 66, "Equation",ExpressionUUID->"dd954c46-8dfc-48a0-9702-320eb4fa0ae6"],
+Cell[6076, 138, 1222, 35, 78, "Text",ExpressionUUID->"d0d435cf-33ae-4ebd-8dac-46d1445688cd"],
+Cell[7301, 175, 860, 18, 73, "Text",ExpressionUUID->"da2d457a-7abb-454c-ab54-592cfbbadfc1"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

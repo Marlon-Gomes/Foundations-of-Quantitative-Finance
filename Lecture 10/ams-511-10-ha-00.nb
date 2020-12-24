@@ -1,0 +1,298 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10670,        288]
+NotebookOptionsPosition[      8634,        248]
+NotebookOutlinePosition[      9082,        266]
+CellTagsIndexPosition[      9039,        263]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"75e4c8d9-6b1d-4b3b-82b9-\
+86db0bd91b4c"],
+
+Cell["Fall 2020 \[LongDash] Assignment 10", "Subtitle",
+ CellChangeTimes->CompressedData["
+1:eJwdxVtIU3EcB/AxL0yzCwWJvU1WtGlhEAnSqJ8PQ6LLPGEu05zOzB21AqUV
+gYI4h2RJRvWwbA8F0WUj1xIvLV3CyqUQXqCHWHJa4vnvBJURqWx6vufhw0db
+e5m7oFapVLkyzHltr0oaRHo+yQ3ggNNqj8tn/n+tvOY7eKeQF2nv/O672JSm
+SQ7JtztzVMPyb55Wn5qSTz3kVV6O3LZi7tmTWlxkFtO7J0UyvHRocGeygXDI
+0Kf8ocVahhsfbjmHKyP6aqx2F1ixrvjEAt7zaGIRB2KUYUlhJBxdzcL93s8F
++HBz4gDmfyydwSu+n8q533pcznRGI7ZYN66aCXZ9lQ+7B1140+kvessoo5gj
+mYcre4KRd+OMon3Z09hzzD+Dt9/0zeL6v6GtqyFGwURwG1741WvXTTCqaR7l
+8fupsZPtYUbXMsiMOz+dv+eRn4tq7+N63bpf/MjokpgfwK27tObNAqPZCl8p
+Fl44bG+PxGkxpa0OD/0usmPzjR08zs+sezD8J06C818/Nl3tKB/ZL1FF+YoF
+30q4BONFiRKPTd+xxriPYYNRHcfRMveVnXaJwsevt2Bu7eyAn5doKa/Uj1tr
+crL0TRJNe+aVNwDdoCG8
+  
+  "],ExpressionUUID->"a93b77bc-ff2f-46b0-b20f-6ba20bd0b5e5"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey \
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, {
+   3.587883368607191*^9, 3.587883390413391*^9}, 
+   3.8122249274099207`*^9},ExpressionUUID->"937482d5-8aaf-4f18-833e-\
+029d7eeae113"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1.", "Section",
+ CellChangeTimes->{{3.8148035621913643`*^9, 
+  3.814803566162516*^9}},ExpressionUUID->"28237c45-ee43-4b3d-b13e-\
+3dc00560f755"],
+
+Cell["\<\
+In the lecture notes we used the example of a firm with the characteristics:\
+\>", "Text",
+ CellChangeTimes->{{3.8148035766497793`*^9, 
+  3.8148036830432167`*^9}},ExpressionUUID->"421215ed-256f-4925-9ef2-\
+869dde6f9a61"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[NoBreak]", GridBox[{
+     {"\[Mu]", "=", 
+      RowBox[{"0.07", "             "}]},
+     {"\[Sigma]", "=", 
+      RowBox[{"0.20", "             "}]},
+     {"r", "=", 
+      RowBox[{"0.01", "            "}]},
+     {"K", "=", 
+      RowBox[{"7000000", "  "}]},
+     {"V", "=", "10000000"}
+    }], "\[NoBreak]"}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.8148039464629173`*^9, 
+  3.8148040783015738`*^9}},ExpressionUUID->"34b6ee7f-39ce-4096-8275-\
+c6d361431580"],
+
+Cell["\<\
+then used the following expression to estimate the default probability.\
+\>", "Text",
+ CellChangeTimes->{{3.814803847711378*^9, 
+  3.814803870344516*^9}},ExpressionUUID->"56fde444-78a0-4b6d-8d53-\
+1907593fa762"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"P", "[", 
+    RowBox[{
+     RowBox[{"V", "(", "T", ")"}], "<", "K"}], "]"}], "=", 
+   RowBox[{
+    SubscriptBox["F", "Normal"], "[", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"log", "[", 
+       RowBox[{"K", "/", 
+        RowBox[{"V", "(", "0", ")"}]}], "]"}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"r", "-", 
+         RowBox[{
+          SuperscriptBox["\[Sigma]", "2"], "/", "2"}]}], ")"}], " ", "T"}]}], 
+     
+     SqrtBox[
+      RowBox[{"\[Sigma]", " ", "T"}]]], "]"}]}], TraditionalForm]], "Equation",\
+
+ CellChangeTimes->{{3.8140451843203363`*^9, 3.8140452980066442`*^9}, {
+   3.814045334476427*^9, 3.814045360148242*^9}, {3.8140454455556183`*^9, 
+   3.814045446287376*^9}, {3.814045607522894*^9, 3.8140456093226833`*^9}, {
+   3.814045747107448*^9, 3.814045747716586*^9}, 3.814046178253026*^9, 
+   3.814804198003951*^9},ExpressionUUID->"05ff82e9-53a1-4c95-8f2c-\
+f6fa85aa1069"],
+
+Cell[TextData[{
+ "The example assumed that a default would occur if the value of the firm \
+fell below the face value of the debt at the expiry point; ",
+ StyleBox["i.e.",
+  FontSlant->"Italic"],
+ ", if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"V", "(", "T", ")"}], "<", "K"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a7602034-8bfd-4357-93cc-5ce88e8ce470"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.814803877061736*^9, 3.81480390289496*^9}, {
+  3.814804111866497*^9, 
+  3.814804173143867*^9}},ExpressionUUID->"4e4edb9b-3233-4900-a8ac-\
+1b529d1ff74a"],
+
+Cell[TextData[{
+ "We noted that an alternative approach was to allow defaults to occur at any \
+point ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "t", "\[LessEqual]", "T"}], TraditionalForm]],
+  
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "76ea1f1f-924d-47d4-965c-5b3ce1e91416"],
+ " which introduces path dependence into the default process."
+}], "Text",
+ CellChangeTimes->{{3.814804246505855*^9, 
+  3.814804322690894*^9}},ExpressionUUID->"b5b0e897-bdf3-4425-bbc4-\
+7a8086c2b467"],
+
+Cell[TextData[{
+ "Assume now that a default is said to occur if the value of the firm falls \
+below the face value of the debt at any time up to and including the expiry; ",
+ StyleBox["i.e.",
+  FontSlant->"Italic"],
+ "; if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"V", "(", "t", ")"}], "<", "K"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4f6e6c55-aa85-4ea4-ac9e-50169ba6e84b"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "t", "\[LessEqual]", "T"}], TraditionalForm]],
+  
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "243d98b6-a7ae-45eb-b384-7ad5a6b33ad1"],
+ ". Construct a Monte Carlo simulation to estimate the risk neutral default \
+probability under that condition."
+}], "Text",
+ CellChangeTimes->{{3.814804337739744*^9, 
+  3.8148045053770514`*^9}},ExpressionUUID->"1288b14e-f56c-4368-90fe-\
+ab34c9819662"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 2.", "Section",
+ CellChangeTimes->{{3.81480459001206*^9, 
+  3.814804598185874*^9}},ExpressionUUID->"a67a59cc-ae2f-4b8f-8605-\
+18884b3ccbb1"],
+
+Cell[TextData[{
+ "Consider a 10-year zero coupon bond with a face value ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "=", "100000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b2938f11-6965-47c3-a060-32a35b207649"],
+ ". The risk free rate is 0.01. The credit spread for the bond is 150 basis \
+points. Compute the following at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aa0886b3-ab78-43bf-b42a-6686c6c94909"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.814804663740102*^9, 3.814804784893243*^9}, {
+  3.814804880402259*^9, 3.814804893796974*^9}, {3.814805033891852*^9, 
+  3.81480505963347*^9}},ExpressionUUID->"66ba9c9c-9d6c-4566-a250-\
+402d4a9d0e87"],
+
+Cell[CellGroupData[{
+
+Cell["The default probability of the bond.", "Item",
+ CellChangeTimes->{{3.8148047931968*^9, 3.814804802125931*^9}, 
+   3.8148049274879427`*^9, {3.8148050492521877`*^9, 
+   3.814805052728984*^9}},ExpressionUUID->"9446f3b1-c44c-4a48-a895-\
+21ccbdb5cf74"],
+
+Cell["The value of the bond if there is no recovery on a default.", "Item",
+ CellChangeTimes->{{3.8148047931968*^9, 3.814804871969862*^9}, {
+  3.814805023627026*^9, 
+  3.814805027164481*^9}},ExpressionUUID->"eec7c5ba-4eb2-4054-b242-\
+9eb0a1308c51"],
+
+Cell["The value of the bond if there is a recovery of 15%.", "Item",
+ CellChangeTimes->{{3.8148047931968*^9, 3.814804916558066*^9}, {
+  3.814805011579206*^9, 3.814805011579397*^9}, {3.814805071338328*^9, 
+  3.814805071640155*^9}},ExpressionUUID->"0e1c209d-370e-4a4c-b2b1-\
+6813986de951"],
+
+Cell["\<\
+The value of the bond if there were no possibility of default.\
+\>", "Item",
+ CellChangeTimes->{{3.8148047931968*^9, 3.814804916558066*^9}, {
+  3.8148050150569277`*^9, 3.814805020924749*^9}, {3.81480507488309*^9, 
+  3.814805091976036*^9}},ExpressionUUID->"15128145-5255-4a12-a012-\
+72b72a7e2865"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{808, 868},
+WindowMargins->{{335, Automatic}, {43, Automatic}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"ce167b5f-4c23-4f7f-84d0-3a8189dff473"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 656, 9, 250, "Title",ExpressionUUID->"75e4c8d9-6b1d-4b3b-82b9-86db0bd91b4c"],
+Cell[1239, 33, 787, 14, 82, "Subtitle",ExpressionUUID->"a93b77bc-ff2f-46b0-b20f-6ba20bd0b5e5"],
+Cell[2029, 49, 386, 10, 183, "Subsubtitle",ExpressionUUID->"937482d5-8aaf-4f18-833e-029d7eeae113"],
+Cell[CellGroupData[{
+Cell[2440, 63, 158, 3, 105, "Section",ExpressionUUID->"28237c45-ee43-4b3d-b13e-3dc00560f755"],
+Cell[2601, 68, 230, 5, 73, "Text",ExpressionUUID->"421215ed-256f-4925-9ef2-869dde6f9a61"],
+Cell[2834, 75, 508, 15, 161, "Equation",ExpressionUUID->"34b6ee7f-39ce-4096-8275-c6d361431580"],
+Cell[3345, 92, 221, 5, 45, "Text",ExpressionUUID->"56fde444-78a0-4b6d-8d53-1907593fa762"],
+Cell[3569, 99, 954, 27, 84, "Equation",ExpressionUUID->"05ff82e9-53a1-4c95-8f2c-f6fa85aa1069"],
+Cell[4526, 128, 591, 17, 74, "Text",ExpressionUUID->"4e4edb9b-3233-4900-a8ac-1b529d1ff74a"],
+Cell[5120, 147, 505, 13, 102, "Text",ExpressionUUID->"b5b0e897-bdf3-4425-bbc4-7a8086c2b467"],
+Cell[5628, 162, 883, 24, 130, "Text",ExpressionUUID->"1288b14e-f56c-4368-90fe-ab34c9819662"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6548, 191, 155, 3, 105, "Section",ExpressionUUID->"a67a59cc-ae2f-4b8f-8605-18884b3ccbb1"],
+Cell[6706, 196, 760, 19, 103, "Text",ExpressionUUID->"66ba9c9c-9d6c-4566-a250-402d4a9d0e87"],
+Cell[CellGroupData[{
+Cell[7491, 219, 253, 4, 43, "Item",ExpressionUUID->"9446f3b1-c44c-4a48-a895-21ccbdb5cf74"],
+Cell[7747, 225, 248, 4, 43, "Item",ExpressionUUID->"eec7c5ba-4eb2-4054-b242-9eb0a1308c51"],
+Cell[7998, 231, 287, 4, 43, "Item",ExpressionUUID->"0e1c209d-370e-4a4c-b2b1-6813986de951"],
+Cell[8288, 237, 306, 6, 43, "Item",ExpressionUUID->"15128145-5255-4a12-a012-72b72a7e2865"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

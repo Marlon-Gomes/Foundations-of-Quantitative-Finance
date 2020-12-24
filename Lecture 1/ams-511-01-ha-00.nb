@@ -1,0 +1,1036 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     40958,       1028]
+NotebookOptionsPosition[     33110,        890]
+NotebookOutlinePosition[     33556,        908]
+CellTagsIndexPosition[     33513,        905]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"90760aba-34d5-4763-bf77-\
+c0c84de4f858"],
+
+Cell["Fall 2020 \[LongDash] Assignment 01", "Subtitle",
+ CellChangeTimes->{{3.4101180191149073`*^9, 3.410118026587117*^9}, {
+   3.410451275016321*^9, 3.410451277624028*^9}, {3.41113152964636*^9, 
+   3.41113154518227*^9}, {3.4113965922506437`*^9, 3.411396608797546*^9}, {
+   3.411436154989222*^9, 3.4114361574128437`*^9}, {3.411436292462274*^9, 
+   3.411436309145669*^9}, {3.4611057192910433`*^9, 3.461105731739766*^9}, {
+   3.461106187281069*^9, 3.461106188567719*^9}, {3.461106347014133*^9, 
+   3.461106392456594*^9}, {3.461106425305952*^9, 3.461106433518922*^9}, {
+   3.461107458414324*^9, 3.461107510113055*^9}, {3.491414090059168*^9, 
+   3.4914141198204203`*^9}, {3.491414406521193*^9, 3.4914144159195843`*^9}, {
+   3.4914147112780046`*^9, 3.491414711427609*^9}, {3.555082975519517*^9, 
+   3.555082980676901*^9}, {3.555083477712988*^9, 3.555083478687748*^9}, {
+   3.585766164931189*^9, 3.585766165724255*^9}, {3.5858640317953672`*^9, 
+   3.58586403231535*^9}, {3.585980273287774*^9, 3.5859802812381983`*^9}, {
+   3.5864711538486023`*^9, 3.586471154459456*^9}, {3.599790496221098*^9, 
+   3.599790537399109*^9}, {3.617917652767757*^9, 3.6179176619292107`*^9}, {
+   3.617917919337837*^9, 3.617917919855098*^9}, {3.64938928036769*^9, 
+   3.649389302000416*^9}, 3.652198735751018*^9, {3.683054219247025*^9, 
+   3.6830542228671417`*^9}, {3.683054259780175*^9, 3.68305426284271*^9}, {
+   3.683054301458186*^9, 3.683054301657826*^9}, {3.7137069380036087`*^9, 
+   3.713706950755329*^9}, {3.745089018615395*^9, 3.745089019200886*^9}, {
+   3.7769757769651537`*^9, 3.776975777478395*^9}, {3.8079935950874043`*^9, 
+   3.8079935971273317`*^9}},ExpressionUUID->"593a6220-5a3f-4969-ad72-\
+09d30caad2c7"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, 
+   3.5853679457875834`*^9, {3.587183885529838*^9, 
+   3.587183898552814*^9}},ExpressionUUID->"db008c75-0c1d-41e1-9381-\
+8b2e6d4f8488"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1", "Section",
+ CellChangeTimes->{{3.58658333961707*^9, 
+  3.586583344097002*^9}},ExpressionUUID->"29e36953-4361-4d80-8866-\
+177f7372c361"],
+
+Cell["\<\
+Suppose $1 was invested in 1776 at 3.3% interest compounded annually.\
+\>", "Text",
+ CellChangeTimes->{{3.586714878777614*^9, 
+  3.5867149279082527`*^9}},ExpressionUUID->"4643bf28-d517-4fa3-b723-\
+b5880f591b96"],
+
+Cell[CellGroupData[{
+
+Cell["Approximately how much would that investment be worth today?", "Item",
+ CellChangeTimes->{{3.5867150110131207`*^9, 
+  3.586715044803763*^9}},ExpressionUUID->"187141fb-bd96-458f-97dd-\
+78de922b0577"],
+
+Cell["What if the interest rate were 6.6%?", "Item",
+ CellChangeTimes->{{3.5867150110131207`*^9, 
+  3.5867150597604523`*^9}},ExpressionUUID->"dd73d0c9-c1f9-410f-82fa-\
+ed8e4c705f05"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 2", "Section",
+ CellChangeTimes->{{3.58658333961707*^9, 3.586583350760694*^9}, {
+  3.713707144608219*^9, 
+  3.713707144791791*^9}},ExpressionUUID->"dbd53e70-7280-4844-ba38-\
+605610b8c0d2"],
+
+Cell["\<\
+(Effective rates) Find the corresponding effective rates for:\
+\>", "Text",
+ CellChangeTimes->{{3.5867150694559927`*^9, 
+  3.586715094885391*^9}},ExpressionUUID->"752f3b7b-0964-4a12-b288-\
+0e60212962b5"],
+
+Cell[CellGroupData[{
+
+Cell["3% compounded monthly,", "Item",
+ CellChangeTimes->{{3.586715111956017*^9, 3.586715118196789*^9}, 
+   3.586715150499468*^9},ExpressionUUID->"78905f55-a1e5-4a34-9208-\
+7caef66e439f"],
+
+Cell["18% compounded monthly,", "Item",
+ CellChangeTimes->{{3.586715111956017*^9, 
+  3.586715152971181*^9}},ExpressionUUID->"d1c35f9f-35ff-4764-84be-\
+a1ea11a2947c"],
+
+Cell["18% compounded quarterly.", "Item",
+ CellChangeTimes->{{3.586715111956017*^9, 
+  3.5867151460756893`*^9}},ExpressionUUID->"17ec6f5e-1c19-4478-9e98-\
+934a13fb857d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 3", "Section",
+ CellChangeTimes->{{3.58658333961707*^9, 3.5865833553431*^9}, 
+   3.713707148695581*^9},ExpressionUUID->"c2be1b5f-6763-4d3a-82fa-\
+57727e0d1724"],
+
+Cell["\<\
+Two copy machines are available. Both have useful lives of 5 years. One \
+machine can be either leased or purchased outright, the other must be \
+purchased. Below is a description of the three options with the first year\
+\[CloseCurlyQuote]s maintenance included in the initial cost. There are then \
+four additional yearly payments occurring at the beginning of each year, \
+followed by the revenues from any resale. According to a PV analysis the \
+least cost option is B:\
+\>", "Text",
+ CellChangeTimes->{{3.586715467240136*^9, 
+  3.5867156936359243`*^9}},ExpressionUUID->"02f19394-7de6-4c26-8ff0-\
+cd19653c4dbd"],
+
+Cell[TextData[Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      StyleBox["\[Null]",
+       ShowStringCharacters->False], 
+      TagBox["A",
+       HoldForm], 
+      TagBox["B",
+       HoldForm], 
+      TagBox["C",
+       HoldForm]},
+     {
+      TagBox[
+       RowBox[{"Initial", " ", "outlay"}],
+       HoldForm], "6000", "30000", "35000"},
+     {
+      TagBox[
+       RowBox[{"Yearly", " ", "expense"}],
+       HoldForm], "8000", "2000", "1600"},
+     {
+      TagBox[
+       RowBox[{"Resale", " ", "value"}],
+       HoldForm], "0", "10000", "12000"},
+     {
+      TagBox[
+       RowBox[{"PV", " ", "at", " ", "10", "%"}],
+       HoldForm], "31559", "30131", "32621"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxDividers->{
+     "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+      "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+  Function[BoxForm`e$, 
+   TableForm[
+   BoxForm`e$, 
+    TableHeadings -> {{
+      "Initial outlay", "Yearly expense", "Resale value", "PV at 10%"}, {
+      "A", "B", "C"}}]]]],
+ CellChangeTimes->{3.58671531306956*^9, 
+  3.586715393353644*^9},ExpressionUUID->"103c871f-436c-445b-81a8-\
+94202deaf8ab"]], "Text",
+ CellChangeTimes->{{3.5867153291234713`*^9, 3.586715360819935*^9}, {
+  3.586715399253296*^9, 3.586715450575552*^9}},
+ TextAlignment->Center,
+ TextJustification->0.,ExpressionUUID->"8aeca668-b5b3-4cc2-92fc-59459ccff667"],
+
+Cell["\<\
+It is not possible to compute an IRR on these options since the cashflows are \
+all negative, except for the resale value. It is possible, however, to \
+calculate the IRR on an incremental basis. Find the IRR on a change from A to \
+B. Is this change justified on an IRR basis?\
+\>", "Text",
+ CellChangeTimes->{{3.58671571553939*^9, 3.5867158270842047`*^9}, 
+   3.5867180424514427`*^9},ExpressionUUID->"645030b0-66eb-413a-b53b-\
+a36f4a01ff09"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 4", "Section",
+ CellChangeTimes->{{3.5865833831106977`*^9, 3.586583402788156*^9}, {
+  3.713707153527738*^9, 
+  3.713707153959467*^9}},ExpressionUUID->"18a09e30-04b1-47c7-b0b3-\
+8d0e5a9a5502"],
+
+Cell["\<\
+Gavin\[CloseCurlyQuote]s father, Mr. Jones, has just turned 90 years-old and \
+is applying for a lifetime annuity that will pay $10,000 per year, starting 1 \
+year from now, until he dies. He asks Gavin to analyze it for him. Gavin \
+finds that according to statistical summaries, the probability of that Mr. \
+Jones will die at a particular age is:\
+\>", "Text",
+ CellChangeTimes->{{3.586718163418612*^9, 3.5867183099776697`*^9}, {
+  3.5867185128811274`*^9, 3.586718513302661*^9}, {3.713707119561646*^9, 
+  3.7137071236812477`*^9}},ExpressionUUID->"3724db6c-d5c3-4bf1-a7c7-\
+a9fda4004048"],
+
+Cell[TextData[Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      TagBox["age",
+       HoldForm], "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", 
+      "100", "101"},
+     {
+      TagBox[
+       RowBox[{"prob", "."}],
+       HoldForm], "0.07`", "0.08`", "0.09`", "0.1`", "0.1`", "0.1`", "0.1`", 
+      "0.1`", "0.1`", "0.07`", "0.05`", "0.04`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxDividers->{
+     "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+      "Rows" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   {OutputFormsDump`HeadedRows, None}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableHeadings -> {{"age", "prob."}, None}]]]],
+ CellChangeTimes->{
+  3.586718464874793*^9},ExpressionUUID->"b9283405-9c80-42b7-8dfb-\
+50cc277ecbce"]], "Text",
+ CellChangeTimes->{{3.586718479719442*^9, 3.586718494164054*^9}},
+ TextAlignment->Center,
+ TextJustification->0.,ExpressionUUID->"5c1b7248-d770-4ca5-975e-d5a51c7ab3d8"],
+
+Cell["What would Gavin\[CloseCurlyQuote]s answers be to the following \
+questions:", "Text",
+ CellChangeTimes->{{3.586718525780909*^9, 
+  3.586718554079723*^9}},ExpressionUUID->"8070bb32-902d-4934-8808-\
+378870d73fa2"],
+
+Cell[CellGroupData[{
+
+Cell["What is Mr. Jones\[CloseCurlyQuote]s (Gavin\[CloseCurlyQuote]s father\
+\[CloseCurlyQuote]s) life expectancy?", "Item",
+ CellChangeTimes->{{3.5867185992347927`*^9, 3.5867186470397177`*^9}, 
+   3.713707129825233*^9},ExpressionUUID->"9df89691-06c1-4710-9fbe-\
+779d88af7ee2"],
+
+Cell["\<\
+What is the PV of an annuity at 8% interest that has a lifetime equal to Mr. \
+Jones\[CloseCurlyQuote]s life expectancy? (For an annuity equal to a \
+non-integral number of years use an averaging method.)\
+\>", "Item",
+ CellChangeTimes->{{3.5867185992347927`*^9, 3.586718763238986*^9}, 
+   3.7137071344727907`*^9},ExpressionUUID->"761bcf8f-ec44-4792-b712-\
+8ab2de6cfd57"],
+
+Cell["What is the expected PV of the annuity?", "Item",
+ CellChangeTimes->{{3.5867185992347927`*^9, 
+  3.586718796240286*^9}},ExpressionUUID->"9f8e5b6e-c643-4902-ac9e-\
+8de3dea14c9c"],
+
+Cell["What is the standard deviation of the annuity?", "Item",
+ CellChangeTimes->{{3.5867185992347927`*^9, 
+  3.58671881579718*^9}},ExpressionUUID->"e5cf220a-902b-4c77-b6b4-\
+ed1642987d88"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 5", "Section",
+ CellChangeTimes->{{3.586583406196086*^9, 3.586583410955902*^9}, 
+   3.7137071582153177`*^9},ExpressionUUID->"da852475-7c95-4f9b-8202-\
+56249fe657a2"],
+
+Cell["\<\
+The Smith family just took out a variable-rate mortgage on their new home. \
+The mortgage value is $100,000, the term is 30 years, and the initial \
+interest rate is 8%. This rate is guaranteed for 5 years, after which it will \
+be adjusted to the prevailing rates. The mortgage will be adjusted by either \
+modifying the payment amount or the length of the remaining loan.\
+\>", "Text",
+ CellChangeTimes->{{3.586718878387846*^9, 3.5867189276945133`*^9}, {
+  3.586718983721599*^9, 3.5867189996309767`*^9}, {3.586722974445868*^9, 
+  3.5867230563209677`*^9}},ExpressionUUID->"c895a168-7512-427c-84fd-\
+b761db0d963d"],
+
+Cell["\<\
+In the text you are instructed to use yearly payment amounts, but for this \
+assignment assume that the mortgage requires monthly payment,\
+\>", "Text",
+ CellChangeTimes->{{3.586723086096375*^9, 
+  3.586723119509444*^9}},ExpressionUUID->"90b5c57c-d132-4052-b1b1-\
+524968d22be5"],
+
+Cell[CellGroupData[{
+
+Cell["What is the monthly payment at the start of the mortgage?", "Item",
+ CellChangeTimes->{{3.586723134363727*^9, 3.586723148196012*^9}, 
+   3.807993490066564*^9},ExpressionUUID->"ae8a82fb-2cb9-46b7-a339-\
+401c80d78378"],
+
+Cell["What is the mortgage balance after 5 years?", "Item",
+ CellChangeTimes->{{3.586723134363727*^9, 
+  3.586723163152297*^9}},ExpressionUUID->"2a01d5de-88bd-46e9-8c58-\
+d80ad30346be"],
+
+Cell["\<\
+If the prevailing rate is 9% at the readjustment point and the mortgage \
+termination date is kept constant, then what is the new monthly payment?\
+\>", "Item",
+ CellChangeTimes->{{3.586723134363727*^9, 
+  3.586723232368928*^9}},ExpressionUUID->"59d343e3-5ea1-4aa1-8a9e-\
+52ca2e2bd973"],
+
+Cell["\<\
+Under the same conditions immediately above, if the monthly payment is kept \
+constant, then what it the new term (i.e., years and months remaining) of the \
+mortgage?\
+\>", "Item",
+ CellChangeTimes->{{3.586723134363727*^9, 
+  3.586723319243435*^9}},ExpressionUUID->"f9e00bde-1ba0-484d-90cb-\
+7e2f37aa9ab5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 6", "Section",
+ CellChangeTimes->{{3.585977947441392*^9, 3.585977960914722*^9}, {
+  3.585978237745386*^9, 3.585978243824821*^9}, {3.585978425640176*^9, 
+  3.585978425864415*^9}, {3.586471177811248*^9, 3.586471202134551*^9}, {
+  3.5867235955051203`*^9, 3.586723596625432*^9}, {3.684352047142557*^9, 
+  3.684352047324297*^9}, {3.713707172067889*^9, 3.7137071739678383`*^9}, {
+  3.807993500449436*^9, 
+  3.807993501018628*^9}},ExpressionUUID->"d20ba98d-beaf-4f53-b197-\
+506713de68fd"],
+
+Cell["\<\
+A firm wishes to purchase a building for $10,000,000. Origination fees and \
+other costs will total $25,000. The firm has $2,000,000 to cover the initial \
+costs and down payment on the building. The mortgage terms available are a \
+5-year term with monthly payments computed at 7.5% with an amortization of 20 \
+years. \
+\>", "Text",
+ CellChangeTimes->{{3.585977966242429*^9, 
+  3.5859781784238234`*^9}},ExpressionUUID->"15ff6273-7b7d-4a81-b744-\
+3814929c5baf"],
+
+Cell[CellGroupData[{
+
+Cell["What is the amount of the mortgage?", "Item",
+ CellChangeTimes->{{3.585977966242429*^9, 3.5859781784238234`*^9}, {
+  3.585978266374593*^9, 3.5859782788856373`*^9}, {3.585978357766221*^9, 
+  3.5859783577672586`*^9}},ExpressionUUID->"31f97de9-81f6-47f9-8fc8-\
+f572533f1c9e"],
+
+Cell["What are the monthly payments and final balloon payment?", "Item",
+ CellChangeTimes->{{3.585977966242429*^9, 3.5859781784238234`*^9}, 
+   3.585978266374593*^9, {3.5859783630459642`*^9, 
+   3.585978365646696*^9}},ExpressionUUID->"9acd4fcf-e53f-45a1-a95d-\
+042ede027c00"],
+
+Cell["\<\
+How much interest did the firm pay over the 5 years of the mortgage?\
+\>", "Item",
+ CellChangeTimes->{{3.585977966242429*^9, 3.5859781784238234`*^9}, 
+   3.585978266374593*^9, {3.5859783630459642`*^9, 
+   3.585978387835586*^9}},ExpressionUUID->"164f7f99-7474-4ac7-9ac4-\
+66b8fedbee59"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 7", "Section",
+ CellChangeTimes->{{3.5859784311836977`*^9, 3.5859784353034897`*^9}, {
+  3.586471186703974*^9, 3.586471206574418*^9}, {3.586723600329323*^9, 
+  3.5867236018808403`*^9}, {3.684352052180361*^9, 3.684352052388199*^9}, {
+  3.713707177915824*^9, 3.7137071797991123`*^9}, {3.807993503660598*^9, 
+  3.8079935042285213`*^9}},ExpressionUUID->"e8440834-4ab5-47b9-bd7b-\
+6580638c6914"],
+
+Cell["\<\
+Arthur is planning on buying a house and needs to take out a mortgage for \
+$200,000. He has two choices a 30-year with monthly payments of $1,468 and a \
+15-year with monthly payments of 1,854. Arthur wants to pay the lowest \
+interest rate possible. \
+\>", "Text",
+ CellChangeTimes->{{3.5859788683196087`*^9, 3.585978901204608*^9}, {
+   3.5859789493610277`*^9, 3.585979060614146*^9}, 3.5860409476987886`*^9, 
+   3.713707104817396*^9},ExpressionUUID->"0ea8d83e-6cbb-49fb-b41d-\
+0dd0a82dc8df"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What is the interest rate on each mortgage and which mortgage should he pick?\
+\
+\>", "Item",
+ CellChangeTimes->{{3.5859788683196087`*^9, 3.585978901204608*^9}, {
+  3.5859789493610277`*^9, 3.585979060614146*^9}, {3.5860409476987886`*^9, 
+  3.586040972225569*^9}, {3.586045926347825*^9, 
+  3.5860459304095163`*^9}},ExpressionUUID->"75322b36-005f-42e9-a692-\
+8c70de347792"],
+
+Cell["\<\
+He changes his mind and wants to pay the smallest amount of total interest. \
+What are the total interest charges for each mortgage and which mortgage \
+should he now pick?\
+\>", "Item",
+ CellChangeTimes->{{3.5859788683196087`*^9, 3.585978901204608*^9}, {
+  3.5859789493610277`*^9, 3.585979060614146*^9}, {3.5860409476987886`*^9, 
+  3.586041070457426*^9}},ExpressionUUID->"17680627-9bae-489c-beef-\
+6cb0eca46a35"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 8", "Section",
+ CellChangeTimes->{{3.5859790655175133`*^9, 3.585979070968327*^9}, {
+  3.586471213181615*^9, 3.5864712141257343`*^9}, {3.586723585283887*^9, 
+  3.586723606008223*^9}, {3.6843520555644073`*^9, 3.684352055772204*^9}, {
+  3.713707184146028*^9, 3.7137071857355547`*^9}, {3.807993514700129*^9, 
+  3.8079935153146057`*^9}},ExpressionUUID->"e7946cf1-59eb-433c-b13f-\
+5610f4b9264e"],
+
+Cell["\<\
+Meg has the opportunity to purchase bond A at origination for $98,930. The \
+bond\[CloseCurlyQuote]s term is 10 years and pays semi-annual interest based \
+on a nominal rate of 3.5%. She needs to invest the money for 5 years after \
+which she wants to sell the bonds and put the funds towards the purchase of a \
+house. She chose a 10-year bond to secure a higher interest rate.\
+\>", "Text",
+ CellChangeTimes->{{3.585979181491673*^9, 3.585979280857985*^9}, {
+  3.58597933207726*^9, 3.58597933563678*^9}, {3.58597955320887*^9, 
+  3.585979557544586*^9}, {3.5859799777711163`*^9, 3.585979979202032*^9}, {
+  3.586040770542799*^9, 3.586040914029759*^9}, {3.586041192545724*^9, 
+  3.586041208864834*^9}, {3.713707099080557*^9, 
+  3.7137070993045473`*^9}},ExpressionUUID->"67c2fece-a3fd-4291-9b7e-\
+50add6cc093d"],
+
+Cell[CellGroupData[{
+
+Cell["What is bond A\[CloseCurlyQuote]s yield?", "Item",
+ CellChangeTimes->{{3.585979353291295*^9, 3.5859793669311123`*^9}, {
+  3.585979459929224*^9, 3.5859794599298983`*^9}, {3.585979562783865*^9, 
+  3.585979564815619*^9}, {3.586041259526226*^9, 
+  3.586041260126252*^9}},ExpressionUUID->"b23a3c57-35b3-4b11-aaab-\
+89b74802012e"],
+
+Cell["\<\
+Another bond B is offered for sale with the same characteristics except the \
+coupon rate is 3.75%. How would the market price bond B?\
+\>", "Item",
+ CellChangeTimes->{{3.585979353291295*^9, 3.5859793669311123`*^9}, {
+   3.585979459929224*^9, 3.5859795268675127`*^9}, {3.585979568687635*^9, 
+   3.585979579758504*^9}, 
+   3.713707086906725*^9},ExpressionUUID->"8362c81a-317a-4cfa-9c70-\
+26fa310c2182"],
+
+Cell["\<\
+Meg is concerned that yields are at all time lows and is concerned that they \
+will rise in the future. If the long term average yield for 5-year bonds is \
+4.75%, then how would the prices of bonds A and B be affected when Meg is \
+ready to sell them?\
+\>", "Item",
+ CellChangeTimes->{{3.585979353291295*^9, 3.585979419453251*^9}, {
+  3.585979586741778*^9, 3.5859796389212093`*^9}, {3.5860412742705936`*^9, 
+  3.586041306906507*^9}, {3.7137070896810703`*^9, 
+  3.713707094464631*^9}},ExpressionUUID->"5e802c26-5e15-449f-a35f-\
+d76f026dec05"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 9", "Section",
+ CellChangeTimes->{{3.5859798394147778`*^9, 3.5859798475526133`*^9}, {
+  3.586471217253264*^9, 3.586471218197472*^9}, {3.586723588042036*^9, 
+  3.586723609924955*^9}, {3.6843520589562674`*^9, 3.684352059108173*^9}, {
+  3.7137071902016363`*^9, 3.713707191686944*^9}, {3.8079935190874777`*^9, 
+  3.807993520773121*^9}},ExpressionUUID->"cc7d95ea-667b-4396-b1a0-\
+e7bcccfc9d8b"],
+
+Cell["\<\
+Ten years ago Sarah purchased her house and took out a mortgage for $150,000. \
+The term of the mortgage was 30-years with monthly payments at an interest \
+rate of 5.6%. She is selling the house and will use a portion of her proceeds \
+to pay off the mortgage.\
+\>", "Text",
+ CellChangeTimes->{{3.585979862997444*^9, 3.585979964107278*^9}, {
+   3.585979996376313*^9, 3.5859800553309917`*^9}, 3.5860406864105988`*^9, 
+   3.713707082049761*^9},ExpressionUUID->"01e39aff-9a40-4953-b960-\
+4fd1587f74a5"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What is the principal balance on the mortgage that must be paid off?\
+\>", "Item",
+ CellChangeTimes->{{3.585980069441759*^9, 
+  3.585980090272653*^9}},ExpressionUUID->"57630e36-4e7e-45d6-b964-\
+9fceca417a53"],
+
+Cell["\<\
+How much total interest has been paid by Sarah over the past 10 years?\
+\>", "Item",
+ CellChangeTimes->{{3.585980069441759*^9, 
+  3.585980115941477*^9}},ExpressionUUID->"9ffb86fe-cbc6-4c84-aadb-\
+0cb2ccae7980"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 10", "Section",
+ CellChangeTimes->{{3.586041393100911*^9, 3.586041396941029*^9}, {
+  3.586471222005102*^9, 3.586471222796914*^9}, {3.586723591673661*^9, 
+  3.586723613904097*^9}, {3.684352061732089*^9, 3.684352061908176*^9}, {
+  3.713707197273486*^9, 3.713707198951021*^9}, {3.807993535188755*^9, 
+  3.807993535712762*^9}},ExpressionUUID->"e2bb8b50-27a2-42e6-b052-\
+0cbe4240edd5"],
+
+Cell["\<\
+Joe purchases a new car every 4 years, paying $25,000 (assume there is no \
+inflation). He can put away money each month into a saving account which pays \
+interest at the rate of 4% compounded monthly and needs to know what his \
+monthly savings payment must be so that he has $25,000 in the account after 4 \
+years. Alternately, he can fund the purchase price of $25,000 with a loan \
+with a term of 4 years with monthly payments based on an interest rate of 6%.\
+\
+\>", "Text",
+ CellChangeTimes->{{3.586041400299851*^9, 3.586041481548451*^9}, {
+   3.586041519065197*^9, 3.586041757677496*^9}, {3.58604188309416*^9, 
+   3.586041883941867*^9}, 3.586046060676221*^9, {3.7137070621312447`*^9, 
+   3.713707062945518*^9}},ExpressionUUID->"2178cc1c-12fc-4749-84c6-\
+9caff528dabe"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+How much must Joe save each month if he decides to save for the purchase of \
+the car?\
+\>", "Item",
+ CellChangeTimes->{{3.586041902401648*^9, 3.586041938818928*^9}, {
+  3.586042030667214*^9, 3.586042065120122*^9}, {3.71370706725069*^9, 
+  3.713707068057996*^9}},ExpressionUUID->"34b7d87c-6429-4f64-9d13-\
+36e29959f7bd"],
+
+Cell["\<\
+What is the monthly loan payment if Joe decides to borrow the money for the \
+purchase of the car?\
+\>", "Item",
+ CellChangeTimes->{{3.586041902401648*^9, 3.586041968664239*^9}, 
+   3.586042072990613*^9, {3.7137070707310877`*^9, 
+   3.713707071432933*^9}},ExpressionUUID->"9c29605e-608a-4ccc-b423-\
+4f8feeb746f7"],
+
+Cell["\<\
+If Joe decides to save each month the same amount he would have had to pay \
+for the loan, how much would he have left over when he purchased the car \
+after 4 years of saving?\
+\>", "Item",
+ CellChangeTimes->{{3.586041902401648*^9, 3.586041968663053*^9}, {
+  3.586042084393153*^9, 3.586042181829925*^9}, {3.586046113674018*^9, 
+  3.586046116825715*^9}, {3.713707076514043*^9, 
+  3.7137070773373013`*^9}},ExpressionUUID->"b6d614e0-abca-4edb-a226-\
+0255cfd3e3cf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 11", "Section",
+ CellChangeTimes->{{3.586042383764511*^9, 3.586042389822274*^9}, {
+  3.586471226172426*^9, 3.586471227036387*^9}, {3.586723617375483*^9, 
+  3.586723623830784*^9}, {3.684352065340062*^9, 3.684352065540318*^9}, {
+  3.713707202873521*^9, 3.713707204478593*^9}, {3.807993538619079*^9, 
+  3.8079935392801933`*^9}},ExpressionUUID->"0bc996de-8fb9-4b39-bf54-\
+5b45170d4fba"],
+
+Cell["\<\
+Consider two investments, both of which require an initial investment of \
+$12,500. The first, A, pays a steady cashflow over the next 4 years. The \
+second, B, pays a gradually increasing cashflow over the same period. These \
+cash-flows are summarized in the table below:\
+\>", "Text",
+ CellChangeTimes->{{3.586043572764669*^9, 3.586043684307403*^9}, {
+   3.586045264719255*^9, 3.586045319419024*^9}, 
+   3.745089008546891*^9},ExpressionUUID->"443910e7-f31f-469b-84ea-\
+bec757b6b9a8"],
+
+Cell[TextData[Cell[BoxData[GridBox[{
+   {
+    StyleBox["\[Null]",
+     ShowStringCharacters->False], 
+    TagBox["0",
+     HoldForm], 
+    TagBox["1",
+     HoldForm], 
+    TagBox["2",
+     HoldForm], 
+    TagBox["3",
+     HoldForm], 
+    TagBox["4",
+     HoldForm]},
+   {
+    TagBox["A",
+     HoldForm], 
+    RowBox[{"-", "12500"}], "4000", "4000", "4000", "4000"},
+   {
+    TagBox["B",
+     HoldForm], 
+    RowBox[{"-", "12500"}], 
+    RowBox[{"       ", "0"}], "2500", "6000", "8500"}
+  },
+  GridBoxAlignment->{
+   "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+    "RowsIndexed" -> {}},
+  GridBoxDividers->{
+   "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[2.0999999999999996`]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.4]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]],
+ CellChangeTimes->{
+  3.586043420085034*^9},ExpressionUUID->"3d4e856c-8e71-4d3d-8c1c-\
+ed26e42dcdf6"]], "Text",
+ CellChangeTimes->{{3.586043436985777*^9, 3.586043457717173*^9}, {
+  3.586043492212434*^9, 3.586043502580657*^9}, {3.586045191988339*^9, 
+  3.5860452008424664`*^9}},
+ TextAlignment->Center,ExpressionUUID->"98550357-1299-465d-bc50-fe8b1bc5e33d"],
+
+Cell["\<\
+You need to make an investment decision. Assume annual compounding for your \
+calculations. \
+\>", "Text",
+ CellChangeTimes->{
+  3.586045325661447*^9},ExpressionUUID->"59564f53-a53f-4043-bbe2-\
+751b56476aaa"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+An investment is viable if it has a positive IRR. You decide to pick the \
+viable investment with the largest IRR, but if neither IRR is positive you \
+will hold onto your $12,500. \
+\>", "Item",
+ CellChangeTimes->{{3.586044417961466*^9, 3.58604445755732*^9}, {
+  3.586045351052182*^9, 
+  3.5860454124225063`*^9}},ExpressionUUID->"47257819-5dbb-45f3-b33e-\
+247f6269766d"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Determine the viability of each investment in terms of its IRR.\
+\>", "Subitem",
+ CellChangeTimes->{{3.586044417961466*^9, 3.58604445755732*^9}, {
+   3.586045351052182*^9, 3.586045412421536*^9}, {3.586045460979187*^9, 
+   3.5860454663130207`*^9}, 
+   3.7137070441157093`*^9},ExpressionUUID->"016e9fe5-221d-4a99-861c-\
+255cdcf02287"],
+
+Cell["\<\
+What is your investment decision on an IRR basis: do not invest, invest in A, \
+or invest in B?\
+\>", "Subitem",
+ CellChangeTimes->{{3.586044417961466*^9, 3.586044457555867*^9}, {
+  3.586044492715687*^9, 3.586044686267665*^9}, {3.586044790937256*^9, 
+  3.586044818302574*^9}, {3.586045443764134*^9, 
+  3.586045445314744*^9}},ExpressionUUID->"973b917d-c976-4f48-a314-\
+4b5cffbbd413"]
+}, Open  ]],
+
+Cell["\<\
+Alternately, you have a threshold rate of return of 7% that you use to \
+evaluate investment opportunities. An investment is considered viable if its \
+PV is positive. You decide to pick the viable investment with the highest PV, \
+but if neither is viable you will hold onto your $12,500.\
+\>", "Item",
+ CellChangeTimes->{{3.586044417961466*^9, 3.586044457555867*^9}, {
+  3.586044492715687*^9, 3.586044639707508*^9}, {3.586044996497514*^9, 
+  3.586045008456459*^9}, {3.586045086489648*^9, 3.586045128583138*^9}, {
+  3.713707036411291*^9, 
+  3.713707048668028*^9}},ExpressionUUID->"45a87470-1bee-4c34-b971-\
+5281eda2c51e"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Determine the viability of each investment in terms of its PV.\
+\>", "Subitem",
+ CellChangeTimes->{{3.586044417961466*^9, 3.586044457555867*^9}, {
+   3.586044492715687*^9, 3.586044686269588*^9}, 3.5860450231096373`*^9, 
+   3.713707051946837*^9},ExpressionUUID->"f760b5d8-c17a-467a-9d17-\
+b55f0023450b"],
+
+Cell["\<\
+What is your investment decision on a PV basis: do not invest, invest in A, \
+or invest in B?\
+\>", "Subitem",
+ CellChangeTimes->{{3.586044417961466*^9, 3.586044457555867*^9}, {
+  3.586044492715687*^9, 3.586044686267665*^9}, {3.586044790937256*^9, 
+  3.586044818302574*^9}},ExpressionUUID->"282e199a-fb1e-49ce-b2a3-\
+a5409003e498"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 12", "Section",
+ CellChangeTimes->{{3.808009374493833*^9, 
+  3.808009379146096*^9}},ExpressionUUID->"4adb447c-c401-4807-88bc-\
+aec9d68d9fb4"],
+
+Cell["Perform the following computations in Mathematica:", "Text",
+ CellChangeTimes->{{3.808009385056842*^9, 
+  3.808009405020002*^9}},ExpressionUUID->"1dedd560-fe42-4154-9cfe-\
+f191e4aa9676"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Plot ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", "sin", " ", "x"}], ")"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "56a0aa93-2e6d-4c9e-8c1b-8e58cdd8a148"],
+ " for ",
+ StyleBox["x ",
+  FontSlant->"Italic"],
+ "from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", "\[Pi]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3c9f3483-dcd6-42be-87b2-be8965aa8114"],
+ " to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "\[Pi]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e5e8c8ec-7167-4267-a45f-ab3c6316e623"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.808009436777031*^9, 3.808009552041052*^9}, {
+  3.808009628930902*^9, 3.808009636976568*^9}, {3.808009690440377*^9, 
+  3.808009712368166*^9}},ExpressionUUID->"7d7aca4b-8ab2-4d51-b08f-\
+7bb5b37bc7e9"],
+
+Cell[TextData[{
+ "Integrate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", "sin", " ", "x"}], ")"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8b956b07-7495-4841-a349-0f1701dd7e71"],
+ " for ",
+ StyleBox["x ",
+  FontSlant->"Italic"],
+ "from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", "\[Pi]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "188c28f7-0060-4a77-b6c5-b9baf70bab94"],
+ " to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "\[Pi]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "65b6ee32-2064-4938-a839-f80711fd2e3b"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.808009436777031*^9, 3.808009552041052*^9}, {
+  3.808009628930902*^9, 3.808009636976568*^9}, {3.808009745206995*^9, 
+  3.808009745207428*^9}},ExpressionUUID->"1ebe7cb3-dbe5-40fb-af65-\
+40be4a382243"],
+
+Cell[TextData[{
+ "Differentiate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", "sin", " ", "x"}], ")"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6be10432-ba13-44b0-84b0-d376c599be9d"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.808009436777031*^9, 3.808009552041052*^9}, {
+  3.808009628930902*^9, 3.808009636976568*^9}, {3.808009746344657*^9, 
+  3.808009766906148*^9}},ExpressionUUID->"2818c48c-ee40-4d93-ae7c-\
+64b9bd7b10b4"],
+
+Cell[TextData[{
+ "Write a function f[x] which, given ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ ", computes ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", "sin", " ", "x"}], ")"}], 
+   TraditionalForm]],ExpressionUUID->"c3a8d251-edbf-4dc8-b41a-6c7f6b084b1c"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.808009436777031*^9, 3.808009552041052*^9}, {
+  3.808009628930902*^9, 3.808009636976568*^9}, {3.808009746344657*^9, 
+  3.808009764083232*^9}, {3.808009801018771*^9, 3.808009824867145*^9}, {
+  3.808009865886142*^9, 3.808009869852459*^9}, {3.808009945754887*^9, 
+  3.8080099471021748`*^9}},ExpressionUUID->"c1ddf162-1d5d-465d-8677-\
+bdfd1fb217e1"],
+
+Cell[TextData[{
+ "Evaluate the function above for ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ " from 0 to 1 in increments of 0.1"
+}], "Item",
+ CellChangeTimes->{{3.808009436777031*^9, 3.808009552041052*^9}, {
+  3.808009628930902*^9, 3.808009636976568*^9}, {3.808009746344657*^9, 
+  3.808009764083232*^9}, {3.808009801018771*^9, 3.808009824867145*^9}, {
+  3.808009865886142*^9, 
+  3.808009907760858*^9}},ExpressionUUID->"349d9535-5838-4611-b256-\
+9e837876aee5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{1068, 776},
+WindowMargins->{{2, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"44c50d63-c99b-4165-a620-581e03eaa25d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 656, 9, 250, "Title",ExpressionUUID->"90760aba-34d5-4763-bf77-c0c84de4f858"],
+Cell[1238, 33, 1691, 23, 82, "Subtitle",ExpressionUUID->"593a6220-5a3f-4969-ad72-09d30caad2c7"],
+Cell[2932, 58, 385, 10, 183, "Subsubtitle",ExpressionUUID->"db008c75-0c1d-41e1-9381-8b2e6d4f8488"],
+Cell[CellGroupData[{
+Cell[3342, 72, 154, 3, 105, "Section",ExpressionUUID->"29e36953-4361-4d80-8866-177f7372c361"],
+Cell[3499, 77, 221, 5, 45, "Text",ExpressionUUID->"4643bf28-d517-4fa3-b723-b5880f591b96"],
+Cell[CellGroupData[{
+Cell[3745, 86, 204, 3, 43, "Item",ExpressionUUID->"187141fb-bd96-458f-97dd-78de922b0577"],
+Cell[3952, 91, 182, 3, 43, "Item",ExpressionUUID->"dd73d0c9-c1f9-410f-82fa-ed8e4c705f05"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4183, 100, 203, 4, 105, "Section",ExpressionUUID->"dbd53e70-7280-4844-ba38-605610b8c0d2"],
+Cell[4389, 106, 213, 5, 45, "Text",ExpressionUUID->"752f3b7b-0964-4a12-b288-0e60212962b5"],
+Cell[CellGroupData[{
+Cell[4627, 115, 187, 3, 43, "Item",ExpressionUUID->"78905f55-a1e5-4a34-9208-7caef66e439f"],
+Cell[4817, 120, 165, 3, 43, "Item",ExpressionUUID->"d1c35f9f-35ff-4764-84be-a1ea11a2947c"],
+Cell[4985, 125, 169, 3, 43, "Item",ExpressionUUID->"17ec6f5e-1c19-4478-9e98-934a13fb857d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5203, 134, 175, 3, 105, "Section",ExpressionUUID->"c2be1b5f-6763-4d3a-82fa-57727e0d1724"],
+Cell[5381, 139, 626, 11, 156, "Text",ExpressionUUID->"02f19394-7de6-4c26-8ff0-cd19653c4dbd"],
+Cell[6010, 152, 1856, 55, 168, "Text",ExpressionUUID->"8aeca668-b5b3-4cc2-92fc-59459ccff667"],
+Cell[7869, 209, 453, 8, 101, "Text",ExpressionUUID->"645030b0-66eb-413a-b53b-a36f4a01ff09"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8359, 222, 206, 4, 105, "Section",ExpressionUUID->"18a09e30-04b1-47c7-b0b3-8d0e5a9a5502"],
+Cell[8568, 228, 600, 10, 129, "Text",ExpressionUUID->"3724db6c-d5c3-4bf1-a7c7-a9fda4004048"],
+Cell[9171, 240, 1343, 34, 76, "Text",ExpressionUUID->"5c1b7248-d770-4ca5-975e-d5a51c7ab3d8"],
+Cell[10517, 276, 218, 4, 45, "Text",ExpressionUUID->"8070bb32-902d-4934-8808-378870d73fa2"],
+Cell[CellGroupData[{
+Cell[10760, 284, 277, 4, 43, "Item",ExpressionUUID->"9df89691-06c1-4710-9fbe-779d88af7ee2"],
+Cell[11040, 290, 381, 7, 95, "Item",ExpressionUUID->"761bcf8f-ec44-4792-b712-8ab2de6cfd57"],
+Cell[11424, 299, 183, 3, 43, "Item",ExpressionUUID->"9f8e5b6e-c643-4902-ac9e-8de3dea14c9c"],
+Cell[11610, 304, 189, 3, 43, "Item",ExpressionUUID->"e5cf220a-902b-4c77-b6b4-ed1642987d88"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11848, 313, 180, 3, 105, "Section",ExpressionUUID->"da852475-7c95-4f9b-8202-56249fe657a2"],
+Cell[12031, 318, 624, 10, 129, "Text",ExpressionUUID->"c895a168-7512-427c-84fd-b761db0d963d"],
+Cell[12658, 330, 288, 6, 73, "Text",ExpressionUUID->"90b5c57c-d132-4052-b1b1-524968d22be5"],
+Cell[CellGroupData[{
+Cell[12971, 340, 222, 3, 43, "Item",ExpressionUUID->"ae8a82fb-2cb9-46b7-a339-401c80d78378"],
+Cell[13196, 345, 185, 3, 43, "Item",ExpressionUUID->"2a01d5de-88bd-46e9-8c58-d80ad30346be"],
+Cell[13384, 350, 296, 6, 69, "Item",ExpressionUUID->"59d343e3-5ea1-4aa1-8a9e-52ca2e2bd973"],
+Cell[13683, 358, 317, 7, 69, "Item",ExpressionUUID->"f9e00bde-1ba0-484d-90cb-7e2f37aa9ab5"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14049, 371, 496, 8, 105, "Section",ExpressionUUID->"d20ba98d-beaf-4f53-b197-506713de68fd"],
+Cell[14548, 381, 472, 9, 129, "Text",ExpressionUUID->"15ff6273-7b7d-4a81-b744-3814929c5baf"],
+Cell[CellGroupData[{
+Cell[15045, 394, 278, 4, 43, "Item",ExpressionUUID->"31f97de9-81f6-47f9-8fc8-f572533f1c9e"],
+Cell[15326, 400, 275, 4, 43, "Item",ExpressionUUID->"9acd4fcf-e53f-45a1-a95d-042ede027c00"],
+Cell[15604, 406, 295, 6, 43, "Item",ExpressionUUID->"164f7f99-7474-4ac7-9ac4-66b8fedbee59"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15948, 418, 404, 6, 105, "Section",ExpressionUUID->"e8440834-4ab5-47b9-bd7b-6580638c6914"],
+Cell[16355, 426, 503, 9, 101, "Text",ExpressionUUID->"0ea8d83e-6cbb-49fb-b41d-0dd0a82dc8df"],
+Cell[CellGroupData[{
+Cell[16883, 439, 381, 8, 43, "Item",ExpressionUUID->"75322b36-005f-42e9-a692-8c70de347792"],
+Cell[17267, 449, 423, 8, 69, "Item",ExpressionUUID->"17680627-9bae-489c-beef-6cb0eca46a35"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17739, 463, 404, 6, 105, "Section",ExpressionUUID->"e7946cf1-59eb-433c-b13f-5610f4b9264e"],
+Cell[18146, 471, 817, 13, 129, "Text",ExpressionUUID->"67c2fece-a3fd-4291-9b7e-50add6cc093d"],
+Cell[CellGroupData[{
+Cell[18988, 488, 330, 5, 43, "Item",ExpressionUUID->"b23a3c57-35b3-4b11-aaab-89b74802012e"],
+Cell[19321, 495, 411, 8, 69, "Item",ExpressionUUID->"8362c81a-317a-4cfa-9c70-26fa310c2182"],
+Cell[19735, 505, 552, 10, 95, "Item",ExpressionUUID->"5e802c26-5e15-449f-a35f-d76f026dec05"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20336, 521, 404, 6, 105, "Section",ExpressionUUID->"cc7d95ea-667b-4396-b1a0-e7bcccfc9d8b"],
+Cell[20743, 529, 510, 9, 101, "Text",ExpressionUUID->"01e39aff-9a40-4953-b960-4fd1587f74a5"],
+Cell[CellGroupData[{
+Cell[21278, 542, 218, 5, 43, "Item",ExpressionUUID->"57630e36-4e7e-45d6-b964-9fceca417a53"],
+Cell[21499, 549, 220, 5, 43, "Item",ExpressionUUID->"9ffb86fe-cbc6-4c84-aadb-0cb2ccae7980"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21768, 560, 395, 6, 105, "Section",ExpressionUUID->"e2bb8b50-27a2-42e6-b052-0cbe4240edd5"],
+Cell[22166, 568, 786, 13, 156, "Text",ExpressionUUID->"2178cc1c-12fc-4749-84c6-9caff528dabe"],
+Cell[CellGroupData[{
+Cell[22977, 585, 330, 7, 43, "Item",ExpressionUUID->"34b7d87c-6429-4f64-9d13-36e29959f7bd"],
+Cell[23310, 594, 323, 7, 69, "Item",ExpressionUUID->"9c29605e-608a-4ccc-b423-4f8feeb746f7"],
+Cell[23636, 603, 472, 9, 69, "Item",ExpressionUUID->"b6d614e0-abca-4edb-a226-0255cfd3e3cf"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24157, 618, 397, 6, 105, "Section",ExpressionUUID->"0bc996de-8fb9-4b39-bf54-5b45170d4fba"],
+Cell[24557, 626, 496, 9, 101, "Text",ExpressionUUID->"443910e7-f31f-469b-84ea-bec757b6b9a8"],
+Cell[25056, 637, 1402, 43, 108, "Text",ExpressionUUID->"98550357-1299-465d-bc50-fe8b1bc5e33d"],
+Cell[26461, 682, 218, 6, 45, "Text",ExpressionUUID->"59564f53-a53f-4043-bbe2-751b56476aaa"],
+Cell[CellGroupData[{
+Cell[26704, 692, 381, 8, 69, "Item",ExpressionUUID->"47257819-5dbb-45f3-b33e-247f6269766d"],
+Cell[CellGroupData[{
+Cell[27110, 704, 342, 7, 35, "Subitem",ExpressionUUID->"016e9fe5-221d-4a99-861c-255cdcf02287"],
+Cell[27455, 713, 392, 8, 35, "Subitem",ExpressionUUID->"973b917d-c976-4f48-a314-4b5cffbbd413"]
+}, Open  ]],
+Cell[27862, 724, 632, 11, 120, "Item",ExpressionUUID->"45a87470-1bee-4c34-b971-5281eda2c51e"],
+Cell[CellGroupData[{
+Cell[28519, 739, 312, 6, 35, "Subitem",ExpressionUUID->"f760b5d8-c17a-467a-9d17-b55f0023450b"],
+Cell[28834, 747, 341, 7, 35, "Subitem",ExpressionUUID->"282e199a-fb1e-49ce-b2a3-a5409003e498"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29236, 761, 156, 3, 105, "Section",ExpressionUUID->"4adb447c-c401-4807-88bc-aec9d68d9fb4"],
+Cell[29395, 766, 192, 3, 45, "Text",ExpressionUUID->"1dedd560-fe42-4154-9cfe-f191e4aa9676"],
+Cell[CellGroupData[{
+Cell[29612, 773, 893, 30, 51, "Item",ExpressionUUID->"7d7aca4b-8ab2-4d51-b08f-7bb5b37bc7e9"],
+Cell[30508, 805, 898, 30, 51, "Item",ExpressionUUID->"1ebe7cb3-dbe5-40fb-af65-40be4a382243"],
+Cell[31409, 837, 505, 15, 51, "Item",ExpressionUUID->"2818c48c-ee40-4d93-ae7c-64b9bd7b10b4"],
+Cell[31917, 854, 691, 18, 51, "Item",ExpressionUUID->"c1ddf162-1d5d-465d-8677-bdfd1fb217e1"],
+Cell[32611, 874, 459, 11, 43, "Item",ExpressionUUID->"349d9535-5838-4611-b256-9e837876aee5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

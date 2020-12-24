@@ -1,0 +1,480 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17631,        472]
+NotebookOptionsPosition[     14481,        412]
+NotebookOutlinePosition[     14928,        430]
+CellTagsIndexPosition[     14885,        427]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"7489b20b-ece0-427d-93bd-\
+d022f95d08e5"],
+
+Cell["Fall 2020 \[LongDash] Assignment 02", "Subtitle",
+ CellChangeTimes->{{3.4101180191149073`*^9, 3.410118026587117*^9}, {
+   3.410451275016321*^9, 3.410451277624028*^9}, {3.41113152964636*^9, 
+   3.41113154518227*^9}, {3.4113965922506437`*^9, 3.411396608797546*^9}, {
+   3.411436154989222*^9, 3.4114361574128437`*^9}, {3.411436292462274*^9, 
+   3.411436309145669*^9}, {3.4611057192910433`*^9, 3.461105731739766*^9}, {
+   3.461106187281069*^9, 3.461106188567719*^9}, {3.461106347014133*^9, 
+   3.461106392456594*^9}, {3.461106425305952*^9, 3.461106433518922*^9}, {
+   3.461107458414324*^9, 3.461107510113055*^9}, {3.491414090059168*^9, 
+   3.4914141198204203`*^9}, {3.491414406521193*^9, 3.4914144159195843`*^9}, {
+   3.4914147112780046`*^9, 3.491414711427609*^9}, {3.555082975519517*^9, 
+   3.555082980676901*^9}, {3.555083477712988*^9, 3.555083478687748*^9}, {
+   3.585766164931189*^9, 3.585766165724255*^9}, {3.5858640317953672`*^9, 
+   3.58586403231535*^9}, {3.585980273287774*^9, 3.5859802812381983`*^9}, {
+   3.5864711538486023`*^9, 3.586471154459456*^9}, {3.599790496221098*^9, 
+   3.599790537399109*^9}, {3.617917652767757*^9, 3.6179176619292107`*^9}, {
+   3.617917919337837*^9, 3.617917919855098*^9}, {3.64938928036769*^9, 
+   3.649389302000416*^9}, 3.652198735751018*^9, {3.683054219247025*^9, 
+   3.6830542228671417`*^9}, {3.683054259780175*^9, 3.68305426284271*^9}, {
+   3.683054301458186*^9, 3.683054301657826*^9}, {3.7137069380036087`*^9, 
+   3.713706950755329*^9}, {3.745089018615395*^9, 3.745089019200886*^9}, {
+   3.745854458241702*^9, 3.7458544588709993`*^9}, {3.777126499679727*^9, 
+   3.777126500578986*^9}, {3.8080898419631987`*^9, 
+   3.8080898573914948`*^9}},ExpressionUUID->"bb9862ee-20aa-46cf-9aa9-\
+ae1eaae946c0"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, 
+   3.5853679457875834`*^9, {3.587183885529838*^9, 
+   3.587183898552814*^9}},ExpressionUUID->"7d251ea9-61fe-4cd9-9680-\
+567c82ae4807"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1", "Section",
+ CellChangeTimes->{{3.745854495105418*^9, 
+  3.745854505635058*^9}},ExpressionUUID->"7c392387-cda3-4a09-8570-\
+0a7ad078d799"],
+
+Cell["Complete the following rate computations:", "Text",
+ CellChangeTimes->{{3.745854991577286*^9, 
+  3.745855018171255*^9}},ExpressionUUID->"3043dac2-a788-4c45-8275-\
+2c70400dd992"],
+
+Cell[TextData[{
+ "Take the yield curve ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["y", "1"], ",", 
+     SubscriptBox["y", "3"], ",", 
+     SubscriptBox["y", "5"]}], "}"}], TraditionalForm]],ExpressionUUID->
+  "aef5c3fb-e52a-42db-9b89-9dfa7a65fd95"],
+ " shown below and bootstrap the annual spot rates ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["s", "1"], ",", 
+     SubscriptBox["s", "2"], ",", "\[Ellipsis]", ",", 
+     SubscriptBox["s", "5"]}], "}"}], TraditionalForm]],ExpressionUUID->
+  "5e7e39fd-b473-422c-b3ee-be6fec2094eb"],
+ ".  Use interpolation to estimate the missing yields you need to compute the \
+spot curve."
+}], "Item",
+ CellChangeTimes->{{3.745854526970354*^9, 3.74585464640901*^9}, {
+  3.7458548172046633`*^9, 3.7458548353022423`*^9}, {3.7458548858706293`*^9, 
+  3.745854951614531*^9}, {3.745855052575943*^9, 
+  3.7458550636950693`*^9}},ExpressionUUID->"5dd75e3b-f252-4b94-9219-\
+0be1ec8650df"],
+
+Cell[BoxData[
+ RowBox[{"mnYieldCurve", "=", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0.0249"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "0.0273"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", "0.0281"}], "}"}]}], "\[IndentingNewLine]", 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.74585467171008*^9, 3.745854689763206*^9}, {
+  3.745854844636902*^9, 
+  3.74585486126768*^9}},ExpressionUUID->"6f74453b-8396-472e-a42f-\
+e5867abc229d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Using the spot rate curve, compute the short rates ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["r", "1"], ",", 
+     SubscriptBox["r", "2"], ",", "\[Ellipsis]", ",", 
+     SubscriptBox["r", "5"]}], "}"}], TraditionalForm]],ExpressionUUID->
+  "30a4c8c7-c6ca-4446-9b4d-b803ecfff25c"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.74585504259114*^9, 3.745855099166967*^9}, {
+   3.7458551299454823`*^9, 3.745855129945776*^9}, 
+   3.777126520126718*^9},ExpressionUUID->"41d81e22-e6fa-46dc-9d92-\
+de923627a3d5"],
+
+Cell[TextData[{
+ "Compute the forward rate ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["f", 
+    RowBox[{"2", ",", "5"}]], TraditionalForm]],ExpressionUUID->
+  "d3051484-b2b1-43ea-a22d-f0e806f642a3"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.74585504259114*^9, 3.745855099166967*^9}, {
+  3.7458551313119173`*^9, 
+  3.7458552076569366`*^9}},ExpressionUUID->"7fe8aed2-a9f5-4826-b39f-\
+359385514b74"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 2", "Section",
+ CellChangeTimes->{{3.7458552512538557`*^9, 
+  3.7458552537803373`*^9}},ExpressionUUID->"08cf9080-bec9-47e4-bfd0-\
+eec7a206ed5b"],
+
+Cell[TextData[{
+ "We are dealing with several projects whose benefits (",
+ StyleBox["i.e.",
+  FontSlant->"Italic"],
+ ", their PVs) are represented by a vector ",
+ StyleBox["b",
+  FontWeight->"Bold"],
+ " and costs by a vector ",
+ StyleBox["c",
+  FontWeight->"Bold"],
+ ".",
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "Given the total available capital ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ ", we have the basic zero-one programming problem:"
+}], "Text",
+ CellChangeTimes->{
+  3.4930805697808723`*^9, {3.74585532262484*^9, 3.745855389439537*^9}, {
+   3.7458555082837543`*^9, 
+   3.745855509364032*^9}},ExpressionUUID->"37be89e3-8e54-4441-abd7-\
+483007f1d937"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   UnderscriptBox["max", 
+    StyleBox["x",
+     FontWeight->"Bold",
+     FontSlant->"Plain"]], 
+   RowBox[{"{", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        StyleBox[
+         RowBox[{
+          StyleBox["b",
+           FontWeight->"Bold",
+           FontSlant->"Plain"], "\[Null]"}]], "T"], 
+       StyleBox["x",
+        FontWeight->"Bold",
+        FontSlant->"Plain"]}], " ", "|", " ", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         StyleBox[
+          RowBox[{
+           StyleBox["c",
+            FontWeight->"Bold",
+            FontSlant->"Plain"], "\[Null]"}]], "T"], 
+        StyleBox["x",
+         FontWeight->"Bold",
+         FontSlant->"Plain"]}], 
+       StyleBox[" ",
+        FontWeight->"Plain",
+        FontSlant->"Plain"], 
+       StyleBox["\[LessEqual]",
+        FontWeight->"Plain",
+        FontSlant->"Plain"], 
+       StyleBox[" ",
+        FontWeight->"Plain",
+        FontSlant->"Plain"], 
+       StyleBox["k",
+        FontWeight->"Plain",
+        FontSlant->"Italic"]}]}], 
+     StyleBox[",",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], 
+     StyleBox[" ",
+      FontWeight->"Plain",
+      FontSlant->"Plain"], 
+     RowBox[{
+      StyleBox[
+       SubscriptBox["x", "i"],
+       FontWeight->"Plain",
+       FontSlant->"Italic"], 
+      StyleBox[" ",
+       FontWeight->"Plain",
+       FontSlant->"Italic"], "\[Epsilon]", "  ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "1"}], "}"}]}]}], "}"}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.443732896172621*^9, 3.443732898152492*^9}, {
+  3.587171903455497*^9, 3.587171905767128*^9}},
+ TextAlignment->Center,ExpressionUUID->"0db43fa8-bd0b-427e-9a53-8fd3ee7f7c90"],
+
+Cell[TextData[{
+ "There are 10 separate projects, so ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["x",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "=", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["x", "1"], ",", 
+      SubscriptBox["x", "2"], ",", "\[Ellipsis]", ",", 
+      SubscriptBox["x", "9"], ",", 
+      SubscriptBox["x", "10"]}], "}"}]}], TraditionalForm]],ExpressionUUID->
+  "a92efc37-e6d4-47e2-b1eb-a7cdfe16b14b"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7458554105008707`*^9, 
+  3.7458554929780827`*^9}},ExpressionUUID->"0fad4c9e-a758-41ce-9862-\
+e016ba369a5a"],
+
+Cell["\<\
+However, you find that there are certain interdependencies that are not \
+properly represented in the above integer linear program.\
+\>", "Text",
+ CellChangeTimes->{{3.7458555127233543`*^9, 
+  3.745855570968627*^9}},ExpressionUUID->"caa87f2a-dc87-44a4-bfc8-\
+81325af25ddd"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Project 1 cannot be done, unless at least one of project 4 and project 7 are \
+done.\
+\>", "Item",
+ CellChangeTimes->{{3.7458555788076563`*^9, 3.745855608109025*^9}, {
+  3.745855686417192*^9, 3.7458557041679983`*^9}, {3.7458557829882193`*^9, 
+  3.745855802807914*^9}, {3.745855913033929*^9, 
+  3.745855915761833*^9}},ExpressionUUID->"6a019cec-834f-46be-9f0e-\
+f8cf72d37337"],
+
+Cell["\<\
+Project 2 cannot be done unless both project 5 and project 8 are done.\
+\>", "Item",
+ CellChangeTimes->{{3.7458555788076563`*^9, 3.745855608109025*^9}, {
+  3.745855686417192*^9, 3.7458557041679983`*^9}, {3.7458557829882193`*^9, 
+  3.745855829230069*^9}, {3.745855874345487*^9, 
+  3.7458559081346273`*^9}},ExpressionUUID->"bc7c6c91-af03-482b-8d02-\
+b40c3525476d"],
+
+Cell["\<\
+Project 3 and project 9 cannot both be done, but neither or exactly one of \
+them may be done.\
+\>", "Item",
+ CellChangeTimes->{{3.7458555788076563`*^9, 3.745855608109025*^9}, {
+  3.745855686417192*^9, 3.7458557041679983`*^9}, {3.7458557829882193`*^9, 
+  3.745855829230069*^9}, {3.745855876016594*^9, 3.745855896880232*^9}, {
+  3.745855928903205*^9, 
+  3.745856008923315*^9}},ExpressionUUID->"49bd3b6f-3be3-4f9d-aba5-\
+1305d7d7bae4"]
+}, Open  ]],
+
+Cell["\<\
+Define the additional constraints necessary to achieve the conditions above.\
+\>", "Text",
+ CellChangeTimes->{{3.7458560255864563`*^9, 
+  3.745856044802388*^9}},ExpressionUUID->"d089465d-4648-458e-91b7-\
+1674a0d43a60"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 3", "Section",
+ CellChangeTimes->{{3.745854495105418*^9, 3.745854505635058*^9}, {
+  3.808089836652583*^9, 
+  3.808089837023919*^9}},ExpressionUUID->"c0c46eed-19b6-43f8-bef3-\
+c50f1c6ed26a"],
+
+Cell["Use FinancialBond[\[NonBreakingSpace]] to compute the following:", \
+"Text",
+ CellChangeTimes->{{3.746286795557638*^9, 
+  3.7462868125969276`*^9}},ExpressionUUID->"3a13b706-18a5-419c-a047-\
+6c1a5191323b"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A newly issued $10,000 bond with a ten-year term has a 4% coupon rate and \
+pays semi-annually. The current market yield for a ten-year bond of this type \
+is 3.7%. What is the current market price of the bond?\
+\>", "Item",
+ CellChangeTimes->{{3.746286837033349*^9, 3.746286981839905*^9}, {
+  3.746287190013872*^9, 
+  3.746287191645377*^9}},ExpressionUUID->"87d4e4d4-ae4f-4abb-858e-\
+2b57cd2d2649"],
+
+Cell["\<\
+A $10,000 bond with a five-year term, a 3.7% coupon rate paying semi-annually \
+was issued eight months ago. The current market yield is 3.5%.\
+\>", "Item",
+ CellChangeTimes->{{3.746286837033349*^9, 3.7462869517121363`*^9}, {
+  3.7462870067048388`*^9, 3.7462871406291857`*^9}, {3.746287219796863*^9, 
+  3.746287220580944*^9}},ExpressionUUID->"613b23a9-04d8-4dbf-a62f-\
+695e5398aaf2"],
+
+Cell[CellGroupData[{
+
+Cell["What is the current price of the bond?", "Subitem",
+ CellChangeTimes->{{3.746286837033349*^9, 3.7462869517121363`*^9}, {
+  3.7462870067048388`*^9, 3.746287159420993*^9}},
+ FontSize->15,
+ FontWeight->"Regular",ExpressionUUID->"445beb07-7ee4-47ee-8ee4-d29c14d8dc13"],
+
+Cell["What is the accrued interest on the bond?", "Subitem",
+ CellChangeTimes->{{3.746286837033349*^9, 3.7462869517121363`*^9}, {
+  3.7462870067048388`*^9, 3.746287170477792*^9}},
+ FontSize->15,
+ FontWeight->"Regular",ExpressionUUID->"57588d48-af4d-434e-9eb8-7e147ddee603"]
+}, Open  ]],
+
+Cell["\<\
+Consider a $10,000 semi-annual bond with a twenty-year term and a 4.5% coupon \
+rate. The bond was issued five-years ago and currently trades at a price of \
+$10,500. What is the yield on the bond?\
+\>", "Item",
+ CellChangeTimes->{{3.746287213548736*^9, 
+  3.7462873728788643`*^9}},ExpressionUUID->"c8fde7ca-1093-408a-b3b2-\
+21d9463ab843"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 4", "Section",
+ CellChangeTimes->{{3.8080898965231733`*^9, 
+  3.808089900175494*^9}},ExpressionUUID->"0af4d61a-69d2-4a4a-9f1b-\
+cf1f770e27db"],
+
+Cell["\<\
+The TUV corporation has just paid a dividend and its next dividend is \
+estimated to be $1.4 million. It has a total market capitalization of \
+$35,000,000. The growth rate for this type of company is 10%. What is the \
+implied discount rate for the dividends of this stock?\
+\>", "Text",
+ CellChangeTimes->{{3.411761927681044*^9, 3.411761930942127*^9}, {
+   3.443734808639756*^9, 3.4437348108508263`*^9}, {3.587006594072845*^9, 
+   3.5870066114790897`*^9}, {3.58700668423147*^9, 3.587006698387947*^9}, 
+   3.7143105695095797`*^9, {3.808089939093048*^9, 3.808089963156646*^9}, {
+   3.808090002944289*^9, 3.808090025098761*^9}, {3.808090124584972*^9, 
+   3.8080901583480062`*^9}, {3.808090325804694*^9, 
+   3.808090329097373*^9}},ExpressionUUID->"34b17019-8ee2-425d-b2b3-\
+afd8f115fd93"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{808, 727},
+WindowMargins->{{42, Automatic}, {Automatic, 36}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"904c6a4a-66d8-47e9-bac3-16fda004a991"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 656, 9, 250, "Title",ExpressionUUID->"7489b20b-ece0-427d-93bd-d022f95d08e5"],
+Cell[1239, 33, 1741, 24, 82, "Subtitle",ExpressionUUID->"bb9862ee-20aa-46cf-9aa9-ae1eaae946c0"],
+Cell[2983, 59, 385, 10, 183, "Subsubtitle",ExpressionUUID->"7d251ea9-61fe-4cd9-9680-567c82ae4807"],
+Cell[CellGroupData[{
+Cell[3393, 73, 155, 3, 105, "Section",ExpressionUUID->"7c392387-cda3-4a09-8570-0a7ad078d799"],
+Cell[3551, 78, 183, 3, 45, "Text",ExpressionUUID->"3043dac2-a788-4c45-8275-2c70400dd992"],
+Cell[3737, 83, 981, 26, 97, "Item",ExpressionUUID->"5dd75e3b-f252-4b94-9219-0be1ec8650df"],
+Cell[4721, 111, 554, 14, 176, "Input",ExpressionUUID->"6f74453b-8396-472e-a42f-e5867abc229d"],
+Cell[CellGroupData[{
+Cell[5300, 129, 550, 15, 44, "Item",ExpressionUUID->"41d81e22-e6fa-46dc-9d92-de923627a3d5"],
+Cell[5853, 146, 396, 12, 46, "Item",ExpressionUUID->"7fe8aed2-a9f5-4826-b39f-359385514b74"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6298, 164, 159, 3, 105, "Section",ExpressionUUID->"08cf9080-bec9-47e4-bfd0-eec7a206ed5b"],
+Cell[6460, 169, 657, 22, 101, "Text",ExpressionUUID->"37be89e3-8e54-4441-abd7-483007f1d937"],
+Cell[7120, 193, 1752, 62, 61, "Equation",ExpressionUUID->"0db43fa8-bd0b-427e-9a53-8fd3ee7f7c90"],
+Cell[8875, 257, 595, 19, 46, "Text",ExpressionUUID->"0fad4c9e-a758-41ce-9862-e016ba369a5a"],
+Cell[9473, 278, 283, 6, 73, "Text",ExpressionUUID->"caa87f2a-dc87-44a4-bfc8-81325af25ddd"],
+Cell[CellGroupData[{
+Cell[9781, 288, 384, 8, 69, "Item",ExpressionUUID->"6a019cec-834f-46be-9f0e-f8cf72d37337"],
+Cell[10168, 298, 372, 7, 69, "Item",ExpressionUUID->"bc7c6c91-af03-482b-8d02-b40c3525476d"],
+Cell[10543, 307, 443, 9, 69, "Item",ExpressionUUID->"49bd3b6f-3be3-4f9d-aba5-1305d7d7bae4"]
+}, Open  ]],
+Cell[11001, 319, 228, 5, 73, "Text",ExpressionUUID->"d089465d-4648-458e-91b7-1674a0d43a60"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11266, 329, 204, 4, 105, "Section",ExpressionUUID->"c0c46eed-19b6-43f8-bef3-c50f1c6ed26a"],
+Cell[11473, 335, 210, 4, 45, "Text",ExpressionUUID->"3a13b706-18a5-419c-a047-6c1a5191323b"],
+Cell[CellGroupData[{
+Cell[11708, 343, 409, 8, 120, "Item",ExpressionUUID->"87d4e4d4-ae4f-4abb-858e-2b57cd2d2649"],
+Cell[12120, 353, 393, 7, 95, "Item",ExpressionUUID->"613b23a9-04d8-4dbf-a62f-695e5398aaf2"],
+Cell[CellGroupData[{
+Cell[12538, 364, 270, 4, 36, "Subitem",ExpressionUUID->"445beb07-7ee4-47ee-8ee4-d29c14d8dc13"],
+Cell[12811, 370, 273, 4, 36, "Subitem",ExpressionUUID->"57588d48-af4d-434e-9eb8-7e147ddee603"]
+}, Open  ]],
+Cell[13099, 377, 349, 7, 120, "Item",ExpressionUUID->"c8fde7ca-1093-408a-b3b2-21d9463ab843"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13497, 390, 157, 3, 105, "Section",ExpressionUUID->"0af4d61a-69d2-4a4a-9f1b-cf1f770e27db"],
+Cell[13657, 395, 796, 13, 129, "Text",ExpressionUUID->"34b17019-8ee2-425d-b2b3-afd8f115fd93"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

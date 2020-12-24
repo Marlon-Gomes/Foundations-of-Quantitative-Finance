@@ -1,0 +1,517 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     21723,        509]
+NotebookOptionsPosition[     17882,        440]
+NotebookOutlinePosition[     18563,        464]
+CellTagsIndexPosition[     18520,        461]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"67db5256-f2d4-419c-adfe-\
+66cb56024799"],
+
+Cell["Fall 2020 \[LongDash] Workshop", "Subtitle",
+ CellChangeTimes->CompressedData["
+1:eJwdxVsoQwEYAOBjbjOa8rbkwZrbeECLkge/Ii+iMcmlzZZixoqyPHkxM0lu
+RTYrEiaT5RJjSooIGbkVZhp2zqzUFCbL+c/D15coV4sbWQRBxNNwsUWxUtJE
+wuKR2IqvaWXNXnrO9yrz77JoOFdJQupV0iheHM4ObtJ3a3nEFv36vLTshD4s
+x8LsPx6U4WLzrBzPKycj9EckCJc0bLwn2AT4nnCE+bBDJsFbjNxavO44TYqz
+DJkyXFBY+oQnm/Zf8TU3RFWHUvBcEIjBpyznmXh+618WrnzxVOE/yz5mvnNA
+p42gwKZw6/H6C3vvPf2BYUOHR1fcplVvU+DWBNPxOYlLvXBNASskthNvF7kc
+ZzcU2I2Rl7jqctzT/0DBzmkXiffbhhLGHimY4U0y774883FVXI0An9BOp8j9
+XjBbM1LxSlORw/rpBU427wKPEr3d4oW+4B3O/Spq03x54aP0VI2DqVUXaHkH
+p6ihD/8H9SLqZg==
+  "],ExpressionUUID->"6a37688f-4360-4fd7-9b6c-c4f676fb4ba2"],
+
+Cell["Examining the CAPM Against Actual Data", "Subtitle",
+ CellChangeTimes->{{3.4101180191149073`*^9, 3.410118026587117*^9}, {
+   3.410451275016321*^9, 3.410451277624028*^9}, {3.41113152964636*^9, 
+   3.41113154518227*^9}, {3.4113965922506437`*^9, 3.411396608797546*^9}, {
+   3.411436154989222*^9, 3.4114361574128437`*^9}, {3.411436292462274*^9, 
+   3.411436309145669*^9}, {3.4611057192910433`*^9, 3.461105731739766*^9}, {
+   3.461106187281069*^9, 3.461106188567719*^9}, {3.461106347014133*^9, 
+   3.461106414219338*^9}, 3.461106464619837*^9, {3.491414446289631*^9, 
+   3.4914144551523657`*^9}, {3.49141474162271*^9, 3.491414794268467*^9}, {
+   3.493080178809965*^9, 3.4930801954498453`*^9}, {3.493259314481339*^9, 
+   3.493259334726796*^9}, 3.5878833642315407`*^9, {3.602203588070765*^9, 
+   3.6022036091746397`*^9}, {3.602806516883963*^9, 3.602806549394257*^9}, {
+   3.60581307175016*^9, 3.605813141124806*^9}, {3.606356313983981*^9, 
+   3.606356344623466*^9}, {3.751481669862256*^9, 
+   3.751481683948976*^9}},ExpressionUUID->"ef2da9ed-e663-4c23-bc77-\
+1961fed400b9"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, {
+  3.587883368607191*^9, 
+  3.587883390413391*^9}},ExpressionUUID->"52f90e3c-06fc-4cb0-b186-\
+c24b2345d649"],
+
+Cell[CellGroupData[{
+
+Cell["Workshop Description", "Section",
+ CellChangeTimes->{{3.606356393712226*^9, 
+  3.606356399982332*^9}},ExpressionUUID->"8b897484-1157-4934-a778-\
+90785cca49c7"],
+
+Cell[CellGroupData[{
+
+Cell["Overview", "Subsection",
+ CellChangeTimes->{{3.6063568279972153`*^9, 3.606356832151638*^9}, 
+   3.751481573114182*^9},ExpressionUUID->"02e7ee86-a394-4a94-aa3c-\
+c5fb4fab989b"],
+
+Cell[TextData[{
+ "The Capital Asset Pricing Model (CAPM) makes some specific predictions \
+about the market for securities. There are two that we will address here. \
+First, that the relationship between the return of an asset ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],ExpressionUUID->
+  "c15b8862-d931-4bfd-9e57-fad77183ba38"],
+ " and the market ",
+ Cell[BoxData[
+  FormBox["M", TraditionalForm]],ExpressionUUID->
+  "f235afb6-502a-4f4e-bf2c-1e29f832bc23"],
+ " follows the relationship"
+}], "Text",
+ CellChangeTimes->{{3.606356405758417*^9, 3.6063565226599617`*^9}, {
+  3.6063566109223003`*^9, 3.606356740961532*^9}, {3.75148171227868*^9, 
+  3.7514817446306753`*^9}, {3.751482042999752*^9, 3.751482103134801*^9}, {
+  3.7521676691411877`*^9, 
+  3.75216767118215*^9}},ExpressionUUID->"3effbb3d-0bc7-4e3c-9d3d-\
+37160744e293"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["r", "i"], "(", "t", ")"}], "-", 
+    SubscriptBox["r", "f"]}], "=", 
+   RowBox[{
+    RowBox[{"\[Beta]", "(", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["r", "M"], "(", "t", ")"}], "-", 
+      SubscriptBox["r", "f"]}], ")"}], "+", 
+    RowBox[{
+     SubscriptBox["\[Epsilon]", "i"], "(", "t", ")"}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.751481790459296*^9, 
+  3.7514818339319153`*^9}},ExpressionUUID->"e3a3b6f2-5378-486c-bd35-\
+3b9989c8d351"],
+
+Cell[TextData[{
+ "And second, the proportion of asset ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],ExpressionUUID->
+  "1c90f788-a550-41b4-8512-6a7119199d8c"],
+ " in the market (",
+ StyleBox["i.e.",
+  FontSlant->"Italic"],
+ ", tangent) portfolio is"
+}], "Text",
+ CellChangeTimes->{{3.751482108630368*^9, 3.751482153861524*^9}, {
+   3.751482241903092*^9, 3.75148226192347*^9}, 3.752167712733596*^9, {
+   3.752169752242923*^9, 
+   3.752169752570551*^9}},ExpressionUUID->"407f26b8-06bd-4734-83c6-\
+489ecc4ca8a3"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["x", "i"], "\[Proportional]", 
+   FractionBox[
+    SubscriptBox["\[Beta]", "i"], 
+    RowBox[{"Var", "[", 
+     SubscriptBox["\[Epsilon]", "i"], "]"}]]}], TraditionalForm]], "Equation",\
+
+ CellChangeTimes->{{3.751481843411338*^9, 
+  3.751481875434973*^9}},ExpressionUUID->"56f24882-c2d2-4ab3-8ca3-\
+dc35b9a3c75e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Assignment", "Subsection",
+ CellChangeTimes->{{3.606356841211917*^9, 
+  3.606356843723832*^9}},ExpressionUUID->"500fa8a4-1a88-4fd4-8431-\
+4b3e6db86f57"],
+
+Cell["\<\
+The assignment for this Workshop is to perform an analysis which computes the \
+theoretical allocation, the actual allocation, and compares the two. You will \
+be working with daily return data for the Dow Jones Industrial Index, which \
+consists of 30 stocks, beginning 2008-03-31 and ending 2020-10-30, inclusive. \
+The work involved is the following:\
+\>", "Text",
+ CellChangeTimes->{{3.606357010882896*^9, 3.60635711453198*^9}, {
+   3.6063571741163387`*^9, 3.606357244031556*^9}, 3.7518128169661493`*^9, {
+   3.7520912754273033`*^9, 3.7520912874399443`*^9}, {3.752167561131868*^9, 
+   3.752167623073411*^9}, {3.7521677389008427`*^9, 3.7521678326907797`*^9}, {
+   3.752169694465784*^9, 3.7521696948892937`*^9}, {3.814708167724887*^9, 
+   3.814708168483487*^9}, {3.8147089879958763`*^9, 3.8147089883309927`*^9}, {
+   3.8150688233801394`*^9, 
+   3.815068850706437*^9}},ExpressionUUID->"d4956cf1-c790-4812-89bf-\
+3febb30c64f6"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Load the necessary data. The required data files are on the AMS 511 course \
+page in the syllabus under \[OpenCurlyDoubleQuote]Workshop\
+\[CloseCurlyDoubleQuote].\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091395736289*^9}, {
+  3.752091498495406*^9, 3.752091509821958*^9}, {3.752091844122957*^9, 
+  3.752091855594795*^9}, {3.752092161340963*^9, 3.7520921763166018`*^9}, {
+  3.752167851278137*^9, 3.752167914039482*^9}, {3.8147084480869017`*^9, 
+  3.814708452920093*^9}, {3.814709006899654*^9, 
+  3.814709034586348*^9}},ExpressionUUID->"b2ffef64-43c0-4b61-b38d-\
+9b0431858434"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Import[\[NonBreakingSpace]] the daily return vector for the returns of the \
+market. \
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091395736289*^9}, {
+   3.752091498495406*^9, 3.752091509821958*^9}, {3.752091844122957*^9, 
+   3.752091855594795*^9}, {3.752092161340963*^9, 3.7520921763166018`*^9}, 
+   3.8147090447637*^9, {3.815068878908128*^9, 
+   3.8150688805168743`*^9}},ExpressionUUID->"dde48f60-6725-4e85-83f8-\
+1911ba4ea1c6"],
+
+Cell["\<\
+Import[\[NonBreakingSpace]] the daily returns matrix for the thirty members \
+of the DJI. This is a matrix with each row representing a different date and \
+each column a different stock.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091409673483*^9}, {
+   3.75209147711377*^9, 3.7520914771141853`*^9}, {3.752091512062207*^9, 
+   3.7520915182537003`*^9}, {3.752091858554912*^9, 3.752091886522338*^9}, {
+   3.7520921281251287`*^9, 3.752092153868792*^9}, 
+   3.814709056932938*^9},ExpressionUUID->"1487b952-1295-452e-a05c-\
+4b802b771fd7"],
+
+Cell["\<\
+Import[\[NonBreakingSpace]] vectors representing the tickers of the DJI \
+members (a vector of 30 strings).\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091409673483*^9}, {
+  3.752091478574601*^9, 3.752091492574679*^9}, {3.752091540100728*^9, 
+  3.752091571404366*^9}, {3.752091894426344*^9, 3.75209198144808*^9}, {
+  3.752092012780987*^9, 3.75209205661274*^9}, {3.7520920981658897`*^9, 
+  3.752092098166602*^9}, {3.752092197975747*^9, 3.7520922057747087`*^9}, {
+  3.7521679492037897`*^9, 
+  3.752167950908297*^9}},ExpressionUUID->"64495be7-ac8d-4cc5-96a4-\
+92a7be084c25"],
+
+Cell["\<\
+Import[\[NonBreakingSpace]] the calendar of dates with each element a date \
+{yyyy, mm, dd} vector.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091409673483*^9}, {
+   3.752091478574601*^9, 3.752091492574679*^9}, {3.752091540100728*^9, 
+   3.752091571404366*^9}, {3.752091894426344*^9, 3.75209198144808*^9}, {
+   3.752092012780987*^9, 3.75209205661274*^9}, {3.7520920981658897`*^9, 
+   3.752092098166602*^9}, {3.752092197975747*^9, 3.7520922057747087`*^9}, {
+   3.7521679492037897`*^9, 3.752167971201702*^9}, {3.7521683736883783`*^9, 
+   3.752168394183525*^9}, {3.8147090705786953`*^9, 3.814709078887267*^9}, 
+   3.81470941029714*^9, {3.815069204923134*^9, 
+   3.8150692272988853`*^9}},ExpressionUUID->"1bb92edf-677c-452d-9a74-\
+3860100865cb"],
+
+Cell["All of the above are aligned properly.", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091409673483*^9}, {
+  3.752091478574601*^9, 3.752091492574679*^9}, {3.752091540100728*^9, 
+  3.752091571404366*^9}, {3.752091894426344*^9, 3.75209198144808*^9}, {
+  3.752092012780987*^9, 3.75209205661274*^9}, {3.75209209970374*^9, 
+  3.752092112023779*^9}, {3.752167996817019*^9, 
+  3.752168002625675*^9}},ExpressionUUID->"f3d0b339-3f2b-486b-88ee-\
+5e935c69e135"]
+}, Open  ]],
+
+Cell["\<\
+Perform a CAPM  linear regression (using FitLinearModel[\[NonBreakingSpace]] \
+to estimate the betas and error variances of each member of the DJI. For \
+simplicity assume an annual risk free rate of 1%. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091440633685*^9}, {
+  3.752092230123786*^9, 3.7520923903273153`*^9}, {3.7521676595030327`*^9, 
+  3.75216766267008*^9}, {3.8147081935766087`*^9, 3.814708194299945*^9}, {
+  3.814708227538684*^9, 3.814708231100086*^9}, {3.81470916744095*^9, 
+  3.814709177235141*^9}, {3.814709303591568*^9, 3.814709307681052*^9}, {
+  3.8147094263933067`*^9, 3.814709471755212*^9}, {3.8148064077366323`*^9, 
+  3.814806407737365*^9}},ExpressionUUID->"9af40ae2-e134-40ab-9602-\
+e05f1df3ee30"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Use the ",
+ StyleBox["daily",
+  FontSlant->"Italic"],
+ " rate estimated as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", "0.01"}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"1", "/", "250"}], ")"}]}], "-", "1"}], TraditionalForm]],
+  ExpressionUUID->"074a36f2-6134-461c-adb4-c1a4118f0255"],
+ "."
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091440633685*^9}, {
+  3.752092230123786*^9, 3.7520923903273153`*^9}, {3.7521676595030327`*^9, 
+  3.75216766267008*^9}, {3.8147081935766087`*^9, 3.814708194299945*^9}, {
+  3.814708227538684*^9, 3.814708231100086*^9}, {3.81470916744095*^9, 
+  3.814709177235141*^9}, {3.814709303591568*^9, 3.814709307681052*^9}, {
+  3.8147094263933067`*^9, 3.814709471755212*^9}, {3.814806420900363*^9, 
+  3.814806420900544*^9}, {3.814810782614571*^9, 
+  3.814810782813917*^9}},ExpressionUUID->"930c3722-69dd-487f-9aa6-\
+674c5b0ff20a"],
+
+Cell["\<\
+Use the option IncludeConstantBasis\[Rule]False in LinearModelFit[\
+\[NonBreakingSpace]] to fit a linear regression without an intercept term.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091440633685*^9}, {
+  3.752092230123786*^9, 3.7520923903273153`*^9}, {3.7521676595030327`*^9, 
+  3.75216766267008*^9}, {3.8147081935766087`*^9, 3.814708194299945*^9}, {
+  3.814708227538684*^9, 3.814708231100086*^9}, {3.81470916744095*^9, 
+  3.814709177235141*^9}, {3.814709303591568*^9, 3.814709307681052*^9}, {
+  3.8147094263933067`*^9, 3.814709471755212*^9}, {3.814806427645347*^9, 
+  3.8148064790405483`*^9}},ExpressionUUID->"6a6b44aa-ca76-4bf3-8f68-\
+c34cb8ff463c"]
+}, Open  ]],
+
+Cell["\<\
+Use these estimates of the betas and error variances to compute the \
+proportional allocations of each as predicted by the CAPM and normalize them \
+so they sum to one.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+  3.752091689524867*^9, 3.752091700050976*^9}, {3.75209242544576*^9, 
+  3.7520924325974913`*^9}, {3.752168034304762*^9, 3.75216804328088*^9}, {
+  3.814806487376073*^9, 
+  3.814806507226931*^9}},ExpressionUUID->"42aa6fab-4c95-46a6-bc7c-\
+ff4eedf49b1c"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Check the documentation for LinearModelFit[\[NonBreakingSpace]] for the \
+properties of a FittedModel object.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+   3.752091689524867*^9, 3.752091700050976*^9}, {3.75209242544576*^9, 
+   3.7520924325974913`*^9}, {3.752168034304762*^9, 3.75216804328088*^9}, 
+   3.814806487376073*^9, {3.814806519483365*^9, 3.814806565936557*^9}, {
+   3.814806621165593*^9, 
+   3.814806627610093*^9}},ExpressionUUID->"2e8e0bc1-ca70-467d-b612-\
+004ad2ad1010"],
+
+Cell[TextData[{
+ "The value of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Beta]", "i"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4b335ebc-68af-4dce-b604-62a4cdb5059d"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    SubscriptBox["\[Sigma]", 
+     SubscriptBox["\[Epsilon]", "i"]], "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b3f69b58-e44e-420d-acde-73eec35e8ccf"],
+ ". are both available from the FittedModel."
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+   3.752091689524867*^9, 3.752091700050976*^9}, {3.75209242544576*^9, 
+   3.7520924325974913`*^9}, {3.752168034304762*^9, 3.75216804328088*^9}, 
+   3.814806487376073*^9, {3.814806519483365*^9, 3.814806565936557*^9}, {
+   3.814806621165593*^9, 
+   3.81480669203986*^9}},ExpressionUUID->"6927471e-d328-40c9-be90-\
+59fd70b368fb"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use FinancialData[",
+ StyleBox["ticker",
+  FontSlant->"Italic"],
+ ", \[OpenCurlyDoubleQuote]MarketCap\[CloseCurlyDoubleQuote]] to download the \
+market capitalization of the members of the DJI and use them to compute the \
+actual proportion of each in the DJI. Again, normalize their sum to one."
+}], "ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+   3.752091689524867*^9, 3.752091778756324*^9}, 3.752168017866414*^9, {
+   3.7521680534982758`*^9, 
+   3.752168066103909*^9}},ExpressionUUID->"1c1ea4eb-ff92-44de-b21b-\
+034de086929b"],
+
+Cell[TextData[{
+ "Plot the CAPM allocations estimated in (",
+ StyleBox["3.",
+  FontWeight->"Bold"],
+ ") against the market\[CloseCurlyQuote]s observed in (",
+ StyleBox["4.",
+  FontWeight->"Bold"],
+ ")."
+}], "ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+  3.752091689524867*^9, 3.7520918239795*^9}, {3.752092449797036*^9, 
+  3.75209246000627*^9}, {3.752168073104002*^9, 3.752168079240131*^9}, {
+  3.752168986307334*^9, 3.752169008131302*^9}, {3.7521699092548933`*^9, 
+  3.7521699092553463`*^9}},ExpressionUUID->"da641e83-495d-4780-a316-\
+aa56eb9f818a"],
+
+Cell["\<\
+Perform whatever additional comparisons you feel would be useful to \
+characterize what you found.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+  3.752091689524867*^9, 3.7520918239795*^9}, {3.752092449797036*^9, 
+  3.75209246000627*^9}, {3.752168073104002*^9, 3.752168079240131*^9}, {
+  3.752168986307334*^9, 3.752169008131302*^9}, {3.7521699103784*^9, 
+  3.75216994608255*^9}},ExpressionUUID->"93fb1970-099a-4860-917f-\
+5e72b13f304f"],
+
+Cell["What discrepancies do you note? How might you explain them?", \
+"ItemNumbered",
+ CellChangeTimes->{{3.752091302593513*^9, 3.752091463086854*^9}, {
+  3.752091689524867*^9, 3.7520918239795*^9}, {3.752092449797036*^9, 
+  3.75209247808451*^9}},ExpressionUUID->"106b60db-5e8d-4ec5-902b-\
+db9f2dd2f1e4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Important", "Subsection",
+ CellChangeTimes->{{3.752169702280561*^9, 
+  3.7521697042084312`*^9}},ExpressionUUID->"4e6dfc72-7790-432d-a7da-\
+29fd15849e1f"],
+
+Cell["\<\
+It\[CloseCurlyQuote]s important to remember that clarity and organization \
+counts when submitting your work. As a professional if you can\
+\[CloseCurlyQuote]t communicate what you\[CloseCurlyQuote]ve done \
+effectively, then you often might as well not have done it. Please organize \
+and annotate the notebook you submit for this Workshop.\
+\>", "Text",
+ CellChangeTimes->{{3.7521695809087048`*^9, 
+  3.752169690025607*^9}},ExpressionUUID->"9da3ee43-da07-4697-a0a0-\
+5c3a07d2547d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->{},
+WindowSize->{1289, 756},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowStatusArea->None,
+ShowSelection->True,
+SpellingDictionaries->{"CorrectWords"->{
+ "buc", "Swaptions", "Memetics", "\[Beta]s", "Jefferys", "Jeffreys", "zeroa", 
+  "swaption", "lim", "capitalizations"}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"4017e47a-9ade-45e0-ad7d-0d193a4539d8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 656, 9, 250, "Title",ExpressionUUID->"67db5256-f2d4-419c-adfe-66cb56024799"],
+Cell[1226, 33, 653, 11, 82, "Subtitle",ExpressionUUID->"6a37688f-4360-4fd7-9b6c-c4f676fb4ba2"],
+Cell[1882, 46, 1071, 15, 82, "Subtitle",ExpressionUUID->"ef2da9ed-e663-4c23-bc77-1961fed400b9"],
+Cell[2956, 63, 359, 10, 183, "Subsubtitle",ExpressionUUID->"52f90e3c-06fc-4cb0-b186-c24b2345d649"],
+Cell[CellGroupData[{
+Cell[3340, 77, 165, 3, 105, "Section",ExpressionUUID->"8b897484-1157-4934-a778-90785cca49c7"],
+Cell[CellGroupData[{
+Cell[3530, 84, 181, 3, 84, "Subsection",ExpressionUUID->"02e7ee86-a394-4a94-aa3c-c5fb4fab989b"],
+Cell[3714, 89, 832, 18, 74, "Text",ExpressionUUID->"3effbb3d-0bc7-4e3c-9d3d-37160744e293"],
+Cell[4549, 109, 550, 18, 51, "Equation",ExpressionUUID->"e3a3b6f2-5378-486c-bd35-3b9989c8d351"],
+Cell[5102, 129, 514, 14, 46, "Text",ExpressionUUID->"407f26b8-06bd-4734-83c6-489ecc4ca8a3"],
+Cell[5619, 145, 364, 11, 74, "Equation",ExpressionUUID->"56f24882-c2d2-4ab3-8ca3-dc35b9a3c75e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6020, 161, 158, 3, 84, "Subsection",ExpressionUUID->"500fa8a4-1a88-4fd4-8431-4b3e6db86f57"],
+Cell[6181, 166, 937, 15, 101, "Text",ExpressionUUID->"d4956cf1-c790-4812-89bf-3febb30c64f6"],
+Cell[CellGroupData[{
+Cell[7143, 185, 612, 11, 43, "ItemNumbered",ExpressionUUID->"b2ffef64-43c0-4b61-b38d-9b0431858434"],
+Cell[CellGroupData[{
+Cell[7780, 200, 467, 9, 34, "SubitemNumbered",ExpressionUUID->"dde48f60-6725-4e85-83f8-1911ba4ea1c6"],
+Cell[8250, 211, 572, 10, 58, "SubitemNumbered",ExpressionUUID->"1487b952-1295-452e-a05c-4b802b771fd7"],
+Cell[8825, 223, 609, 11, 34, "SubitemNumbered",ExpressionUUID->"64495be7-ac8d-4cc5-96a4-92a7be084c25"],
+Cell[9437, 236, 780, 13, 34, "SubitemNumbered",ExpressionUUID->"1bb92edf-677c-452d-9a74-3860100865cb"],
+Cell[10220, 251, 476, 7, 34, "SubitemNumbered",ExpressionUUID->"f3d0b339-3f2b-486b-88ee-5e935c69e135"]
+}, Open  ]],
+Cell[10711, 261, 753, 12, 69, "ItemNumbered",ExpressionUUID->"9af40ae2-e134-40ab-9602-e05f1df3ee30"],
+Cell[CellGroupData[{
+Cell[11489, 277, 955, 24, 34, "SubitemNumbered",ExpressionUUID->"930c3722-69dd-487f-9aa6-674c5b0ff20a"],
+Cell[12447, 303, 694, 11, 34, "SubitemNumbered",ExpressionUUID->"6a6b44aa-ca76-4bf3-8f68-c34cb8ff463c"]
+}, Open  ]],
+Cell[13156, 317, 519, 10, 69, "ItemNumbered",ExpressionUUID->"42aa6fab-4c95-46a6-bc7c-ff4eedf49b1c"],
+Cell[CellGroupData[{
+Cell[13700, 331, 539, 10, 34, "SubitemNumbered",ExpressionUUID->"2e8e0bc1-ca70-467d-b612-004ad2ad1010"],
+Cell[14242, 343, 907, 23, 42, "SubitemNumbered",ExpressionUUID->"6927471e-d328-40c9-be90-59fd70b368fb"]
+}, Open  ]],
+Cell[15164, 369, 585, 12, 69, "ItemNumbered",ExpressionUUID->"1c1ea4eb-ff92-44de-b21b-034de086929b"],
+Cell[15752, 383, 588, 14, 43, "ItemNumbered",ExpressionUUID->"da641e83-495d-4780-a316-aa56eb9f818a"],
+Cell[16343, 399, 489, 9, 43, "ItemNumbered",ExpressionUUID->"93fb1970-099a-4860-917f-5e72b13f304f"],
+Cell[16835, 410, 303, 5, 43, "ItemNumbered",ExpressionUUID->"106b60db-5e8d-4ec5-902b-db9f2dd2f1e4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17187, 421, 159, 3, 84, "Subsection",ExpressionUUID->"4e6dfc72-7790-432d-a7da-29fd15849e1f"],
+Cell[17349, 426, 493, 9, 101, "Text",ExpressionUUID->"9da3ee43-da07-4697-a0a0-5c3a07d2547d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

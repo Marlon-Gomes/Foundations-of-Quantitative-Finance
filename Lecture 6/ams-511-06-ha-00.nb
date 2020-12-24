@@ -1,0 +1,521 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     20364,        513]
+NotebookOptionsPosition[     17228,        451]
+NotebookOutlinePosition[     17983,        478]
+CellTagsIndexPosition[     17940,        475]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AMS-511 Foundations of Quantitative Finance", "Title",
+ CellChangeTimes->{{3.410118002352737*^9, 3.4101180035512123`*^9}, {
+   3.4104512493187323`*^9, 3.410451249562763*^9}, {3.411070441580077*^9, 
+   3.411070441827072*^9}, {3.411127582523164*^9, 3.41112758277359*^9}, {
+   3.4111315188866587`*^9, 3.411131524894576*^9}, {3.411253224366561*^9, 
+   3.411253224912155*^9}, {3.4114345716329317`*^9, 3.4114345742149363`*^9}, {
+   3.411436143492992*^9, 3.411436148100697*^9}, {3.461105702626305*^9, 
+   3.461105709176071*^9}, 3.4611060748428698`*^9, 3.461106153130972*^9, 
+   3.461106185408854*^9},ExpressionUUID->"7e828797-e1b6-4f57-b899-\
+a8e07e040324"],
+
+Cell["Fall 2020 \[LongDash] Assignment 06 ", "Subtitle",
+ CellChangeTimes->{{3.4101180191149073`*^9, 3.410118026587117*^9}, {
+   3.410451275016321*^9, 3.410451277624028*^9}, {3.41113152964636*^9, 
+   3.41113154518227*^9}, {3.4113965922506437`*^9, 3.411396608797546*^9}, {
+   3.411436154989222*^9, 3.4114361574128437`*^9}, {3.411436292462274*^9, 
+   3.411436309145669*^9}, {3.4611057192910433`*^9, 3.461105731739766*^9}, {
+   3.461106187281069*^9, 3.461106188567719*^9}, {3.461106347014133*^9, 
+   3.461106392456594*^9}, {3.461106425305952*^9, 3.461106433518922*^9}, {
+   3.461107458414324*^9, 3.461107510113055*^9}, {3.491414090059168*^9, 
+   3.4914141198204203`*^9}, {3.491414406521193*^9, 3.4914144159195843`*^9}, {
+   3.4914147112780046`*^9, 3.491414711427609*^9}, {3.493080124402238*^9, 
+   3.4930801431371737`*^9}, {3.493258293931929*^9, 3.4932583017065153`*^9}, {
+   3.587883342760137*^9, 3.587883359952135*^9}, {3.602203519041705*^9, 
+   3.602203568468873*^9}, {3.602806415037652*^9, 3.602806424237883*^9}, {
+   3.6058130607445583`*^9, 3.605813067806364*^9}, {3.606356204522771*^9, 
+   3.606356204815629*^9}, {3.606954432010997*^9, 3.606954449657132*^9}, {
+   3.607034409899108*^9, 3.607034413305244*^9}, {3.6560781608260813`*^9, 
+   3.6560781735996513`*^9}, {3.68870980386621*^9, 3.68870982564704*^9}, {
+   3.749843051989142*^9, 3.749843052548761*^9}, {3.781114888999761*^9, 
+   3.7811148900772743`*^9}, {3.809127463693617*^9, 3.809127467736699*^9}, 
+   3.812132519754054*^9},ExpressionUUID->"02fc04eb-08b0-4047-8a12-\
+d15bba5ae4d8"],
+
+Cell["\<\
+Robert J. Frey, Research Professor
+Stony Brook University, Applied Mathematics and Statistics
+
+Robert.Frey@StonyBrook.edu
+http://www.ams.sunysb.edu/~frey\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.411439843209729*^9, 3.411439853156939*^9}, {
+  3.587883368607191*^9, 
+  3.587883390413391*^9}},ExpressionUUID->"08e4a1b3-2056-43d0-8e9e-\
+6cd3bae632dc"],
+
+Cell[CellGroupData[{
+
+Cell["Question 1.", "Section",
+ CellChangeTimes->{{3.45070776907771*^9, 3.4507077931648912`*^9}, {
+   3.451603317783736*^9, 3.451603319196744*^9}, {3.469385034130913*^9, 
+   3.4693850348559504`*^9}, {3.4693882262136393`*^9, 3.469388226713882*^9}, {
+   3.469388856005396*^9, 3.469388856242487*^9}, {3.595537761316703*^9, 
+   3.595537761764819*^9}, 3.59554047787995*^9, {3.608940492442129*^9, 
+   3.608940492954245*^9}, 3.6089405978657913`*^9, {3.608940809817047*^9, 
+   3.608940812833026*^9}, {3.753018739084453*^9, 3.753018739771549*^9}, {
+   3.8121325432187634`*^9, 
+   3.812132546024663*^9}},ExpressionUUID->"c9b71931-e6cb-44d9-b671-\
+0a28b11117b2"],
+
+Cell[TextData[{
+ "We are given a single-step geometric binomial pricing lattice as the model \
+for the price dynamics of a stock with current price ",
+ StyleBox["S",
+  FontSlant->"Italic"],
+ "(0):"
+}], "Text",
+ CellChangeTimes->{{3.450708348736415*^9, 3.450708373735448*^9}, {
+  3.4507156602579308`*^9, 
+  3.4507156935180397`*^9}},ExpressionUUID->"18773e4f-d95b-4c53-88f9-\
+61dd5700c681"],
+
+Cell[BoxData[
+ GraphicsBox[{LineBox[{{0, 0}, {1, 1}}], LineBox[{{0, 0}, {1, -1}}], 
+   {PointSize[0.025], PointBox[{0, 0}]}, 
+   {PointSize[0.025], PointBox[{1, 1}]}, 
+   {PointSize[0.025], PointBox[{1, -1}]}, 
+   InsetBox["\<\"\\!\\(\\*\\nStyleBox[\\\"S\\\",\\nFontSlant->\\\"Italic\\\"]\
+\\)(0)\"\>", {-0.05, 0}], 
+   InsetBox["\<\"\\!\\(\\*SubscriptBox[\\n \
+StyleBox[\\\"S\\\",\\nFontSlant->\\\"Italic\\\"], \\\"+\\\"]\\)(\
+\[CapitalDelta]) = \
+\\!\\(\\*\\nStyleBox[\\\"u\\\",\\nFontSlant->\\\"Italic\\\"]\\) \[Times] \
+\\!\\(\\*\\nStyleBox[\\\"S\\\",\\nFontSlant->\\\"Italic\\\"]\\)(0)\"\>", \
+{1.2, 1}], 
+   InsetBox["\<\"\\!\\(\\*SubscriptBox[\\(S\\), \\(-\\)]\\)(\[CapitalDelta]) \
+= \\!\\(\\*\\nStyleBox[\\\"S\\\",\\nFontSlant->\\\"Italic\\\"]\\)(0)/\\!\\(\\*\
+\\nStyleBox[\\\"u\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"\>", {1.2, -1}], 
+   InsetBox["\<\"\\!\\(\\*SubscriptBox[\\n \
+StyleBox[\\\"p\\\",\\nFontSlant->\\\"Italic\\\"], \\\"+\\\"]\\)\"\>", \
+{0.5, 0.65}], 
+   InsetBox["\<\"\\!\\(\\*SubscriptBox[\\n \
+StyleBox[\\\"p\\\",\\nFontSlant->\\\"Italic\\\"], \\\"-\\\"]\\) = 1 \[Dash] \
+\\!\\(\\*SubscriptBox[\\n StyleBox[\\\"p\\\",\\nFontSlant->\\\"Italic\\\"], \
+\\\"+\\\"]\\)\"\>", {0.5, -0.67}]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Background->GrayLevel[1],
+  PlotRange->All]], "Output",
+ CellChangeTimes->{{3.4166576393272533`*^9, 3.4166576529878674`*^9}, 
+   3.416674413980454*^9, 3.447085629017457*^9, 3.447085678728588*^9, {
+   3.450708506688621*^9, 3.450708516382819*^9}, 3.4507086823195133`*^9},
+ TextAlignment->Center,ExpressionUUID->"f153864e-7a38-4ef1-9f71-e79d357e6851"],
+
+Cell[TextData[{
+ "Consider a case in which ",
+ StyleBox["S",
+  FontSlant->"Italic"],
+ "(0)  = 95, \[CapitalDelta] = 0.25, ",
+ StyleBox["u",
+  FontSlant->"Italic"],
+ " = 1.1, and the risk free rate of return ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " = 1.5%, then..."
+}], "Text",
+ CellChangeTimes->{{3.450716687770966*^9, 3.450716824570458*^9}, {
+   3.451598017583542*^9, 3.451598030920294*^9}, 3.451600579082361*^9, {
+   3.469386298527017*^9, 3.469386323263939*^9}, {3.6089384062300797`*^9, 
+   3.608938434339617*^9}, 
+   3.812132196198159*^9},ExpressionUUID->"8bea6f4d-66a9-47c5-b97e-\
+b2ff344e360a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Show that the market for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "(", "t", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aefc21b6-dc42-4e39-af51-d9226ce95677"],
+ " is arbitrage free."
+}], "Item",
+ CellChangeTimes->{{3.8121322239040947`*^9, 
+  3.812132253558824*^9}},ExpressionUUID->"24471112-0538-44f0-b0fe-\
+322d4b2ed6f8"],
+
+Cell["What is the risk neutral measure?", "Item",
+ CellChangeTimes->{{3.8121322239040947`*^9, 
+  3.8121322706984043`*^9}},ExpressionUUID->"cb1a49e0-5dcd-4c9f-9c02-\
+e1c86a9c127e"],
+
+Cell[TextData[{
+ "What is the price at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5d5834d4-94aa-4207-aef5-4b944cc4c4c0"],
+ " for an at-the-money put?"
+}], "Item",
+ CellChangeTimes->{{3.8121322239040947`*^9, 3.812132308146187*^9}, 
+   3.812132342569379*^9},ExpressionUUID->"52301b2b-78e8-4c81-84bd-\
+3188b0964938"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 2.", "Section",
+ CellChangeTimes->{{3.450705132064363*^9, 3.450705144827417*^9}, {
+   3.450707765028006*^9, 3.450707765352715*^9}, 3.451603330047591*^9, {
+   3.4693850410060263`*^9, 3.469385041580922*^9}, {3.469388231101718*^9, 
+   3.469388231551619*^9}, {3.469388860180558*^9, 3.4693888605305843`*^9}, 
+   3.595537768634286*^9, {3.595540482886026*^9, 3.595540483317677*^9}, {
+   3.657897479896738*^9, 3.657897480224667*^9}, {3.6902421052949142`*^9, 
+   3.690242105535284*^9}, {3.753018750507843*^9, 3.7530187511000233`*^9}, {
+   3.8121325668842163`*^9, 
+   3.8121325700237837`*^9}},ExpressionUUID->"14e8239c-4268-43c1-8fc4-\
+ee2c79898711"],
+
+Cell["\<\
+For an underlying whose price dynamic follows the following SDE\
+\>", "Text",
+ CellChangeTimes->{{3.45070449011454*^9, 
+  3.450704514401499*^9}},ExpressionUUID->"49871eb5-cf63-4d49-b310-\
+e2a2101b8592"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[DifferentialD]", 
+    RowBox[{"S", "(", "t", ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"\[Mu]", " ", 
+     RowBox[{"S", "(", "t", ")"}], 
+     RowBox[{"\[DifferentialD]", "t"}]}], "+", 
+    RowBox[{"\[Sigma]", " ", 
+     RowBox[{"S", "(", "t", ")"}], " ", 
+     RowBox[{"\[DifferentialD]", 
+      RowBox[{"W", "(", "t", ")"}]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.450704750628384*^9, 3.450704773365773*^9}},
+ TextAlignment->Center,ExpressionUUID->"e152ff23-9229-4441-8328-df001a2a796c"],
+
+Cell["Let", "Text",
+ CellChangeTimes->{{3.450705785930223*^9, 
+  3.4507057882289057`*^9}},ExpressionUUID->"20f3e941-699d-4aee-9c62-\
+8b04d5317ea2"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"X", "(", "t", ")"}], "=", 
+   SuperscriptBox[
+    RowBox[{"S", "(", "t", ")"}], 
+    RowBox[{"-", "1"}]]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.450704750628384*^9, 3.450704773365773*^9}, {
+  3.450705797092774*^9, 3.450705807379218*^9}, {3.4507063922058764`*^9, 
+  3.45070639360534*^9}, {3.45159913468686*^9, 3.45159917397289*^9}, {
+  3.6578956063756323`*^9, 3.657895613958684*^9}},
+ TextAlignment->Center,ExpressionUUID->"1bb23dcf-91f7-48a0-b51b-7565a49b1f86"],
+
+Cell[TextData[{
+ "Use It\[OHat]'s lemma to determine the SDE which describes the price \
+dynamics of ",
+ StyleBox["X",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ "), assuming ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "(", "0", ")"}], ">", "0"}], TraditionalForm]],
+  ExpressionUUID->"041562f4-d460-4494-b4bf-830911714707"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4507058744280367`*^9, 3.450705922903288*^9}, {
+  3.657894940835964*^9, 
+  3.657894960955575*^9}},ExpressionUUID->"a8db7799-64b5-4677-9b2a-\
+0a0b78dafe07"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 3.", "Section",
+ CellChangeTimes->{{3.418657169469554*^9, 3.418657176343526*^9}, {
+   3.45070516546646*^9, 3.450705177564748*^9}, {3.4507077541541367`*^9, 
+   3.450707754703479*^9}, 3.451603335709297*^9, {3.469385064068617*^9, 
+   3.469385064606546*^9}, {3.4693874559593477`*^9, 3.469387456234295*^9}, {
+   3.469388244788686*^9, 3.4693882454522057`*^9}, {3.469388874092802*^9, 
+   3.469388874593257*^9}, 3.595537803460585*^9, 3.595540500444092*^9, 
+   3.6089405038900003`*^9, 3.6089406064495993`*^9, {3.6089407967292747`*^9, 
+   3.6089408016572313`*^9}, {3.608940939665365*^9, 3.608940940025239*^9}, {
+   3.7530187665640993`*^9, 3.753018766835445*^9}, {3.812132582283074*^9, 
+   3.8121325855591908`*^9}},ExpressionUUID->"12cd1623-d149-4dfd-8213-\
+33b4c71f5647"],
+
+Cell[TextData[{
+ "Consider a European ",
+ StyleBox["capped-call option",
+  FontSlant->"Italic"],
+ ". With ",
+ StyleBox["S",
+  FontSlant->"Italic"],
+ "(",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ ") the price of the underlying and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "(", "t", ")"}], TraditionalForm]],ExpressionUUID->
+  "9723a8dd-c5d7-4edc-bb4f-827231218114"],
+ " the price of the option, the capped-call gives the holder the right to \
+exercise the option at expiry with value of a put with strike ",
+ Cell[BoxData[
+  FormBox["K", TraditionalForm]],ExpressionUUID->
+  "51c3e515-6c7f-4047-b2c1-b07fe5e4fc7a"],
+ " whose value, however, is capped at a maximum pay-out ",
+ Cell[BoxData[
+  FormBox["C", TraditionalForm]],ExpressionUUID->
+  "a2bcab45-63be-40d6-951d-9e244fd49256"],
+ " where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"K", "<", "C"}], TraditionalForm]],ExpressionUUID->
+  "24c9d477-d162-4062-b415-43905805a773"],
+ ". Thus, the value at expiry ",
+ Cell[BoxData[
+  FormBox["T", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2e1eae6e-77ee-4f7f-a0a0-e9ec95d14591"],
+ " can be expressed by"
+}], "Text",
+ CellChangeTimes->{{3.451598203285267*^9, 3.451598317836432*^9}, {
+   3.451598351134838*^9, 3.451598354232918*^9}, {3.451598887297474*^9, 
+   3.451598973820607*^9}, {3.608939423351316*^9, 3.608939513059587*^9}, {
+   3.608939713695039*^9, 3.6089397852605667`*^9}, {3.608961575610477*^9, 
+   3.6089616875379267`*^9}, {3.6089617218712387`*^9, 3.608961729167004*^9}, {
+   3.60896176482374*^9, 3.608961777151331*^9}, {3.6089618738509827`*^9, 
+   3.608961912796488*^9}, 3.784394261819154*^9, {3.812132663498659*^9, 
+   3.8121326791519823`*^9}},ExpressionUUID->"3e9bc96c-a532-4a4d-990a-\
+b5d2237f0915"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"F", "(", "T", ")"}], "=", 
+   RowBox[{"min", "[", " ", 
+    RowBox[{
+     RowBox[{"max", "[", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"S", "(", "T", ")"}], "-", "K"}], ",", " ", "0"}], " ", "]"}],
+      ",", " ", "C"}], " ", "]"}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.608939526187316*^9, 3.608939582058464*^9}, {
+  3.6089617856719933`*^9, 3.608961788015869*^9}, {3.6089619271802187`*^9, 
+  3.608961933924301*^9}},ExpressionUUID->"909b2975-1dc9-4b36-8323-\
+b2558e9f7213"],
+
+Cell[TextData[{
+ "Assume the risk free rate is ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " with continuous compounding. Express the value of the option at time ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "<", "T"}], TraditionalForm]],ExpressionUUID->
+  "95bf275d-713d-449b-b12c-a902d9e28e2d"],
+ " in terms of vanilla European options with appropriately chosen parameters \
+and, if necessary, any cash position."
+}], "Text",
+ CellChangeTimes->{{3.451598203285267*^9, 3.451598317836432*^9}, {
+  3.451598351134838*^9, 3.451598354232918*^9}, {3.451598887297474*^9, 
+  3.451598973820607*^9}, {3.608939423351316*^9, 3.608939513059587*^9}, {
+  3.608939610138644*^9, 3.6089396659241667`*^9}, {3.608961805339987*^9, 
+  3.608961859586478*^9}, {3.658587603055517*^9, 3.658587605823249*^9}, {
+  3.812132400712963*^9, 
+  3.812132436111761*^9}},ExpressionUUID->"c4e4f81f-1892-4dc9-895d-\
+ac8354e8f828"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Question 4.", "Section",
+ CellChangeTimes->{{3.8121327365044947`*^9, 
+  3.812132739409472*^9}},ExpressionUUID->"b724a49e-60e1-4cc2-802a-\
+b0a92f923b1b"],
+
+Cell[TextData[{
+ "Consider a security priced ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "(", "t", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "22cd8053-e704-4399-ad00-9175f4498ffb"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sigma]", "=", "0.22"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "41c5c64c-0d76-4be9-8611-00835b2ad4db"],
+ " where the risk free rate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", "0.01"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "04907571-a819-4e9d-9141-4af3a3a59579"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.812132743875574*^9, 3.812132899981186*^9}, {
+  3.812132933770464*^9, 3.8121331155528803`*^9}, {3.812133263964286*^9, 
+  3.8121333214505663`*^9}},ExpressionUUID->"33a63d8e-8478-4d41-956a-\
+5a6dbe244936"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Use FinancialDerivative[\[NonBreakingSpace]] to plot the values of a \
+European call option for a strike ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"K", "=", "102"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "299b231a-3bb2-4a20-9aa3-2960e925edf9"],
+ " and expiry ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "=", "0.5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "242c83a7-84d3-489f-a10c-09aa9d971133"],
+ " at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0.25"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9b02a1dc-34ee-4190-b1cc-feea8f4e8c21"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"60", "\[LessEqual]", 
+    RowBox[{"S", "(", "t", ")"}], "\[LessEqual]", "140"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aa67d7d8-3a37-4935-87c9-229c3eb09f4e"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.812132743875574*^9, 3.812132899981186*^9}, {
+  3.812132933770464*^9, 3.8121331155528803`*^9}, {3.812133263964286*^9, 
+  3.8121333373035917`*^9}},ExpressionUUID->"9841faec-7b79-444a-af1c-\
+29dbfb07820f"],
+
+Cell[TextData[{
+ "With the same parameters above, use \
+FinancialDerivative[\[NonBreakingSpace]] to plot the values of an \
+at-the-money European call option at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0.25"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1b0f947f-e11f-4c10-94a0-dabbfb6da8ed"],
+ " for values of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0.1", "\[LessEqual]", "\[Sigma]", "\[LessEqual]", "0.3"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4ca1a8b5-71ef-4faa-8d44-319852f97433"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.812132743875574*^9, 3.812132899981186*^9}, {
+  3.812132933770464*^9, 3.8121331155528803`*^9}, {3.812133263964286*^9, 
+  3.812133317262454*^9}, {3.8121333693313704`*^9, 
+  3.812133530044198*^9}},ExpressionUUID->"93e43620-8263-4118-9f99-\
+29d17133c8b0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+Editable->True,
+WindowToolbars->{},
+Selectable->True,
+WindowSize->{1440, 781},
+WindowMargins->{{92, Automatic}, {Automatic, 16}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+ShowSelection->True,
+DefaultFormatType->DefaultTextFormatType,
+SpellingDictionaries->{"CorrectWords"->{
+ "buc", "Swaptions", "Memetics", "\[Beta]s", "Jefferys", "Jeffreys", "zeroa", 
+  "swaption", "lim", "It\[OHat]"}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"StonyBrook.nb",
+ExpressionUUID->"07321724-2ddd-4bb9-83b9-7c1f44c1b238"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 656, 9, 153, "Title",ExpressionUUID->"7e828797-e1b6-4f57-b899-a8e07e040324"],
+Cell[1226, 33, 1541, 21, 82, "Subtitle",ExpressionUUID->"02fc04eb-08b0-4047-8a12-d15bba5ae4d8"],
+Cell[2770, 56, 359, 10, 183, "Subsubtitle",ExpressionUUID->"08e4a1b3-2056-43d0-8e9e-6cd3bae632dc"],
+Cell[CellGroupData[{
+Cell[3154, 70, 651, 10, 105, "Section",ExpressionUUID->"c9b71931-e6cb-44d9-b671-0a28b11117b2"],
+Cell[3808, 82, 388, 10, 45, "Text",ExpressionUUID->"18773e4f-d95b-4c53-88f9-61dd5700c681"],
+Cell[4199, 94, 1624, 29, 344, "Output",ExpressionUUID->"f153864e-7a38-4ef1-9f71-e79d357e6851"],
+Cell[5826, 125, 603, 17, 45, "Text",ExpressionUUID->"8bea6f4d-66a9-47c5-b97e-b2ff344e360a"],
+Cell[CellGroupData[{
+Cell[6454, 146, 378, 11, 44, "Item",ExpressionUUID->"24471112-0538-44f0-b0fe-322d4b2ed6f8"],
+Cell[6835, 159, 179, 3, 43, "Item",ExpressionUUID->"cb1a49e0-5dcd-4c9f-9c02-e1c86a9c127e"],
+Cell[7017, 164, 398, 11, 44, "Item",ExpressionUUID->"52301b2b-78e8-4c81-84bd-3188b0964938"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7464, 181, 655, 10, 105, "Section",ExpressionUUID->"14e8239c-4268-43c1-8fc4-ee2c79898711"],
+Cell[8122, 193, 212, 5, 45, "Text",ExpressionUUID->"49871eb5-cf63-4d49-b310-e2a2101b8592"],
+Cell[8337, 200, 556, 14, 45, "Equation",ExpressionUUID->"e152ff23-9229-4441-8328-df001a2a796c"],
+Cell[8896, 216, 147, 3, 45, "Text",ExpressionUUID->"20f3e941-699d-4aee-9c62-8b04d5317ea2"],
+Cell[9046, 221, 524, 11, 49, "Equation",ExpressionUUID->"1bb23dcf-91f7-48a0-b51b-7565a49b1f86"],
+Cell[9573, 234, 560, 19, 46, "Text",ExpressionUUID->"a8db7799-64b5-4677-9b2a-0a0b78dafe07"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10170, 258, 776, 11, 105, "Section",ExpressionUUID->"12cd1623-d149-4dfd-8213-33b4c71f5647"],
+Cell[10949, 271, 1734, 44, 104, "Text",ExpressionUUID->"3e9bc96c-a532-4a4d-990a-b5d2237f0915"],
+Cell[12686, 317, 549, 14, 45, "Equation",ExpressionUUID->"909b2975-1dc9-4b36-8323-b2558e9f7213"],
+Cell[13238, 333, 890, 19, 74, "Text",ExpressionUUID->"c4e4f81f-1892-4dc9-895d-ac8354e8f828"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14165, 357, 158, 3, 105, "Section",ExpressionUUID->"b724a49e-60e1-4cc2-802a-b0a92f923b1b"],
+Cell[14326, 362, 845, 24, 46, "Text",ExpressionUUID->"33a63d8e-8478-4d41-956a-5a6dbe244936"],
+Cell[CellGroupData[{
+Cell[15196, 390, 1135, 32, 71, "Item",ExpressionUUID->"9841faec-7b79-444a-af1c-29dbfb07820f"],
+Cell[16334, 424, 854, 22, 71, "Item",ExpressionUUID->"93e43620-8263-4118-9f99-29d17133c8b0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

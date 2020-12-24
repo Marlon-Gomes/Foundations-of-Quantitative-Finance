@@ -1,0 +1,837 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     30256,        836]
+NotebookOptionsPosition[     24363,        688]
+NotebookOutlinePosition[     24739,        704]
+CellTagsIndexPosition[     24696,        701]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"]],
+
+Cell[StyleData["Notebook"],
+ DockedCells->{
+   Cell[
+    BoxData[
+     GraphicsBox[
+      TagBox[
+       RasterBox[CompressedData["
+1:eJztnT+sHUcVxu1AQUdA9NiBlkix0hGJFysNUQrHIMVKF+NYNAjFsUDpbv70
+EXKAyjTBNC6CFIxlQHJhIuMiRWJSpLLQS0QBzSMVorjcb+/73vv23DOzM3t3
+733X96z02fftzu7Ozu7+5syZM7Mnz//07MVHjh079upXZv+cfennT1+69NJr
+P/jy7I/Tr11++fyXZj+enuknx48dw8rpdBoKhUKhUCgUCoVCoVAoFAqFQqHQ
+1upf9+9Pdu98MPnw9Tcb3Tl/YfLn06dbQhoIvz+9dm2C/e5dujx5cOPGhMfY
++8fuZN3XEgqFQg+TwNVP373WcPnmqVOT68cemen4tEuf//WDKbiM3/cuXZrg
+WNgfwu/bZ85O3nv0683v+1d+OQHP/7u3N1n39YZCodCm6cH7NxpGv3/isSI+
+u8ye2eE4FhgPWxu/wWn8jd8fzTjNdA9u/LHZ59Nrv5vu7e42XIf9DuavuyxC
+oVDoKAq+DnAatm9fTncxGxzmtv/s7jbp7r1yaYrl/RMnG2H5y9OnD44Dfn90
+5UrY4KFQaOsFDoKHy9jTJcymbQ1fNrZ9+MZbUyzKaayjTwXyjok6JXzgoVBo
+2wRWw+b9/Ve/NiinPWbP7fY5s+nfvn3m+SmWO+fPN2n/ff/vU9rdWIdFbe1g
+dygU2mYN5f8oYTb8Ivibvmnwm7Y1/dj0j5DT4HfK1qZQ34S/OxQKbYNKYz+G
+ZDb/nseezLkMex+/yXD0QarvJGdrQ7v7xwyFQqGHWetgNmO057Ejx6eM0ybD
+4R+ZMbyxnyEstMOD2aFQaJu1SmaT0fCf42/Gjti/P37nV1Ms9HHD5sYCGzyY
+HQqFtlmrZLZlNNbjb8b/sV/y5hOnpljox4ZfBAv9JcHsUCi0rVoHs8lojJmZ
+p5nHkkDsE4WPGwtta/hL9O9gdigU2katk9l6fsZ90H9C/whjtRn3l7K1g9mh
+UGgbtEpmc4w65xaBbL8k/lf/yKEtfrzpl8Ti2drB7FAotA1aJbPpv1ZfyMx+
+nuzb0c06w+hmHblO2xv/B7NDodA2aj3MPt7Yz1hHfwnn+IM4ft7a3ozdZhxg
+MDsUCm2b1sXsnO2N+VqxDr5trmPfJOK0sdDPHcwOhULbpFUyW/0eHEej65iO
+80epf4Q+FMb9WVt7GWZfv3598uOLFyenHn988u0TJxq9eO7c5M3XX5/s7h7O
+ZYI0V69e7X2eTRfK6Rdvv12lW7dutcpwk4RngNp56qnmucA1LXNM/T5ITt4c
+Ol37DGW3IB5gyOMddeGbAKkyP4paJbP1fIzR9tZxHLv6Rxi7DTEOUG3tPs/X
+3uw8eB+/9c0TU8i+o1wPduNdZZp137N1ScsqJXDNW499P/nkk40qOz4Leh3L
+Mpu+wC55z3PXu6rvVF+BW0PZQpsgzGXKa4VPdt35KdFRYDb7GNUX4q2jn5vz
+SCnb+zxbfB+f+/6zU88WhI34ve8+tcCe1LFgh677fo4pMPfu3buNbLmgrPb2
+20RMh7ruie88fpAGvzeN2xCuYyhmg4l4VqHbz59tM/eNN6fc5s0Rz22wC8lV
+xFfhuyRYP4SduCv+y6HqgaOs22fPyvUe+mdVKG+NT163+jC7dt5Wj9laBvR7
+aD3HuEAtR67D+a3PpJbZYArfw1zbHRwC03PMxv5DvM+bJLY7utoeYHRJnXeU
+pdc65D22fKxhLuYgbtqh714btDzxXjGWFu/ZpvgL+gr1Hctf4yAWy9rn+TpU
+y2zcx9wY8i5m01ZWZh/y+TCeRH0hnu+bPhOuq2U2bacShoDJtBe99LAxg9np
+tOpfgO9k3Xlf5lrHY3YdE+hjGcN3AW6nbP2HUWz7pLbz27frzidVy2yMR/zf
+F1/s9GU2fR5qU2s8CfkMMVaEsdsQx0nq/the++ySI6V2X86f/bPLl4PZhWkh
+tHHWnf++17oNzA4d6tD/urnMfnDz5g72u33mh8Xc9pitZaB+aX6XHaLfQ8dN
+MlZbjwtbu/abB2Q27Oe9AnsCaZAefZO6Xm3wYHZ3WmjTfNrB7O3VYZ/x5jAb
+Yw4xv94/79zdgbjfF7u7zd/8ZmPumwQ+sw/j+CDa1OozUT532d+1Qtwe38NU
+H6S3j7btsY/6umveZ+zL/rzSWDjUG7Z+wb7rYGANs7WsEU+ZKxP9m32ZuTq1
+TzlS3K/rHJvIbM8PXevvwDHG8I9oP2ypv9ymg42Wunb6dmr7ZW1ajSnZJGZD
+96/8eie1P9iNvutSO5u2c4n9rf5r5bMeY69n7C/irG082nPPPtvEX6cYSD7g
+txf3hlgKjReEz3yhvK9fb8URUlhn405wDI0ZR7q/3b3btAvgj9G4OvzGOo3d
+0LxY8RzIo7e9qx4oZba2Q5R5uFbsx2ujmHfcC403QZ9BaTnatK33cr/sUK52
+X9Qt3nV7zO4q35IYoiGY/dnMXkI/JH2uFG0fnONw2/xc8Cui702PBwbO38FH
+RPPjc5sn7QNNpdHr5XdNVMiPHse7Hv2OrH5nHPabtrHvXbqcPD7SMj9INz/O
+Ypkhrfctc3tduXJp2Z77cSe5shua2U1+n3lmB35s3Rd2dkkMibJZ41N1Pcc+
+QnoPeI/Vf639k31jkfDu2ng1Fd5pjqHx7De+m3oM2Nw5ZtPvzZhv2ni6Hr+V
+FfhbmfenW7emPKey3PKTTFmol/bzqMxWPrLuGoLZNlZSy4OxgDaPuC+4XujF
+F8617kffcqRwTSxL/A+uYj/kk+0lr37wmI1nork/r152n5sSn/1QzOY4HeUh
+2r1ggh5/wc8p3IaNiWO0Y9/azPYYZplteaAc5Dqcg3Yw41/mdtmFg3rmzvkf
+LbTdGTuOuBa1E8kG8hoxlMh3U5/99lprTjnNz5zb/jZyldtw3hSz7TUjbx6z
+c/XUGMx+79Fv7Nh9YX+X7JtitvJWY0fwu4vlrAfV110ra8/llLI99X3Ovadd
+7evcdt1GnilXcF7lum6zsXYp/wHZWTrO0+bJGzN4YL++fDHre1Jug4HsY1Bm
+0wbXWGkvr5ov3a51NI5v85Pbnrs3jBmqKbshmW39A3yfyRHwkW1++AyUkakx
+JMp+PX7J+BPtm+L7qteJ/Nh91Dbe59jBotwGx8FYnMPynOflfKC6YMw0GW/j
+rDVvXgy2F5vsXbNy27Zh7HV6ZVCjUmbfuXBhB+ln92GHvhL4RYZitsaOqB9E
+x7Fr/6QynnF/vcsg0c72ZNu8Jcxm/DZ54PlO2cfppSnpw8uN+1B/sldf0La1
+/as55ZhNn46171P+Amtrs87Rc7DPwbO7S8pRj+XZ4HwOUu0dr/yYvu9YoTGZ
+neOMtvs9f6/ahPb47EvytjXv6368M21mSOsAL1YAeTisC+bzwHGxbOY5lSNI
+85n5ppVd8M2UsZht85NiMsth2Zj3UmZjbiaw+mD81ZNP7mAMeZcv2zJbGaxj
+HLV+trHtzKPW7Zp+qDFKeO/wTtLP6jE7Z4OlmK2+85zvV9mlfCvxQ+gYIctl
+3ebVGWRPTf9aSZ7oP7DtFXt+vW5bb2gf4W+uXm35nmvKUevklL9b6wTta/aY
+vSyvm/ONzOyUvZdjctf2LjbRjieb1Y+Zu0bNN79JhUWZbbmgY0a1LD9+552p
+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
+j3Wy7A==
+        "], {{0, 65}, {365, 0}}, {0, 255}, ColorFunction -> 
+        RGBColor], 
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True], 
+       Selectable -> False], BaseStyle -> "ImageGraphics", 
+      ImageSizeRaw -> {365, 65}, PlotRange -> {{0, 365}, {0, 65}}]], 
+    "DockedCell", CellMargins -> {{0, 0}, {0, 0}}, GeneratedCell -> True, 
+    CellAutoOverwrite -> True, CellFrameMargins -> {{0, 0}, {0, 0}}, 
+    CellChangeTimes -> {3.585259058775495*^9}, TextAlignment -> Center, 
+    ImageMargins -> 0, Background -> None]}],
+
+Cell[StyleData["Title"],
+ FontColor->RGBColor[0.6, 0., 0.0196078431372549]],
+
+Cell[StyleData["Subtitle"],
+ FontColor->GrayLevel[0]],
+
+Cell[StyleData["Subsubtitle"],
+ FontColor->GrayLevel[0]],
+
+Cell[StyleData["Section"],
+ FontColor->RGBColor[0.6, 0., 0.0196078431372549]],
+
+Cell[StyleData["Subsection"],
+ FontColor->RGBColor[0.6, 0., 0.0196078431372549]],
+
+Cell[StyleData["Subsubsection"],
+ FontSlant->"Italic",
+ FontColor->RGBColor[0.6, 0., 0.0196078431372549]],
+
+Cell[StyleData["Item"],
+ CellDingbat->"\[FilledSmallCircle]",
+ FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["ItemParagraph"],
+ CellMargins->{{81, 10}, {4, 1}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{"Tab" -> "SubitemParagraph"},
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15000},
+ DefaultNewCellStyle->"Item",
+ MenuSortingValue->1600,
+ FontFamily->"Times",
+ FontSize->14,
+ FontColor->GrayLevel[0.2]],
+
+Cell[RawData["\<\
+Cell[StyleData[\"ItemParagraph\", \"Presentation\"],
+ CellMargins->{{140, 10}, {7, 2}},
+ FontSize->24]\
+\>"],
+ CellMargins->{{140, 10}, {7, 2}},
+ FontSize->24],
+
+Cell[RawData["\<\
+Cell[StyleData[\"ItemParagraph\", \"SlideShow\"],
+ ShowGroupOpener->False,
+ CellMargins->{{
+   0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 2}},
+ FontSize->22]\
+\>"],
+ ShowGroupOpener->False,
+ CellMargins->{{
+   0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 2}},
+ FontSize->22],
+
+Cell[RawData["\<\
+Cell[StyleData[\"ItemParagraph\", \"Condensed\"],
+ CellMargins->{{38, Inherited}, {2, 1}},
+ FontSize->11]\
+\>"],
+ CellMargins->{{38, Inherited}, {2, 1}},
+ FontSize->11],
+
+Cell[RawData["\<\
+Cell[StyleData[\"ItemParagraph\", \"Printout\"],
+ CellMargins->{{65, Inherited}, {Inherited, 0.5 Inherited}}]\
+\>"],
+ CellMargins->{{65, Inherited}, {Inherited, 0.5 Inherited}}],
+
+Cell[RawData["\<\
+Cell[StyleData[\"ItemParagraph\", \"PrintoutGray\"],
+ CellMargins->{{65, Inherited}, {Inherited, 0.5 Inherited}}]\
+\>"],
+ CellMargins->{{65, Inherited}, {Inherited, 0.5 Inherited}}]
+}, Closed]],
+
+Cell[StyleData["Subitem"],
+ CellDingbat->"\[EmptySmallCircle]",
+ FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["SubitemParagraph"],
+ CellMargins->{{105, 12}, {4, 1}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Tab" -> "SubsubitemParagraph", "Backspace" -> "ItemParagraph", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "ItemParagraph"},
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15100},
+ CellFrameLabelMargins->4,
+ DefaultNewCellStyle->"Subitem",
+ MenuSortingValue->1610,
+ FontFamily->"Times",
+ FontSize->13.5,
+ FontColor->GrayLevel[0.2]],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubitemParagraph\", \"Presentation\"],
+ CellMargins->{{176, 12}, {7, 2}},
+ FontSize->24]\
+\>"],
+ CellMargins->{{176, 12}, {7, 2}},
+ FontSize->24],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubitemParagraph\", \"SlideShow\"],
+ CellMargins->{{
+   0.155 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 2}},
+ FontSize->22]\
+\>"],
+ CellMargins->{{
+   0.155 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 2}},
+ FontSize->22],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubitemParagraph\", \"Condensed\"],
+ CellMargins->{{60, 2}, {2, 1}},
+ FontSize->11]\
+\>"],
+ CellMargins->{{60, 2}, {2, 1}},
+ FontSize->11],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubitemParagraph\", \"Printout\"],
+ CellMargins->{{92, Inherited}, {Inherited, 0.1 Inherited}}]\
+\>"],
+ CellMargins->{{92, Inherited}, {Inherited, 0.1 Inherited}}],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubitemParagraph\", \"PrintoutGray\"],
+ CellMargins->{{92, Inherited}, {Inherited, 0.1 Inherited}}]\
+\>"],
+ CellMargins->{{92, Inherited}, {Inherited, 0.1 Inherited}}]
+}, Closed]],
+
+Cell[StyleData["Subsubitem"],
+ CellDingbat->"-",
+ FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["SubsubitemParagraph"],
+ CellMargins->{{129, 12}, {4, 1}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Backspace" -> "SubitemParagraph", KeyEvent["Tab", Modifiers -> {Shift}] -> 
+   "SubitemParagraph"},
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15200},
+ CellFrameLabelMargins->4,
+ DefaultNewCellStyle->"Subsubitem",
+ CounterIncrements->"Subsubitem",
+ MenuSortingValue->1625,
+ FontFamily->"Times",
+ FontSize->13,
+ FontColor->GrayLevel[0.2]],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubsubitemParagraph\", \"Presentation\"],
+ CellMargins->{{212, 12}, {7, 2}},
+ FontSize->24]\
+\>"],
+ CellMargins->{{212, 12}, {7, 2}},
+ FontSize->24],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubsubitemParagraph\", \"SlideShow\"],
+ CellMargins->{{
+   0.176 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 2}},
+ FontSize->22]\
+\>"],
+ CellMargins->{{
+   0.176 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 2}},
+ FontSize->22],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubsubitemParagraph\", \"Condensed\"],
+ CellMargins->{{84, 2}, {2, 1}},
+ FontSize->11]\
+\>"],
+ CellMargins->{{84, 2}, {2, 1}},
+ FontSize->11],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubsubitemParagraph\", \"Printout\"],
+ CellMargins->{{119, Inherited}, {Inherited, 0.1 Inherited}}]\
+\>"],
+ CellMargins->{{119, Inherited}, {Inherited, 0.1 Inherited}}],
+
+Cell[RawData["\<\
+Cell[StyleData[\"SubsubitemParagraph\", \"PrintoutGray\"],
+ CellMargins->{{119, Inherited}, {Inherited, 0.1 Inherited}}]\
+\>"],
+ CellMargins->{{119, Inherited}, {Inherited, 0.1 Inherited}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["ItemNumbered"],
+ CellDingbat->Cell[
+   TextData[{
+     CounterBox["ItemNumbered"], "."}], FontWeight -> "Bold"],
+ CellMargins->{{81, 10}, {4, 8}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{"Tab" -> "SubitemNumbered"},
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15000},
+ CellFrameLabelMargins->4,
+ CounterIncrements->"ItemNumbered",
+ CounterAssignments->{{"SubitemNumbered", 0}, {"SubsubitemNumbered", 0}},
+ MenuSortingValue->1630,
+ FontFamily->"Times",
+ FontSize->15],
+
+Cell[StyleData["ItemNumbered", "Presentation"],
+ CellMargins->{{140, 10}, {7, 7}},
+ CellFrameLabelMargins->6,
+ FontSize->24],
+
+Cell[StyleData["ItemNumbered", "SlideShow"],
+ CellMargins->{{
+   0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 10}},
+ CellFrameLabelMargins->6,
+ FontSize->22],
+
+Cell[StyleData["ItemNumbered", "Condensed"],
+ CellMargins->{{38, Inherited}, {2, 2}},
+ FontSize->11],
+
+Cell[StyleData["ItemNumbered", "Printout"],
+ CellMargins->{{65, Inherited}, {Inherited, Inherited}}],
+
+Cell[StyleData["ItemNumbered", "PrintoutGray"],
+ CellMargins->{{65, Inherited}, {Inherited, Inherited}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["SubitemNumbered"],
+ CellDingbat->Cell[
+   TextData[{
+     CounterBox["ItemNumbered"], ".", 
+     CounterBox["SubitemNumbered"], "."}], FontWeight -> "Bold"],
+ CellMargins->{{105, 12}, {4, 4}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Tab" -> "SubsubitemNumbered", "Backspace" -> "ItemNumbered", 
+   KeyEvent["Tab", Modifiers -> {Shift}] -> "ItemNumbered"},
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15100},
+ CellFrameLabelMargins->4,
+ DefaultNewCellStyle->"Item",
+ CounterIncrements->"SubitemNumbered",
+ CounterAssignments->{{"SubsubitemNumbered", 0}},
+ MenuSortingValue->1640,
+ FontFamily->"Times",
+ FontSize->13.5],
+
+Cell[StyleData["SubitemNumbered", "Presentation"],
+ CellMargins->{{176, 12}, {7, 7}},
+ CellFrameLabelMargins->6,
+ FontSize->24],
+
+Cell[StyleData["SubitemNumbered", "SlideShow"],
+ CellMargins->{{
+   0.155 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 10}},
+ CellFrameLabelMargins->6,
+ FontSize->22],
+
+Cell[StyleData["SubitemNumbered", "Condensed"],
+ CellMargins->{{60, 2}, {2, 2}},
+ FontSize->11],
+
+Cell[StyleData["SubitemNumbered", "Printout"],
+ CellMargins->{{92, Inherited}, {Inherited, Inherited}}],
+
+Cell[StyleData["SubitemNumbered", "PrintoutGray"],
+ CellMargins->{{92, Inherited}, {Inherited, Inherited}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["SubsubitemNumbered"],
+ CellDingbat->Cell[
+   TextData[{
+     CounterBox["ItemNumbered"], ".", 
+     CounterBox["SubitemNumbered"], ".", 
+     CounterBox["SubsubitemNumbered"], "."}], FontWeight -> "Bold"],
+ CellMargins->{{129, 12}, {4, 4}},
+ ReturnCreatesNewCell->True,
+ StyleKeyMapping->{
+  "Backspace" -> "SubitemNumbered", KeyEvent["Tab", Modifiers -> {Shift}] -> 
+   "SubitemNumbered"},
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15200},
+ CellFrameLabelMargins->4,
+ DefaultNewCellStyle->"SubitemNumbered",
+ CounterIncrements->"SubsubitemNumbered",
+ MenuSortingValue->1645,
+ FontFamily->"Times",
+ FontSize->13],
+
+Cell[StyleData["SubsubitemNumbered", "Presentation"],
+ CellMargins->{{212, 12}, {7, 7}},
+ CellFrameLabelMargins->6,
+ FontSize->24],
+
+Cell[StyleData["SubsubitemNumbered", "SlideShow"],
+ CellMargins->{{
+   0.176 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 10}},
+ CellFrameLabelMargins->6,
+ FontSize->22],
+
+Cell[StyleData["SubsubitemNumbered", "Condensed"],
+ CellMargins->{{84, 2}, {2, 2}},
+ FontSize->11],
+
+Cell[StyleData["SubsubitemNumbered", "Printout"],
+ CellMargins->{{119, Inherited}, {Inherited, Inherited}}],
+
+Cell[StyleData["SubsubitemNumbered", "PrintoutGray"],
+ CellMargins->{{119, Inherited}, {Inherited, Inherited}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["Text"],
+ CellMargins->{{66, 10}, {7, 7}},
+ InputAutoReplacements->{"TeX" -> FormBox[
+     StyleBox[
+      RowBox[{"T", 
+        AdjustmentBox[
+        "E", BoxMargins -> {{-0.3, 0}, {0, 0}}, BoxBaselineShift -> 0.5], 
+        "X"}], SingleLetterItalics -> False], TraditionalForm], "LaTeX" -> 
+   FormBox[
+     StyleBox[
+      RowBox[{"L", 
+        StyleBox[
+         AdjustmentBox[
+         "A", BoxMargins -> {{-0.5, -0.3}, {0, 0}}, BoxBaselineShift -> -0.4],
+          FontSize -> Smaller], "T", 
+        AdjustmentBox[
+        "E", BoxMargins -> {{-0.3, 0}, {0, 0}}, BoxBaselineShift -> 0.5], 
+        "X"}], SingleLetterItalics -> False], TraditionalForm], "mma" -> 
+   "Mathematica", "Mma" -> "Mathematica", "MMA" -> "Mathematica", 
+   "gridMathematica" -> FormBox[
+     RowBox[{"grid", 
+       AdjustmentBox[
+        StyleBox["Mathematica", FontSlant -> "Italic"], 
+        BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], "webMathematica" -> 
+   FormBox[
+     RowBox[{"web", 
+       AdjustmentBox[
+        StyleBox["Mathematica", FontSlant -> "Italic"], 
+        BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], ParentList},
+ LineSpacing->{1, 3},
+ CounterIncrements->"Text",
+ MenuSortingValue->1400,
+ MenuCommandKey->"7",
+ FontFamily->"Times",
+ FontSize->14],
+
+Cell[StyleData["Text", "Presentation"],
+ CellMargins->{{100, 10}, {10, 10}},
+ LineSpacing->{1, 5},
+ FontSize->24],
+
+Cell[StyleData["Text", "SlideShow"],
+ CellMargins->{{
+   0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 10}},
+ FontSize->22],
+
+Cell[StyleData["Text", "Condensed"],
+ CellMargins->{{18, 10}, {6, 6}},
+ LineSpacing->{1, 1},
+ FontSize->11],
+
+Cell[StyleData["Text", "Printout"],
+ CellMargins->{{49, Inherited}, {Inherited, Inherited}},
+ Hyphenation->True],
+
+Cell[StyleData["Text", "PrintoutGray"],
+ CellMargins->{{49, Inherited}, {Inherited, Inherited}},
+ Hyphenation->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["SmallText"],
+ CellMargins->{{66, 10}, {6, 6}},
+ LineSpacing->{1, 3},
+ LanguageCategory->"NaturalLanguage",
+ CounterIncrements->"SmallText",
+ MenuSortingValue->1750,
+ StyleMenuListing->None,
+ FontFamily->"Times",
+ FontSize->13,
+ FontColor->GrayLevel[0.2]],
+
+Cell[StyleData["SmallText", "Presentation"],
+ CellMargins->{{100, 10}, {9, 9}},
+ LineSpacing->{1, 5},
+ FontSize->18],
+
+Cell[StyleData["SmallText", "SlideShow"],
+ CellMargins->{{
+   0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.03 
+    FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {9, 9}},
+ FontSize->18],
+
+Cell[StyleData["SmallText", "Condensed"],
+ CellMargins->{{18, 10}, {5, 5}},
+ LineSpacing->{1, 2},
+ FontSize->9],
+
+Cell[StyleData["SmallText", "Printout"],
+ CellMargins->{{33, Inherited}, {Inherited, Inherited}},
+ Hyphenation->True],
+
+Cell[StyleData["SmallText", "PrintoutGray"],
+ CellMargins->{{33, Inherited}, {Inherited, Inherited}},
+ Hyphenation->True]
+}, Closed]],
+
+Cell[StyleData["Equation"],
+ CellMargins->{{36, 6}, {7, 7}},
+ ConversionRules:>{"HTML" -> {{"", ""}, {"<p class=\"Equation\">", "</p>"}}},
+ CellHorizontalScrolling->True,
+ CellFrameLabels->{{None, 
+    Cell["", "EquationNumber"]}, {None, None}},
+ DefaultFormatType->TraditionalForm,
+ InputAutoReplacements->{},
+ TextAlignment->Center,
+ CounterIncrements->"Equation",
+ MenuSortingValue->1400,
+ FontFamily->"Times",
+ FontSize->14,
+ ButtonBoxOptions->{Appearance->{Automatic, None}}],
+
+Cell[StyleData["EquationGroup"],
+ CellMargins->{{36, 6}, {0, 2}},
+ CellGroupingRules->"GraphicsGrouping",
+ TaggingRules:>{
+  "ExtraConversionRules" -> {
+    "General" -> {"NestingLevel" -> 1, "Numbered" -> False}, 
+     "TeX" -> {"CellGroupEnvironment" -> "gather*"}}},
+ CellFrameLabels->{{None, 
+    Cell["", "EquationNumber"]}, {None, None}},
+ DefaultFormatType->DefaultInputFormatType,
+ TextAlignment->Center,
+ StyleMenuListing->None,
+ FontSize->14,
+ ButtonBoxOptions->{Appearance->{Automatic, None}}],
+
+Cell[StyleData["EquationGroupAligned"],
+ CellMargins->{{36, 6}, {0, 2}},
+ CellGroupingRules->"GraphicsGrouping",
+ TaggingRules:>{
+  "ExtraConversionRules" -> {
+    "General" -> {"NestingLevel" -> 1, "Numbered" -> False}, 
+     "TeX" -> {"CellGroupEnvironment" -> "align*"}}},
+ CellFrameLabels->{{None, 
+    Cell["", "EquationNumber"]}, {None, None}},
+ DefaultFormatType->DefaultInputFormatType,
+ TextAlignment->Center,
+ StyleMenuListing->None,
+ FontSize->14,
+ ButtonBoxOptions->{Appearance->{Automatic, None}},
+ UnderoverscriptBoxOptions->{LimitsPositioning->False},
+ UnderscriptBoxOptions->{LimitsPositioning->False},
+ OverscriptBoxOptions->{LimitsPositioning->False},
+ GridBoxOptions->{AllowScriptLevelChange->False}],
+
+Cell[StyleData["EquationNumbered", StyleDefinitions -> StyleData["Equation"]],
+ ConversionRules:>{
+  "HTML" -> {{"", ""}, {"<table class='EquationNumbered'><tr><td>", Automatic, 
+      IncludeCount[
+      "</td><td class='EquationNumberedLabel'>(`1`)</td></tr></table>", 
+       "EquationNumbered"]}}},
+ TaggingRules:>{
+  "CounterSettings" -> {
+    "CounterFormat" -> {"EquationNumbered"}, "CounterTarget" -> "Cell", 
+     "XRefPrefix" -> "Equation"}},
+ CellHorizontalScrolling->True,
+ CellFrameLabels->{{None, 
+    Cell[
+     TextData[{"(", 
+       CounterBox["EquationNumbered"], ")"}]]}, {None, None}},
+ CounterIncrements->"EquationNumbered",
+ MenuSortingValue->1450],
+
+Cell[StyleData["EquationGroupNumbered", StyleDefinitions -> StyleData[
+ "EquationGroup"]],
+ ConversionRules:>{
+  "HTML" -> {{"", ""}, {
+     "<table class='EquationGroupNumbered'><tr><td>", Automatic, 
+      IncludeCount[
+      "</td><td class='EquationGroupNumberedLabel'>(`1`)</td></tr></table>", 
+       "EquationNumbered"]}}},
+ TaggingRules:>{
+  "CounterSettings" -> {
+    "CounterFormat" -> {"EquationNumbered"}, "CounterTarget" -> "Cell", 
+     "XRefPrefix" -> "Equation"}, 
+   "ExtraConversionRules" -> {
+    "General" -> {"Numbered" -> True}, 
+     "TeX" -> {"CellGroupEnvironment" -> "gather"}}},
+ CellFrameLabels->{{None, 
+    Cell[
+     TextData[{"(", 
+       CounterBox["EquationNumbered"], ")"}]]}, {None, None}},
+ CounterIncrements->"EquationNumbered"],
+
+Cell[StyleData["EquationGroupAlignedNumbered", StyleDefinitions -> StyleData[
+ "EquationGroupAligned"]],
+ ConversionRules:>{
+  "HTML" -> {{"", ""}, {
+     "<table class='EquationGroupAlignedNumbered'><tr><td>", Automatic, 
+      IncludeCount[
+      "</td><td \
+class='EquationGroupAlignedNumberedLabel'>(`1`)</td></tr></table>", 
+       "EquationNumbered"]}}},
+ TaggingRules:>{
+  "CounterSettings" -> {
+    "CounterFormat" -> {"EquationNumbered"}, "CounterTarget" -> "Cell", 
+     "XRefPrefix" -> "Equation"}, 
+   "ExtraConversionRules" -> {
+    "General" -> {"Numbered" -> True}, 
+     "TeX" -> {"CellGroupEnvironment" -> "align"}}},
+ CellFrameLabels->{{None, 
+    Cell[
+     TextData[{"(", 
+       CounterBox["EquationNumbered"], ")"}]]}, {None, None}},
+ CounterIncrements->"EquationNumbered"],
+
+Cell[StyleData["EquationNumber"],
+ CellSize->{24, Inherited},
+ TextAlignment->Right,
+ StyleMenuListing->None,
+ FontSize->14]
+},
+WindowSize->{842, 775},
+WindowMargins->{{Automatic, 154}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 49, 0, 36, 49, 0, "StyleData", "StyleDefinitions", ""],
+Cell[452, 15, 7281, 124, 36, 27, 0, "StyleData", "Notebook", "All"],
+Cell[7736, 141, 75, 1, 107, 24, 0, "StyleData", "Title", "All"],
+Cell[7814, 144, 53, 1, 66, 27, 0, "StyleData", "Subtitle", "All"],
+Cell[7870, 147, 56, 1, 45, 30, 0, "StyleData", "Subsubtitle", "All"],
+Cell[7929, 150, 77, 1, 95, 26, 0, "StyleData", "Section", "All"],
+Cell[8009, 153, 80, 1, 51, 29, 0, "StyleData", "Subsection", "All"],
+Cell[8092, 156, 105, 2, 44, 32, 0, "StyleData", "Subsubsection", "All"],
+Cell[8200, 160, 83, 2, 38, 23, 0, "StyleData", "Item", "All"],
+Cell[CellGroupData[{
+Cell[8308, 166, 324, 9, 35, 32, 0, "StyleData", "ItemParagraph", "All",
+ MenuSortingValue->1600],
+Cell[8635, 177, 177, 6, 65],
+Cell[8815, 185, 440, 12, 107],
+Cell[9258, 199, 186, 6, 65],
+Cell[9447, 207, 195, 4, 51],
+Cell[9645, 213, 199, 4, 51]
+}, Closed]],
+Cell[9859, 220, 85, 2, 38, 26, 0, "StyleData", "Subitem", "All"],
+Cell[CellGroupData[{
+Cell[9969, 226, 460, 12, 35, 35, 0, "StyleData", "SubitemParagraph", "All",
+ MenuSortingValue->1610],
+Cell[10432, 240, 180, 6, 70],
+Cell[10615, 248, 393, 10, 70],
+Cell[11011, 260, 173, 6, 70],
+Cell[11187, 268, 198, 4, 70],
+Cell[11388, 274, 202, 4, 70]
+}, Closed]],
+Cell[11605, 281, 70, 2, 37, 29, 0, "StyleData", "Subsubitem", "All"],
+Cell[CellGroupData[{
+Cell[11700, 287, 472, 13, 34, 38, 0, "StyleData", "SubsubitemParagraph", "All",
+ CounterIncrements->"Subsubitem",
+ MenuSortingValue->1625],
+Cell[12175, 302, 183, 6, 70],
+Cell[12361, 310, 396, 10, 70],
+Cell[12760, 322, 176, 6, 70],
+Cell[12939, 330, 203, 4, 70],
+Cell[13145, 336, 207, 4, 70]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13389, 345, 498, 13, 39, 31, 0, "StyleData", "ItemNumbered", "All",
+ CounterIncrements->"ItemNumbered",
+ CounterAssignments->{{"SubitemNumbered", 0}, {"SubsubitemNumbered", 0}},
+ MenuSortingValue->1630],
+Cell[13890, 360, 124, 3, 70, 47, 0, "StyleData", "ItemNumbered", \
+"Presentation"],
+Cell[14017, 365, 230, 5, 70, 44, 0, "StyleData", "ItemNumbered", \
+"SlideShow"],
+Cell[14250, 372, 100, 2, 70, 44, 0, "StyleData", "ItemNumbered", \
+"Condensed"],
+Cell[14353, 376, 100, 1, 70, 43, 0, "StyleData", "ItemNumbered", "Printout"],
+Cell[14456, 379, 104, 1, 70, 47, 0, "StyleData", "ItemNumbered", \
+"PrintoutGray"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14597, 385, 653, 17, 38, 34, 0, "StyleData", "SubitemNumbered", "All",
+ CounterIncrements->"SubitemNumbered",
+ CounterAssignments->{{"SubsubitemNumbered", 0}},
+ MenuSortingValue->1640],
+Cell[15253, 404, 127, 3, 70, 50, 0, "StyleData", "SubitemNumbered", \
+"Presentation"],
+Cell[15383, 409, 233, 5, 70, 47, 0, "StyleData", "SubitemNumbered", \
+"SlideShow"],
+Cell[15619, 416, 95, 2, 70, 47, 0, "StyleData", "SubitemNumbered", \
+"Condensed"],
+Cell[15717, 420, 103, 1, 70, 46, 0, "StyleData", "SubitemNumbered", \
+"Printout"],
+Cell[15823, 423, 107, 1, 70, 50, 0, "StyleData", "SubitemNumbered", \
+"PrintoutGray"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15967, 429, 638, 17, 37, 37, 0, "StyleData", "SubsubitemNumbered", "All",
+ 
+ CounterIncrements->"SubsubitemNumbered",
+ MenuSortingValue->1645],
+Cell[16608, 448, 130, 3, 70, 53, 0, "StyleData", "SubsubitemNumbered", \
+"Presentation"],
+Cell[16741, 453, 236, 5, 70, 50, 0, "StyleData", "SubsubitemNumbered", \
+"SlideShow"],
+Cell[16980, 460, 98, 2, 70, 50, 0, "StyleData", "SubsubitemNumbered", \
+"Condensed"],
+Cell[17081, 464, 107, 1, 70, 49, 0, "StyleData", "SubsubitemNumbered", \
+"Printout"],
+Cell[17191, 467, 111, 1, 70, 53, 0, "StyleData", "SubsubitemNumbered", \
+"PrintoutGray"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17339, 473, 1286, 34, 41, 23, 0, "StyleData", "Text", "All",
+ CounterIncrements->"Text",
+ MenuSortingValue->1400,
+ MenuCommandKey->"7"],
+Cell[18628, 509, 113, 3, 60, 39, 0, "StyleData", "Text", "Presentation"],
+Cell[18744, 514, 195, 4, 58, 36, 0, "StyleData", "Text", "SlideShow"],
+Cell[18942, 520, 107, 3, 39, 36, 0, "StyleData", "Text", "Condensed"],
+Cell[19052, 525, 112, 2, 36, 35, 0, "StyleData", "Text", "Printout"],
+Cell[19167, 529, 116, 2, 36, 39, 0, "StyleData", "Text", "PrintoutGray"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19320, 536, 270, 9, 41, 28, 0, "StyleData", "SmallText", "All",
+ CounterIncrements->"SmallText",
+ MenuSortingValue->1750,
+ StyleMenuListing->None],
+Cell[19593, 547, 116, 3, 70, 44, 0, "StyleData", "SmallText", \
+"Presentation"],
+Cell[19712, 552, 198, 4, 70, 41, 0, "StyleData", "SmallText", "SlideShow"],
+Cell[19913, 558, 111, 3, 70, 41, 0, "StyleData", "SmallText", "Condensed"],
+Cell[20027, 563, 117, 2, 70, 40, 0, "StyleData", "SmallText", "Printout"],
+Cell[20147, 567, 121, 2, 70, 44, 0, "StyleData", "SmallText", "PrintoutGray"]
+}, Closed]],
+Cell[20283, 572, 480, 13, 41, 27, 0, "StyleData", "Equation", "All",
+ CounterIncrements->"Equation",
+ MenuSortingValue->1400],
+Cell[20766, 587, 504, 13, 32, 32, 0, "StyleData", "EquationGroup", "All",
+ StyleMenuListing->None],
+Cell[21273, 602, 719, 17, 32, 39, 0, "StyleData", "EquationGroupAligned", \
+"All",
+ StyleMenuListing->None],
+Cell[21995, 621, 670, 16, 44, 78, 0, "StyleData", "EquationNumbered", "All",
+ CounterIncrements->"EquationNumbered",
+ MenuSortingValue->1450],
+Cell[22668, 639, 766, 19, 32, 90, 1, "StyleData", "EquationGroupNumbered", \
+"All",
+ CounterIncrements->"EquationNumbered"],
+Cell[23437, 660, 795, 20, 32, 104, 1, "StyleData", \
+"EquationGroupAlignedNumbered", "All",
+ CounterIncrements->"EquationNumbered"],
+Cell[24235, 682, 124, 4, 38, 33, 0, "StyleData", "EquationNumber", "All",
+ StyleMenuListing->None]
+}
+]
+*)
+

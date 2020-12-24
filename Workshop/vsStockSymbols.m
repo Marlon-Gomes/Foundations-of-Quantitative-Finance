@@ -1,0 +1,7 @@
+(* Created with the Wolfram Language : www.wolfram.com *)
+{"NASDAQ:AAPL", "NASDAQ:AMGN", "NASDAQ:CSCO", "NASDAQ:INTC", "NASDAQ:MSFT", 
+ "NASDAQ:WBA", "NYSE:AXP", "NYSE:BA", "NYSE:CAT", "NYSE:CRM", "NYSE:CVX", 
+ "NYSE:DD", "NYSE:DIS", "NYSE:GS", "NYSE:HD", "NYSE:HON", "NYSE:IBM", 
+ "NYSE:JNJ", "NYSE:JPM", "NYSE:KO", "NYSE:MCD", "NYSE:MMM", "NYSE:MRK", 
+ "NYSE:NKE", "NYSE:PG", "NYSE:TRV", "NYSE:UNH", "NYSE:V", "NYSE:VZ", 
+ "NYSE:WMT"}
